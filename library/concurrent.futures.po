@@ -17,9 +17,8 @@ msgstr ""
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/concurrent.futures.rst:2
-#, fuzzy
 msgid ":mod:`!concurrent.futures` --- Launching parallel tasks"
-msgstr ":mod:`concurrent.futures` --- 병렬 작업 실행하기"
+msgstr ":mod:`!concurrent.futures` --- 병렬 작업 실행하기"
 
 #: ../../library/concurrent.futures.rst:9
 msgid ""
@@ -71,13 +70,12 @@ msgstr ""
 "합니다."
 
 #: ../../library/concurrent.futures.rst:34
-#, fuzzy
 msgid ""
 "Schedules the callable, *fn*, to be executed as ``fn(*args, **kwargs)`` "
 "and returns a :class:`Future` object representing the execution of the "
 "callable. ::"
 msgstr ""
-"콜러블 *fn* 이 ``fn(*args **kwargs)`` 처럼 실행되도록 예약하고, 콜러블 객체의 실행을 나타내는 "
+"콜러블 *fn* 이 ``fn(*args, **kwargs)`` 처럼 실행되도록 예약하고, 콜러블 객체의 실행을 나타내는 "
 ":class:`Future` 객체를 반환합니다. ::"
 
 #: ../../library/concurrent.futures.rst:38
@@ -86,25 +84,25 @@ msgid ""
 "    future = executor.submit(pow, 323, 1235)\n"
 "    print(future.result())"
 msgstr ""
+"with ThreadPoolExecutor(max_workers=1) as executor:\n"
+"    future = executor.submit(pow, 323, 1235)\n"
+"    print(future.result())"
 
 #: ../../library/concurrent.futures.rst:44
-#, fuzzy
 msgid "Similar to :func:`map(fn, *iterables) <map>` except:"
-msgstr ":func:`map(func, *iterables) <map>` 과 비슷하지만, 다음과 같은 차이가 있습니다:"
+msgstr ":func:`map(fn, *iterables) <map>` 과 비슷하지만, 다음과 같은 차이가 있습니다:"
 
 #: ../../library/concurrent.futures.rst:46
 msgid "the *iterables* are collected immediately rather than lazily;"
 msgstr "*iterables* 는 느긋하게 처리되는 것이 아니라 즉시 수집됩니다."
 
 #: ../../library/concurrent.futures.rst:48
-#, fuzzy
 msgid ""
 "*fn* is executed asynchronously and several calls to *fn* may be made "
 "concurrently."
-msgstr "*func* 는 비동기적으로 실행되며 *func* 에 대한 여러 호출이 동시에 이루어질 수 있습니다."
+msgstr "*fn* 는 비동기적으로 실행되며 *fn* 에 대한 여러 호출이 동시에 이루어질 수 있습니다."
 
 #: ../../library/concurrent.futures.rst:51
-#, fuzzy
 msgid ""
 "The returned iterator raises a :exc:`TimeoutError` if "
 ":meth:`~iterator.__next__` is called and the result isn't available after"
@@ -113,16 +111,15 @@ msgid ""
 "``None``, there is no limit to the wait time."
 msgstr ""
 "반환된 이터레이터는 :meth:`~iterator.__next__` 가 호출되었을 때, :meth:`Executor.map` 에 "
-"대한 최초 호출에서 *timeout* 초 후에도 결과를 사용할 수 없는 경우 "
-":exc:`concurrent.futures.TimeoutError` 를 발생시킵니다. *timeout* 은 int 또는 "
-"float가 될 수 있습니다. *timeout* 이 지정되지 않았거나 ``None`` 인 경우, 대기 시간에는 제한이 없습니다."
+"대한 최초 호출에서 *timeout* 초 후에도 결과를 사용할 수 없는 경우 :exc:`TimeoutError` 를 발생시킵니다. "
+"*timeout* 은 int 또는 float가 될 수 있습니다. *timeout* 이 지정되지 않았거나 ``None`` 인 경우, "
+"대기 시간에는 제한이 없습니다."
 
 #: ../../library/concurrent.futures.rst:57
-#, fuzzy
 msgid ""
 "If a *fn* call raises an exception, then that exception will be raised "
 "when its value is retrieved from the iterator."
-msgstr "*func* 호출이 예외를 일으키면, 값을 이터레이터에서 꺼낼 때 해당 예외가 발생합니다."
+msgstr "*fn* 호출이 예외를 일으키면, 값을 이터레이터에서 꺼낼 때 해당 예외가 발생합니다."
 
 #: ../../library/concurrent.futures.rst:60
 msgid ""
@@ -208,6 +205,12 @@ msgid ""
 "    e.submit(shutil.copy, 'src3.txt', 'dest3.txt')\n"
 "    e.submit(shutil.copy, 'src4.txt', 'dest4.txt')"
 msgstr ""
+"import shutil\n"
+"with ThreadPoolExecutor(max_workers=4) as e:\n"
+"    e.submit(shutil.copy, 'src1.txt', 'dest1.txt')\n"
+"    e.submit(shutil.copy, 'src2.txt', 'dest2.txt')\n"
+"    e.submit(shutil.copy, 'src3.txt', 'dest3.txt')\n"
+"    e.submit(shutil.copy, 'src4.txt', 'dest4.txt')"
 
 #: ../../library/concurrent.futures.rst:107
 msgid "Added *cancel_futures*."
@@ -253,6 +256,21 @@ msgid ""
 "a = executor.submit(wait_on_b)\n"
 "b = executor.submit(wait_on_a)"
 msgstr ""
+"import time\n"
+"def wait_on_b():\n"
+"    time.sleep(5)\n"
+"    print(b.result())  # b 는 a 를 기다리기 때문에 완료되지 않습니다.\n"
+"    return 5\n"
+"\n"
+"def wait_on_a():\n"
+"    time.sleep(5)\n"
+"    print(a.result())  # a 는 b 를 기다리기 때문에 완료되지 않습니다.\n"
+"    return 6\n"
+"\n"
+"\n"
+"executor = ThreadPoolExecutor(max_workers=2)\n"
+"a = executor.submit(wait_on_b)\n"
+"b = executor.submit(wait_on_a)"
 
 #: ../../library/concurrent.futures.rst:136
 msgid "And::"
@@ -270,6 +288,14 @@ msgid ""
 "executor = ThreadPoolExecutor(max_workers=1)\n"
 "executor.submit(wait_on_future)"
 msgstr ""
+"def wait_on_future():\n"
+"    f = executor.submit(pow, 5, 2)\n"
+"    # 작업자 스레드가 하나뿐인데, wait_on_future 를 실행하고 있으므로\n"
+"    # f 는 완료되지 않습니다.\n"
+"    print(f.result())\n"
+"\n"
+"executor = ThreadPoolExecutor(max_workers=1)\n"
+"executor.submit(wait_on_future)"
 
 #: ../../library/concurrent.futures.rst:150
 msgid ""
@@ -314,14 +340,13 @@ msgstr ""
 "작업자의 수가 :class:`ProcessPoolExecutor` 보다 많아야 한다고 가정하고 있습니다."
 
 #: ../../library/concurrent.futures.rst:174
-#, fuzzy
 msgid ""
 "Added the *thread_name_prefix* parameter to allow users to control the "
 ":class:`threading.Thread` names for worker threads created by the pool "
 "for easier debugging."
 msgstr ""
-"*thread_name_prefix* 인자가 추가되어, 디버깅 편의를 위해 사용자가 풀이 만드는 작업자 스레드의 "
-":class:`threading.Thread` 이름을 제어 할 수 있습니다."
+"디버깅 편의를 위해 사용자가 풀이 만드는 작업자 스레드의 :class:`threading.Thread` 이름을 제어 할 수 있도록,"
+" *thread_name_prefix* 매개 변수를 추가했습니다."
 
 #: ../../library/concurrent.futures.rst:179
 #: ../../library/concurrent.futures.rst:287
@@ -387,6 +412,33 @@ msgid ""
 "        else:\n"
 "            print('%r page is %d bytes' % (url, len(data)))"
 msgstr ""
+"import concurrent.futures\n"
+"import urllib.request\n"
+"\n"
+"URLS = ['http://www.foxnews.com/',\n"
+"        'http://www.cnn.com/',\n"
+"        'http://europe.wsj.com/',\n"
+"        'http://www.bbc.co.uk/',\n"
+"        'http://nonexistent-subdomain.python.org/']\n"
+"\n"
+"# 페이지 하나를 가져오고 URL 과 내용을 보고합니다\n"
+"def load_url(url, timeout):\n"
+"    with urllib.request.urlopen(url, timeout=timeout) as conn:\n"
+"        return conn.read()\n"
+"\n"
+"# with 문을 사용하여 스레드가 즉시 정리되도록 할 수 있습니다\n"
+"with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:\n"
+"    # 로드 작업을 시작하고 각 퓨처의 해당 URL을 기록합니다\n"
+"    future_to_url = {executor.submit(load_url, url, 60): url for url in "
+"URLS}\n"
+"    for future in concurrent.futures.as_completed(future_to_url):\n"
+"        url = future_to_url[future]\n"
+"        try:\n"
+"            data = future.result()\n"
+"        except Exception as exc:\n"
+"            print('%r generated an exception: %s' % (url, exc))\n"
+"        else:\n"
+"            print('%r page is %d bytes' % (url, len(data)))"
 
 #: ../../library/concurrent.futures.rst:231
 msgid "ProcessPoolExecutor"
@@ -424,7 +476,6 @@ msgstr ""
 ":class:`Future` 메서드를 호출하면 교착 상태가 발생합니다."
 
 #: ../../library/concurrent.futures.rst:248
-#, fuzzy
 msgid ""
 "An :class:`Executor` subclass that executes calls asynchronously using a "
 "pool of at most *max_workers* processes.  If *max_workers* is ``None`` or"
@@ -440,13 +491,14 @@ msgid ""
 "methods`."
 msgstr ""
 "최대 *max_workers* 프로세스의 풀을 사용하여 호출을 비동기적으로 실행하는 :class:`Executor` 서브 클래스. "
-"*max_workers* 가 ``None`` 이거나 주어지지 않았다면, 기계의 프로세서 수를 기본값으로 사용합니다. "
-"*max_workers* 가 ``0`` 보다 작거나 같으면 :exc:`ValueError` 가 발생합니다. 윈도우에서, "
-"*max_workers*\\는 ``61``\\보다 작거나 같아야 합니다. 그렇지 않으면 :exc:`ValueError`\\가 "
-"발생합니다. *max_workers*\\가 ``None`` 이면, 더 많은 프로세서를 사용할 수 있다 할지라도 선택된 기본값은 최대"
-" ``61``\\이 될 것입니다. *mp_context* 는 multiprocessing 컨텍스트이거나 None일 수 있습니다. "
-"작업자들을 만드는데 사용될 것입니다. *mp_context* 가 ``None`` 이거나 주어지지 않으면 기본 "
-"multiprocessing 컨텍스트가 사용됩니다."
+"*max_workers* 가 ``None`` 이거나 주어지지 않았다면, :func:`os.process_cpu_count`\\를 "
+"기본값으로 사용합니다. *max_workers* 가 ``0`` 보다 작거나 같으면 :exc:`ValueError` 가 발생합니다. "
+"윈도우에서, *max_workers*\\는 ``61``\\보다 작거나 같아야 합니다. 그렇지 않으면 "
+":exc:`ValueError`\\가 발생합니다. *max_workers*\\가 ``None`` 이면, 더 많은 프로세서를 사용할 "
+"수 있다 할지라도 선택된 기본값은 최대 ``61``\\이 될 것입니다. *mp_context* 는 "
+":mod:`multiprocessing` 컨텍스트이거나 ``None``\\일 수 있습니다. 작업자들을 만드는데 사용될 것입니다. "
+"*mp_context* 가 ``None`` 이거나 주어지지 않으면 기본 :mod:`multiprocessing` 컨텍스트가 "
+"사용됩니다. :ref:`multiprocessing-start-methods`\\을 참조하세요."
 
 #: ../../library/concurrent.futures.rst:262
 msgid ""
@@ -474,15 +526,15 @@ msgid ""
 msgstr ""
 
 #: ../../library/concurrent.futures.rst:276
-#, fuzzy
 msgid ""
 "When one of the worker processes terminates abruptly, a "
 ":exc:`~concurrent.futures.process.BrokenProcessPool` error is now raised."
 " Previously, behaviour was undefined but operations on the executor or "
 "its futures would often freeze or deadlock."
 msgstr ""
-"작업자 프로세스 중 하나가 갑자기 종료되면, :exc:`BrokenProcessPool` 오류가 발생합니다. 이전에는, 동작이 "
-"정의되지 않았지만, 실행기나 그 퓨처에 대한 연산이 종종 멈추거나 교착 상태에 빠졌습니다."
+"작업자 프로세스 중 하나가 갑자기 종료되면, "
+":exc:`~concurrent.futures.process.BrokenProcessPool` 오류가 발생합니다. 이전에는, 동작이"
+" 정의되지 않았지만, 실행기나 그 퓨처에 대한 연산이 종종 멈추거나 교착 상태에 빠졌습니다."
 
 #: ../../library/concurrent.futures.rst:283
 msgid ""
@@ -500,11 +552,10 @@ msgid ""
 msgstr ""
 
 #: ../../library/concurrent.futures.rst:297
-#, fuzzy
 msgid ""
 "The *max_tasks_per_child* argument was added to allow users to control "
 "the lifetime of workers in the pool."
-msgstr "*mp_context* 인자가 추가되어 사용자가 풀에서 만드는 작업자 프로세스의 시작 방법을 제어 할 수 있습니다."
+msgstr "*max_tasks_per_child* 인자가 추가되어 사용자가 풀에 있는 작업자의 수명을 제어 할 수 있습니다."
 
 #: ../../library/concurrent.futures.rst:301
 msgid ""
@@ -563,6 +614,39 @@ msgid ""
 "if __name__ == '__main__':\n"
 "    main()"
 msgstr ""
+"import concurrent.futures\n"
+"import math\n"
+"\n"
+"PRIMES = [\n"
+"    112272535095293,\n"
+"    112582705942171,\n"
+"    112272535095293,\n"
+"    115280095190773,\n"
+"    115797848077099,\n"
+"    1099726899285419]\n"
+"\n"
+"def is_prime(n):\n"
+"    if n < 2:\n"
+"        return False\n"
+"    if n == 2:\n"
+"        return True\n"
+"    if n % 2 == 0:\n"
+"        return False\n"
+"\n"
+"    sqrt_n = int(math.floor(math.sqrt(n)))\n"
+"    for i in range(3, sqrt_n + 1, 2):\n"
+"        if n % i == 0:\n"
+"            return False\n"
+"    return True\n"
+"\n"
+"def main():\n"
+"    with concurrent.futures.ProcessPoolExecutor() as executor:\n"
+"        for number, prime in zip(PRIMES, executor.map(is_prime, PRIMES)):"
+"\n"
+"            print('%d is prime: %s' % (number, prime))\n"
+"\n"
+"if __name__ == '__main__':\n"
+"    main()"
 
 #: ../../library/concurrent.futures.rst:354
 msgid "Future Objects"
@@ -613,7 +697,6 @@ msgid ""
 msgstr "호출이 성공적으로 취소되었거나 실행이 완료되었으면 ``True`` 를 반환합니다."
 
 #: ../../library/concurrent.futures.rst:388
-#, fuzzy
 msgid ""
 "Return the value returned by the call. If the call hasn't yet completed "
 "then this method will wait up to *timeout* seconds.  If the call hasn't "
@@ -622,9 +705,9 @@ msgid ""
 "or ``None``, there is no limit to the wait time."
 msgstr ""
 "호출이 반환한 값을 돌려줍니다. 호출이 아직 완료되지 않는 경우, 이 메서드는 *timeout* 초까지 대기합니다. "
-"*timeout* 초 내에 호출이 완료되지 않으면 :exc:`concurrent.futures.TimeoutError` 가 "
-"발생합니다. *timeout* 은 int 또는 float가 될 수 있습니다. *timeout* 이 지정되지 않았거나 ``None``"
-" 인 경우, 대기 시간에는 제한이 없습니다."
+"*timeout* 초 내에 호출이 완료되지 않으면 :exc:`TimeoutError` 가 발생합니다. *timeout* 은 int "
+"또는 float가 될 수 있습니다. *timeout* 이 지정되지 않았거나 ``None`` 인 경우, 대기 시간에는 제한이 "
+"없습니다."
 
 #: ../../library/concurrent.futures.rst:395
 #: ../../library/concurrent.futures.rst:409
@@ -634,14 +717,12 @@ msgid ""
 msgstr "완료하기 전에 퓨처가 취소되면 :exc:`.CancelledError` 가 발생합니다."
 
 #: ../../library/concurrent.futures.rst:398
-#, fuzzy
 msgid ""
 "If the call raised an exception, this method will raise the same "
 "exception."
 msgstr "호출이 예외를 일으키는 경우, 이 메서드는 같은 예외를 발생시킵니다."
 
 #: ../../library/concurrent.futures.rst:402
-#, fuzzy
 msgid ""
 "Return the exception raised by the call.  If the call hasn't yet "
 "completed then this method will wait up to *timeout* seconds.  If the "
@@ -650,9 +731,9 @@ msgid ""
 "specified or ``None``, there is no limit to the wait time."
 msgstr ""
 "호출이 일으킨 예외를 돌려줍니다. 호출이 아직 완료되지 않는 경우, 이 메서드는 *timeout* 초까지 대기합니다. "
-"*timeout* 초 내에 호출이 완료되지 않으면 :exc:`concurrent.futures.TimeoutError` 가 "
-"발생합니다. *timeout* 은 int 또는 float가 될 수 있습니다. *timeout* 이 지정되지 않았거나 ``None``"
-" 인 경우, 대기 시간에는 제한이 없습니다."
+"*timeout* 초 내에 호출이 완료되지 않으면 :exc:`TimeoutError` 가 발생합니다. *timeout* 은 int "
+"또는 float가 될 수 있습니다. *timeout* 이 지정되지 않았거나 ``None`` 인 경우, 대기 시간에는 제한이 "
+"없습니다."
 
 #: ../../library/concurrent.futures.rst:412
 msgid "If the call completed without raising, ``None`` is returned."
@@ -699,7 +780,6 @@ msgstr ""
 "호출되거나 단위 테스트에서만 호출되어야 합니다."
 
 #: ../../library/concurrent.futures.rst:438
-#, fuzzy
 msgid ""
 "If the method returns ``False`` then the :class:`Future` was cancelled, "
 "i.e. :meth:`Future.cancel` was called and returned ``True``.  Any threads"
@@ -707,18 +787,17 @@ msgid ""
 ":func:`as_completed` or :func:`wait`) will be woken up."
 msgstr ""
 "메서드가 ``False`` 를 반환하면, :class:`Future` 가 취소된 것입니다. 즉 "
-":meth:`Future.cancel` 이 호출되었고 `True`\\를 반환했습니다. :class:`Future` 완료를 기다리는 "
-"(즉, :func:`as_completed` 또는 :func:`wait`\\를 통해) 모든 스레드는 깨어납니다."
+":meth:`Future.cancel` 이 호출되었고 ``True``\\를 반환했습니다. :class:`Future` 완료를 "
+"기다리는 (즉, :func:`as_completed` 또는 :func:`wait`\\를 통해) 모든 스레드는 깨어납니다."
 
 #: ../../library/concurrent.futures.rst:443
-#, fuzzy
 msgid ""
 "If the method returns ``True`` then the :class:`Future` was not cancelled"
 " and has been put in the running state, i.e. calls to "
 ":meth:`Future.running` will return ``True``."
 msgstr ""
 "메서드가 ``True`` 를 반환하면, :class:`Future` 가 취소되지 않았고 실행 상태로 진입했습니다. 즉 "
-":meth:`Future.running` 을 호출하면 `True` 가 반환됩니다."
+":meth:`Future.running` 을 호출하면 ``True`` 가 반환됩니다."
 
 #: ../../library/concurrent.futures.rst:447
 msgid ""
@@ -762,7 +841,6 @@ msgid "Module Functions"
 msgstr "모듈 함수"
 
 #: ../../library/concurrent.futures.rst:482
-#, fuzzy
 msgid ""
 "Wait for the :class:`Future` instances (possibly created by different "
 ":class:`Executor` instances) given by *fs* to complete. Duplicate futures"
@@ -773,9 +851,10 @@ msgid ""
 " did not complete (pending or running futures)."
 msgstr ""
 "*fs* 로 주어진 여러 (서로 다른 :class:`Executor` 인스턴스가 만든 것들도 가능합니다) "
-":class:`Future` 인스턴스들이 완료할 때까지 기다립니다. 집합들의 이름있는 2-튜플을 돌려줍니다. ``done`` 이라는"
-" 이름의 첫 번째 집합은 대기가 끝나기 전에 완료된 (끝났거나 취소된) 퓨처를 담고 있습니다. ``not_done`` 이라는 이름의"
-" 두 번째 집합은 완료되지 않은 (계류 중이거나 실행 중인) 퓨처를 담고 있습니다."
+":class:`Future` 인스턴스들이 완료할 때까지 기다립니다. *fs* 로 주어진 중복 퓨처는 제거되고 한 번만 반환됩니다. "
+"집합들의 이름있는 2-튜플을 돌려줍니다. ``done`` 이라는 이름의 첫 번째 집합은 대기가 끝나기 전에 완료된 (끝났거나 "
+"취소된) 퓨처를 담고 있습니다. ``not_done`` 이라는 이름의 두 번째 집합은 완료되지 않은 (계류 중이거나 실행 중인) "
+"퓨처를 담고 있습니다."
 
 #: ../../library/concurrent.futures.rst:490
 msgid ""
@@ -805,7 +884,6 @@ msgid "The function will return when any future finishes or is cancelled."
 msgstr "퓨처가 어느 하나라도 끝나거나 취소될 때 함수가 반환됩니다."
 
 #: ../../library/concurrent.futures.rst:507
-#, fuzzy
 msgid ""
 "The function will return when any future finishes by raising an "
 "exception. If no future raises an exception then it is equivalent to "
@@ -819,7 +897,6 @@ msgid "The function will return when all futures finish or are cancelled."
 msgstr "모든 퓨처가 끝나거나 취소되면 함수가 반환됩니다."
 
 #: ../../library/concurrent.futures.rst:516
-#, fuzzy
 msgid ""
 "Returns an iterator over the :class:`Future` instances (possibly created "
 "by different :class:`Executor` instances) given by *fs* that yields "
@@ -836,9 +913,9 @@ msgstr ""
 "(끝났거나 취소된 퓨처) 일드 하는 :class:`Future` 인스턴스의 이터레이터를 반환합니다. *fs* 에 중복된 퓨처가 "
 "들어있으면 한 번만 반환됩니다. :func:`as_completed` 가 호출되기 전에 완료한 모든 퓨처들이 먼저 일드 됩니다. "
 "반환된 이터레이터는, :meth:`~iterator.__next__` 가 호출되고, :func:`as_completed` 호출 "
-"시점으로부터 *timeout* 초 후에 결과를 얻을 수 없는 경우 "
-":exc:`concurrent.futures.TimeoutError` 를 발생시킵니다. *timeout* 은 int 또는 "
-"float가 될 수 있습니다. *timeout* 이 지정되지 않았거나 ``None`` 인 경우, 대기 시간에는 제한이 없습니다."
+"시점으로부터 *timeout* 초 후에 결과를 얻을 수 없는 경우 :exc:`TimeoutError` 를 발생시킵니다. "
+"*timeout* 은 int 또는 float가 될 수 있습니다. *timeout* 이 지정되지 않았거나 ``None`` 인 경우, "
+"대기 시간에는 제한이 없습니다."
 
 #: ../../library/concurrent.futures.rst:529
 msgid ":pep:`3148` -- futures - execute computations asynchronously"
@@ -859,11 +936,10 @@ msgid "Raised when a future is cancelled."
 msgstr "퓨처가 취소될 때 발생합니다."
 
 #: ../../library/concurrent.futures.rst:545
-#, fuzzy
 msgid ""
 "A deprecated alias of :exc:`TimeoutError`, raised when a future operation"
 " exceeds the given timeout."
-msgstr "퓨처 연산이 지정된 시간제한을 초과할 때 발생합니다."
+msgstr ":exc:`TimeoutError`\\의 폐지된 별칭, 퓨처 연산이 지정된 시간제한을 초과할 때 발생합니다."
 
 #: ../../library/concurrent.futures.rst:550
 msgid "This class was made an alias of :exc:`TimeoutError`."
@@ -885,17 +961,16 @@ msgid ""
 msgstr "퓨처에 현재 상태에서 허용되지 않는 연산이 수행될 때 발생합니다."
 
 #: ../../library/concurrent.futures.rst:572
-#, fuzzy
 msgid ""
 "Derived from :exc:`~concurrent.futures.BrokenExecutor`, this exception "
 "class is raised when one of the workers of a "
 ":class:`~concurrent.futures.ThreadPoolExecutor` has failed initializing."
 msgstr ""
 ":exc:`~concurrent.futures.BrokenExecutor` 에서 파생됩니다, 이 예외 클래스는 "
-":class:`ThreadPoolExecutor` 의 작업자 중 하나가 초기화에 실패했을 때 발생합니다."
+":class:`~concurrent.futures.ThreadPoolExecutor` 의 작업자 중 하나가 초기화에 실패했을 때 "
+"발생합니다."
 
 #: ../../library/concurrent.futures.rst:583
-#, fuzzy
 msgid ""
 "Derived from :exc:`~concurrent.futures.BrokenExecutor` (formerly "
 ":exc:`RuntimeError`), this exception class is raised when one of the "
@@ -904,8 +979,9 @@ msgid ""
 " outside)."
 msgstr ""
 ":exc:`~concurrent.futures.BrokenExecutor` 에서 파생됩니다 (예전에는 "
-":exc:`RuntimeError`), 이 예외 클래스는 :class:`ProcessPoolExecutor` 의 작업자 중 하나가 "
-"깨끗하지 못한 방식으로 (예를 들어, 외부에서 강제 종료된 경우) 종료되었을 때 발생합니다."
+":exc:`RuntimeError`), 이 예외 클래스는 "
+":class:`~concurrent.futures.ProcessPoolExecutor` 의 작업자 중 하나가 깨끗하지 못한 방식으로"
+" (예를 들어, 외부에서 강제 종료된 경우) 종료되었을 때 발생합니다."
 
 #~ msgid ":const:`FIRST_COMPLETED`"
 #~ msgstr ":const:`FIRST_COMPLETED`"
