@@ -53,6 +53,10 @@ msgid ""
 "        y--;\n"
 "z++;"
 msgstr ""
+"if (x <= y)\n"
+"        x++;\n"
+"        y--;\n"
+"z++;"
 
 #: ../../faq/design.rst:26
 msgid ""
@@ -113,6 +117,8 @@ msgid ""
 ">>> 1.2 - 1.0\n"
 "0.19999999999999996"
 msgstr ""
+">>> 1.2 - 1.0\n"
+"0.19999999999999996"
 
 #: ../../faq/design.rst:61
 msgid ""
@@ -139,7 +145,6 @@ msgstr ""
 "많은 널리 알려진 언어들처럼 작동합니다."
 
 #: ../../faq/design.rst:72
-#, fuzzy
 msgid ""
 "Many numbers that can be written easily in decimal notation cannot be "
 "expressed exactly in binary floating point.  For example, after::"
@@ -147,7 +152,7 @@ msgstr "십진 표기법으로 쉽게 쓸 수 있는 많은 숫자가 이진 부
 
 #: ../../faq/design.rst:75
 msgid ">>> x = 1.2"
-msgstr ""
+msgstr ">>> x = 1.2"
 
 #: ../../faq/design.rst:77
 msgid ""
@@ -160,7 +165,7 @@ msgstr ""
 
 #: ../../faq/design.rst:81
 msgid "1.0011001100110011001100110011001100110011001100110011 (binary)"
-msgstr ""
+msgstr "1.0011001100110011001100110011001100110011001100110011 (이진수)"
 
 #: ../../faq/design.rst:83
 msgid "which is exactly::"
@@ -168,7 +173,7 @@ msgstr "이것은 정확하게는 다음과 같습니다::"
 
 #: ../../faq/design.rst:85
 msgid "1.1999999999999999555910790149937383830547332763671875 (decimal)"
-msgstr ""
+msgstr "1.1999999999999999555910790149937383830547332763671875 (십진수)"
 
 #: ../../faq/design.rst:87
 msgid ""
@@ -177,7 +182,6 @@ msgid ""
 msgstr "53비트의 일반적인 정밀도는 파이썬 부동 소수점에 15--16자리의 10진수 정확도를 제공합니다."
 
 #: ../../faq/design.rst:90
-#, fuzzy
 msgid ""
 "For a fuller explanation, please see the :ref:`floating-point arithmetic "
 "<tut-fp-issues>` chapter in the Python tutorial."
@@ -241,7 +245,6 @@ msgstr ""
 "표준에서는 인스턴스 어트리뷰트에 ``m_`` 접두어를 요청합니다, 따라서 이러한 명시성은 이런 언어들에서도 여전히 유용합니다."
 
 #: ../../faq/design.rst:127
-#, fuzzy
 msgid ""
 "Second, it means that no special syntax is necessary if you want to "
 "explicitly reference or call the method from a particular class.  In C++,"
@@ -256,8 +259,8 @@ msgstr ""
 "둘째, 특정 클래스에서 메서드를 명시적으로 참조하거나 호출하려고 할 때 특별한 문법이 필요하지 않음을 의미합니다. C++에서, 파생"
 " 클래스에서 재정의된 베이스 클래스의 메서드를 사용하려면, ``::`` 연산자를 사용해야 합니다 -- 파이썬에서는 "
 "``baseclass.methodname(self, <argument list>)``\\라고 쓸 수 있습니다. 이것은 "
-":meth:`__init__` 메서드에, 일반적으로 파생 클래스 메서드가 같은 이름의 베이스 클래스 메서드를 확장하려고 해서 "
-"어떻게든 베이스 클래스 메서드를 호출해야 하는 경우에 특히 유용합니다."
+":meth:`~object.__init__` 메서드에, 일반적으로 파생 클래스 메서드가 같은 이름의 베이스 클래스 메서드를 "
+"확장하려고 해서 어떻게든 베이스 클래스 메서드를 호출해야 하는 경우에 특히 유용합니다."
 
 #: ../../faq/design.rst:136
 msgid ""
@@ -293,17 +296,18 @@ msgid "Starting in Python 3.8, you can!"
 msgstr "파이썬 3.8부터, 가능합니다!"
 
 #: ../../faq/design.rst:158
-#, fuzzy
 msgid ""
 "Assignment expressions using the walrus operator ``:=`` assign a variable"
 " in an expression::"
-msgstr "바다코끼리(walrus) 연산자 `:=`\\를 사용하는 대입 표현식은 표현식에 있는 변수를 대입합니다::"
+msgstr "바다코끼리(walrus) 연산자 ``:=``\\를 사용하는 대입 표현식은 표현식에 있는 변수를 대입합니다::"
 
 #: ../../faq/design.rst:161
 msgid ""
 "while chunk := fp.read(200):\n"
 "   print(chunk)"
 msgstr ""
+"while chunk := fp.read(200):\n"
+"   print(chunk)"
 
 #: ../../faq/design.rst:164
 msgid "See :pep:`572` for more information."
@@ -373,7 +377,7 @@ msgstr ""
 
 #: ../../faq/design.rst:201
 msgid "\", \".join(['1', '2', '4', '8', '16'])"
-msgstr ""
+msgstr "\", \".join(['1', '2', '4', '8', '16'])"
 
 #: ../../faq/design.rst:203
 msgid "which gives the result::"
@@ -381,7 +385,7 @@ msgstr "이것은 다음과 같은 결과를 제공합니다::"
 
 #: ../../faq/design.rst:205
 msgid "\"1, 2, 4, 8, 16\""
-msgstr ""
+msgstr "\"1, 2, 4, 8, 16\""
 
 #: ../../faq/design.rst:207
 msgid "There are two common arguments against this usage."
@@ -413,7 +417,7 @@ msgstr ""
 
 #: ../../faq/design.rst:220
 msgid "\"1, 2, 4, 8, 16\".split(\", \")"
-msgstr ""
+msgstr "\"1, 2, 4, 8, 16\".split(\", \")"
 
 #: ../../faq/design.rst:222
 msgid ""
@@ -441,14 +445,13 @@ msgid "How fast are exceptions?"
 msgstr "예외는 얼마나 빠릅니까?"
 
 #: ../../faq/design.rst:235
-#, fuzzy
 msgid ""
 "A :keyword:`try`/:keyword:`except` block is extremely efficient if no "
 "exceptions are raised.  Actually catching an exception is expensive.  In "
 "versions of Python prior to 2.0 it was common to use this idiom::"
 msgstr ""
-"예외가 발생하지 않으면 try/except 블록은 매우 효율적입니다. 실제로 예외를 잡는 것은 비용이 많이 듭니다. 2.0 이전의 "
-"파이썬 버전에서는 다음 관용구를 사용하는 것이 일반적이었습니다::"
+"예외가 발생하지 않으면 :keyword:`try`/:keyword:`except` 블록은 매우 효율적입니다. 실제로 예외를 잡는 "
+"것은 비용이 많이 듭니다. 2.0 이전의 파이썬 버전에서는 다음 관용구를 사용하는 것이 일반적이었습니다::"
 
 #: ../../faq/design.rst:240
 msgid ""
@@ -458,6 +461,11 @@ msgid ""
 "    mydict[key] = getvalue(key)\n"
 "    value = mydict[key]"
 msgstr ""
+"try:\n"
+"    value = mydict[key]\n"
+"except KeyError:\n"
+"    mydict[key] = getvalue(key)\n"
+"    value = mydict[key]"
 
 #: ../../faq/design.rst:246
 msgid ""
@@ -472,6 +480,10 @@ msgid ""
 "else:\n"
 "    value = mydict[key] = getvalue(key)"
 msgstr ""
+"if key in mydict:\n"
+"    value = mydict[key]\n"
+"else:\n"
+"    value = mydict[key] = getvalue(key)"
 
 #: ../../faq/design.rst:254
 msgid ""
@@ -512,6 +524,12 @@ msgid ""
 "func = functions[value]\n"
 "func()"
 msgstr ""
+"functions = {'a': function_1,\n"
+"             'b': function_2,\n"
+"             'c': self.method_1}\n"
+"\n"
+"func = functions[value]\n"
+"func()"
 
 #: ../../faq/design.rst:279
 msgid ""
@@ -532,6 +550,14 @@ msgid ""
 "        method = getattr(self, method_name)\n"
 "        method()"
 msgstr ""
+"class MyVisitor:\n"
+"    def visit_a(self):\n"
+"        ...\n"
+"\n"
+"    def dispatch(self, value):\n"
+"        method_name = 'visit_' + str(value)\n"
+"        method = getattr(self, method_name)\n"
+"        method()"
 
 #: ../../faq/design.rst:291
 msgid ""
@@ -591,7 +617,6 @@ msgstr ""
 "정의하기에 너무 게으른 경우를 위한 줄임 표기법일 뿐입니다."
 
 #: ../../faq/design.rst:320
-#, fuzzy
 msgid ""
 "Functions are already first class objects in Python, and can be declared "
 "in a local scope.  Therefore the only advantage of using a lambda instead"
@@ -609,17 +634,15 @@ msgid "Can Python be compiled to machine code, C or some other language?"
 msgstr "파이썬을 기계 코드, C 또는 다른 언어로 컴파일 할 수 있습니까?"
 
 #: ../../faq/design.rst:330
-#, fuzzy
 msgid ""
 "`Cython <https://cython.org/>`_ compiles a modified version of Python "
 "with optional annotations into C extensions.  `Nuitka "
 "<https://nuitka.net/>`_ is an up-and-coming compiler of Python into C++ "
 "code, aiming to support the full Python language."
 msgstr ""
-"`Cython <http://cython.org/>`_\\은 수정된 버전의 파이썬을 선택적 주석이 있는 C 확장으로 컴파일합니다. "
-"`Nuitka <http://www.nuitka.net/>`_\\는 완전한 파이썬 언어 지원을 목표로 하는 파이썬을 C++ 코드로 "
-"변환하는 유망한 컴파일러입니다. Java로 컴파일하려면 `VOC <https://voc.readthedocs.io>`_\\를 고려할"
-" 수 있습니다."
+"`Cython <https://cython.org/>`_\\은 수정된 버전의 파이썬을 선택적 주석이 있는 C 확장으로 컴파일합니다."
+" `Nuitka <https://nuitka.net/>`_\\는 완전한 파이썬 언어 지원을 목표로 하는 파이썬을 C++ 코드로 "
+"변환하는 유망한 컴파일러입니다."
 
 #: ../../faq/design.rst:337
 msgid "How does Python manage memory?"
@@ -641,7 +664,6 @@ msgstr ""
 " 얻고, 수거기의 매개 변수를 조정하는 함수를 제공합니다."
 
 #: ../../faq/design.rst:347
-#, fuzzy
 msgid ""
 "Other implementations (such as `Jython <https://www.jython.org>`_ or "
 "`PyPy <https://pypy.org>`_), however, can rely on a different mechanism "
@@ -649,9 +671,9 @@ msgid ""
 "subtle porting problems if your Python code depends on the behavior of "
 "the reference counting implementation."
 msgstr ""
-"그러나, 다른 구현(가령 `Jython <http://www.jython.org>`_\\이나 `PyPy "
-"<http://www.pypy.org>`_)은 완전한 가비지 수거기와 같은 다른 메커니즘에 의존할 수 있습니다. 이 차이는 파이썬 "
-"코드가 참조 카운팅 구현의 동작에 의존하는 경우 미묘한 이식 문제를 일으킬 수 있습니다."
+"그러나, 다른 구현(가령 `Jython <https://www.jython.org>`_\\이나 `PyPy "
+"<https://pypy.org>`_)은 완전한 가비지 수거기와 같은 다른 메커니즘에 의존할 수 있습니다. 이 차이는 파이썬 코드가"
+" 참조 카운팅 구현의 동작에 의존하는 경우 미묘한 이식 문제를 일으킬 수 있습니다."
 
 #: ../../faq/design.rst:353
 msgid ""
@@ -665,17 +687,19 @@ msgid ""
 "    f = open(file)\n"
 "    c = f.read(1)"
 msgstr ""
+"for file in very_long_list_of_files:\n"
+"    f = open(file)\n"
+"    c = f.read(1)"
 
 #: ../../faq/design.rst:360
-#, fuzzy
 msgid ""
 "Indeed, using CPython's reference counting and destructor scheme, each "
 "new assignment to ``f`` closes the previous file.  With a traditional GC,"
 " however, those file objects will only get collected (and closed) at "
 "varying and possibly long intervals."
 msgstr ""
-"실제로, CPython의 참조 카운팅과 파괴자 체계를 사용할 때, *f*\\에 대한 각각의 새로운 대입은 이전 파일을 닫습니다. "
-"그러나 전통적인 GC를 사용하면, 이러한 파일 객체는 다양하고 어쩌면 긴 간격으로만 수집(그리고 닫히게)됩니다."
+"실제로, CPython의 참조 카운팅과 파괴자 체계를 사용할 때, ``f``\\에 대한 각각의 새로운 대입은 이전 파일을 닫습니다."
+" 그러나 전통적인 GC를 사용하면, 이러한 파일 객체는 다양하고 어쩌면 긴 간격으로만 수집(그리고 닫히게)됩니다."
 
 #: ../../faq/design.rst:365
 msgid ""
@@ -692,6 +716,9 @@ msgid ""
 "    with open(file) as f:\n"
 "        c = f.read(1)"
 msgstr ""
+"for file in very_long_list_of_files:\n"
+"    with open(file) as f:\n"
+"        c = f.read(1)"
 
 #: ../../faq/design.rst:375
 msgid "Why doesn't CPython use a more traditional garbage collection scheme?"
@@ -710,7 +737,6 @@ msgstr ""
 " 이것으로 작동하도록 하려면 패치가 필요합니다.)"
 
 #: ../../faq/design.rst:383
-#, fuzzy
 msgid ""
 "Traditional GC also becomes a problem when Python is embedded into other "
 "applications.  While in a standalone Python it's fine to replace the "
@@ -720,10 +746,11 @@ msgid ""
 "Right now, CPython works with anything that implements ``malloc()`` and "
 "``free()`` properly."
 msgstr ""
-"전통적인 GC는 파이썬이 다른 응용 프로그램에 내장될 때도 문제가 됩니다. 독립형 파이썬에서는 표준 malloc()과 free()를"
-" GC 라이브러리에서 제공하는 버전으로 대체해도 상관없지만, 파이썬을 내장하는 응용 프로그램은 malloc()과 free()에 대한"
-" *자신만의* 대체를 원할 수 있습니다, 그리고 파이썬의 것을 원하지 않을 수 있습니다. 현재, CPython은 malloc()과 "
-"free()를 올바르게 구현하는 모든 것과 동작합니다."
+"전통적인 GC는 파이썬이 다른 응용 프로그램에 내장될 때도 문제가 됩니다. 독립형 파이썬에서는 표준 ``malloc()``\\과 "
+"``free()``\\를 GC 라이브러리에서 제공하는 버전으로 대체해도 상관없지만, 파이썬을 내장하는 응용 프로그램은 "
+"``malloc()``\\과 ``free()``\\에 대한 *자신만의* 대체를 원할 수 있습니다, 그리고 파이썬의 것을 원하지 않을"
+" 수 있습니다. 현재, CPython은 ``malloc()``\\과 ``free()``\\를 올바르게 구현하는 모든 것과 "
+"동작합니다."
 
 #: ../../faq/design.rst:392
 msgid "Why isn't all memory freed when CPython exits?"
@@ -756,7 +783,6 @@ msgid "Why are there separate tuple and list data types?"
 msgstr "별도의 튜플과 리스트 데이터형이 있는 이유는 무엇입니까?"
 
 #: ../../faq/design.rst:408
-#, fuzzy
 msgid ""
 "Lists and tuples, while similar in many respects, are generally used in "
 "fundamentally different ways.  Tuples can be thought of as being similar "
@@ -765,12 +791,11 @@ msgid ""
 "group.  For example, a Cartesian coordinate is appropriately represented "
 "as a tuple of two or three numbers."
 msgstr ""
-"리스트와 튜플은, 여러 면에서 비슷하지만, 일반적으로 근본적으로 다른 방식으로 사용됩니다. 튜플은 파스칼 레코드나 C 구조체와 "
-"유사하다고 생각할 수 있습니다; 그룹으로 다뤄지는 다양한 형을 갖는 관련 데이터의 작은 모음입니다. 예를 들어, 직교 좌표는 2개나"
-" 3개의 숫자로 구성된 튜플로 적절하게 표시됩니다."
+"리스트와 튜플은, 여러 면에서 비슷하지만, 일반적으로 근본적으로 다른 방식으로 사용됩니다. 튜플은 파스칼 "
+"``레코드(record)``\\나 C ``구조체(struct)``\\와 유사하다고 생각할 수 있습니다; 그룹으로 다뤄지는 다양한 "
+"형을 갖는 관련 데이터의 작은 모음입니다. 예를 들어, 직교 좌표는 2개나 3개의 숫자로 구성된 튜플로 적절하게 표시됩니다."
 
 #: ../../faq/design.rst:415
-#, fuzzy
 msgid ""
 "Lists, on the other hand, are more like arrays in other languages.  They "
 "tend to hold a varying number of objects all of which have the same type "
@@ -781,8 +806,9 @@ msgid ""
 "two to the directory."
 msgstr ""
 "반면에, 리스트는 다른 언어의 배열과 더 비슷합니다. 이들은 모두 같은 형을 가지고 하나씩 다뤄지는 다양한 수의 객체를 보유하는 "
-"경향이 있습니다. 예를 들어, ``os.listdir('.')``\\은 현재 디렉터리의 파일을 나타내는 문자열 리스트를 반환합니다."
-" 이 출력에 작동하는 함수는 디렉터리에 다른 파일 한두 개를 추가해도 일반적으로 오동작하지 않습니다."
+"경향이 있습니다. 예를 들어, :func:`os.listdir('.') <os.listdir>`\\은 현재 디렉터리의 파일을 "
+"나타내는 문자열 리스트를 반환합니다. 이 출력에 작동하는 함수는 디렉터리에 다른 파일 한두 개를 추가해도 일반적으로 오동작하지 "
+"않습니다."
 
 #: ../../faq/design.rst:423
 msgid ""
@@ -840,7 +866,6 @@ msgstr ""
 "흔한 연산) 성능이 향상되고, 구현이 더 간단합니다."
 
 #: ../../faq/design.rst:452
-#, fuzzy
 msgid ""
 "Dictionaries work by computing a hash code for each key stored in the "
 "dictionary using the :func:`hash` built-in function.  The hash code "
@@ -853,10 +878,10 @@ msgid ""
 " *O*\\ (1), in Big-O notation -- to retrieve a key."
 msgstr ""
 "딕셔너리는 :func:`hash` 내장 함수를 사용하여 딕셔너리에 저장된 각 키에 대한 해시 코드를 계산하여 작동합니다. 해시 "
-"코드는 키와 프로세스별 시드에 따라 크게 다릅니다; 예를 들어, \"Python\"은 -539294296으로 해시 할 수 있는 "
-"반면, 한 글자만 다른 문자열인 \"python\"은 1142331976로 해시 할 수 있습니다. 그런 다음 해시 코드는 값이 "
-"저장될 내부 배열의 위치를 계산하는 데 사용됩니다. 모든 해시값이 다른 키를 저장한다고 가정하면, 딕셔너리가 키를 검색하는 데 상수"
-" 시간이 걸린다는 뜻입니다 -- Big-O 표기법으로 O(1)."
+"코드는 키와 프로세스별 시드에 따라 크게 다릅니다; 예를 들어, ``'Python'``\\은 ``-539294296``\\으로 해시"
+" 할 수 있는 반면, 한 글자만 다른 문자열인 ``'python'``\\은 ``1142331976``\\로 해시 할 수 있습니다. "
+"그런 다음 해시 코드는 값이 저장될 내부 배열의 위치를 계산하는 데 사용됩니다. 모든 해시값이 다른 키를 저장한다고 가정하면, "
+"딕셔너리가 키를 검색하는 데 상수 시간이 걸린다는 뜻입니다 -- Big-O 표기법으로 *O*\\ (1)."
 
 #: ../../faq/design.rst:463
 msgid "Why must dictionary keys be immutable?"
@@ -905,6 +930,8 @@ msgid ""
 "mydict = {[1, 2]: '12'}\n"
 "print(mydict[[1, 2]])"
 msgstr ""
+"mydict = {[1, 2]: '12'}\n"
+"print(mydict[[1, 2]])"
 
 #: ../../faq/design.rst:486
 msgid ""
@@ -951,7 +978,6 @@ msgstr ""
 "전용으로 표시해야 합니다 -- 그리고 다시, 자기 참조 객체는 무한 루프를 일으킬 수 있습니다."
 
 #: ../../faq/design.rst:505
-#, fuzzy
 msgid ""
 "There is a trick to get around this if you need to, but use it at your "
 "own risk: You can wrap a mutable structure inside a class instance which "
@@ -960,10 +986,10 @@ msgid ""
 "that reside in a dictionary (or other hash based structure), remain fixed"
 " while the object is in the dictionary (or other structure). ::"
 msgstr ""
-"필요하면 이 문제를 회피하는 트릭이 있지만, 위험을 감수하고 사용하십시오: :meth:`__eq__`\\와 "
-":meth:`__hash__` 메서드를 모두 가진 클래스 인스턴스 내부에 가변 구조를 래핑할 수 있습니다. 그런 다음 딕셔너리(또는"
-" 다른 해시 기반 구조)에 상주하는 모든 래퍼 객체의 해시값이 객체가 딕셔너리(또는 다른 구조)에 있는 동안 고정되도록 해야 "
-"합니다. ::"
+"필요하면 이 문제를 회피하는 트릭이 있지만, 위험을 감수하고 사용하십시오: :meth:`~object.__eq__`\\와 "
+":meth:`~object.__hash__` 메서드를 모두 가진 클래스 인스턴스 내부에 가변 구조를 래핑할 수 있습니다. 그런 다음"
+" 딕셔너리(또는 다른 해시 기반 구조)에 상주하는 모든 래퍼 객체의 해시값이 객체가 딕셔너리(또는 다른 구조)에 있는 동안 "
+"고정되도록 해야 합니다. ::"
 
 #: ../../faq/design.rst:513
 msgid ""
@@ -984,6 +1010,22 @@ msgid ""
 "                result = (result % 7777777) + i * 333\n"
 "        return result"
 msgstr ""
+"class ListWrapper:\n"
+"    def __init__(self, the_list):\n"
+"        self.the_list = the_list\n"
+"\n"
+"    def __eq__(self, other):\n"
+"        return self.the_list == other.the_list\n"
+"\n"
+"    def __hash__(self):\n"
+"        l = self.the_list\n"
+"        result = 98767 - len(l)*555\n"
+"        for i, el in enumerate(l):\n"
+"            try:\n"
+"                result = result + (hash(el) % 9999999) * 1001 + i\n"
+"            except Exception:\n"
+"                result = (result % 7777777) + i * 333\n"
+"        return result"
 
 #: ../../faq/design.rst:530
 msgid ""
@@ -1005,7 +1047,6 @@ msgstr ""
 "이러한 제한 사항을 충족하지 못하면 딕셔너리와 다른 해시 기반 구조가 오작동합니다."
 
 #: ../../faq/design.rst:539
-#, fuzzy
 msgid ""
 "In the case of :class:`!ListWrapper`, whenever the wrapper object is in a"
 " dictionary the wrapped list must not change to avoid anomalies.  Don't "
@@ -1013,9 +1054,9 @@ msgid ""
 "the consequences of not meeting them correctly.  Consider yourself "
 "warned."
 msgstr ""
-"ListWrapper의 경우, 래퍼 객체가 딕셔너리에 있을 때마다 래핑 된 리스트는 이상 동작을 피하려면 변경되지 않아야 합니다. "
-"요구 사항과 이를 올바르게 충족하지 못한 결과에 대해 충분히 생각할 준비가 되어 있지 않은 한 이 작업을 수행하지 마십시오. "
-"경고받았다고 생각하십시오."
+":class:`!ListWrapper`\\의 경우, 래퍼 객체가 딕셔너리에 있을 때마다 래핑 된 리스트는 이상 동작을 피하려면 "
+"변경되지 않아야 합니다. 요구 사항과 이를 올바르게 충족하지 못한 결과에 대해 충분히 생각할 준비가 되어 있지 않은 한 이 작업을 "
+"수행하지 마십시오. 경고받았다고 생각하십시오."
 
 #: ../../faq/design.rst:546
 msgid "Why doesn't list.sort() return the sorted list?"
@@ -1049,6 +1090,8 @@ msgid ""
 "for key in sorted(mydict):\n"
 "    ...  # do whatever with mydict[key]..."
 msgstr ""
+"for key in sorted(mydict):\n"
+"    ...  # mydict[key]로 뭔가 합니다..."
 
 #: ../../faq/design.rst:564
 msgid "How do you specify and enforce an interface spec in Python?"
@@ -1104,7 +1147,6 @@ msgstr ""
 "실행하는 포괄적인 테스트 스위트를 구축할 수 있습니다."
 
 #: ../../faq/design.rst:589
-#, fuzzy
 msgid ""
 "An appropriate testing discipline can help build large complex "
 "applications in Python as well as having interface specifications would."
@@ -1117,8 +1159,9 @@ msgid ""
 msgstr ""
 "인터페이스 명세를 갖는 것뿐만 아니라 적절한 테스트 규율은 파이썬으로 복잡한 대규모 응용 프로그램을 빌드하는 데 도움이 될 수 "
 "있습니다. 실제로, 인터페이스 명세는 프로그램의 특정 속성을 테스트할 수 없기 때문에 이것이 더 좋을 수 있습니다. 예를 들어, "
-":meth:`append` 메서드는 일부 내부 리스트 끝에 새 요소를 추가해야 합니다; 인터페이스 명세는 :meth:`append`"
-" 구현이 실제로 이를 올바르게 수행하는지 테스트할 수 없지만, 테스트 스위트에서 이 속성을 확인하는 것은 간단합니다."
+":meth:`!list.append` 메서드는 일부 내부 리스트 끝에 새 요소를 추가해야 합니다; 인터페이스 명세는 "
+":meth:`!list.append` 구현이 실제로 이를 올바르게 수행하는지 테스트할 수 없지만, 테스트 스위트에서 이 속성을 "
+"확인하는 것은 간단합니다."
 
 #: ../../faq/design.rst:597
 msgid ""
@@ -1137,7 +1180,6 @@ msgid "Why is there no goto?"
 msgstr "goto가 없는 이유는 무엇입니까?"
 
 #: ../../faq/design.rst:607
-#, fuzzy
 msgid ""
 "In the 1970s people realized that unrestricted goto could lead to messy "
 "\"spaghetti\" code that was hard to understand and revise. In a high-"
@@ -1148,12 +1190,12 @@ msgid ""
 " :keyword:`continue` and :keyword:`break`)."
 msgstr ""
 "1970년대에 사람들은 무제한 goto가 이해하고 수정하기 어려운 지저분한 \"스파게티\" 코드로 이어질 수 있다는 것을 "
-"깨달았습니다. 고수준 언어에서는, 분기(파이썬에서 ``if`` 문, ``or``, ``and`` 및 ``if-else`` 표현식)와"
-" 루프(``while``\\과 ``for`` 문, ``continue``\\와 ``break``\\를 포함할 수 있습니다)가 있는 "
-"한 필요하지 않습니다."
+"깨달았습니다. 고수준 언어에서는, 분기(파이썬에서 :keyword:`if` 문, :keyword:`or`, "
+":keyword:`and` 및 :keyword:`if`/:keyword:`else` 표현식)와 "
+"루프(:keyword:`while`\\과 :keyword:`for` 문, :keyword:`continue`\\와 "
+":keyword:`break`\\를 포함할 수 있습니다)가 있는 한 필요하지 않습니다."
 
 #: ../../faq/design.rst:614
-#, fuzzy
 msgid ""
 "One can also use exceptions to provide a \"structured goto\" that works "
 "even across function calls.  Many feel that exceptions can conveniently "
@@ -1161,7 +1203,8 @@ msgid ""
 "Fortran, and other languages.  For example::"
 msgstr ""
 "예외를 사용하여 함수 호출 간에도 작동하는 \"구조적 goto\"를 제공할 수 있습니다. 많은 사람은 예외가 C, Fortran 및"
-" 기타 언어의 \"go\"나 \"goto\" 구조의 모든 합리적 사용을 편리하게 에뮬레이트 할 수 있다고 생각합니다. 예를 들면::"
+" 기타 언어의 ``go``\\나 ``goto`` 구조의 모든 합리적 사용을 편리하게 에뮬레이트 할 수 있다고 생각합니다. 예를 "
+"들면::"
 
 #: ../../faq/design.rst:620
 msgid ""
@@ -1175,15 +1218,23 @@ msgid ""
 "    pass\n"
 "..."
 msgstr ""
+"class label(Exception): pass  # label을 선언합니다\n"
+"\n"
+"try:\n"
+"    ...\n"
+"    if condition: raise label()  # label로 goto 합니다\n"
+"    ...\n"
+"except label:  # goto 할 곳\n"
+"    pass\n"
+"..."
 
 #: ../../faq/design.rst:630
-#, fuzzy
 msgid ""
 "This doesn't allow you to jump into the middle of a loop, but that's "
 "usually considered an abuse of ``goto`` anyway.  Use sparingly."
 msgstr ""
-"이것은 당신이 루프의 중간으로 점프하는 것을 허용하지 않지만, 어쨌든 그것은 일반적으로 goto의 남용으로 간주합니다. 아껴서 "
-"사용하십시오."
+"이것은 당신이 루프의 중간으로 점프하는 것을 허용하지 않지만, 어쨌든 그것은 일반적으로 ``goto``\\의 남용으로 간주합니다. "
+"아껴서 사용하십시오."
 
 #: ../../faq/design.rst:635
 msgid "Why can't raw strings (r-strings) end with a backslash?"
@@ -1221,7 +1272,7 @@ msgstr "윈도우 경로명을 빌드하려는 경우, 모든 윈도우 시스�
 
 #: ../../faq/design.rst:651
 msgid "f = open(\"/mydir/file.txt\")  # works fine!"
-msgstr ""
+msgstr "f = open(\"/mydir/file.txt\")  # 잘 동작합니다!"
 
 #: ../../faq/design.rst:653
 msgid "If you're trying to build a pathname for a DOS command, try e.g. one of ::"
@@ -1233,20 +1284,22 @@ msgid ""
 "dir = r\"\\this\\is\\my\\dos\\dir\\ \"[:-1]\n"
 "dir = \"\\\\this\\\\is\\\\my\\\\dos\\\\dir\\\\\""
 msgstr ""
+"dir = r\"\\this\\is\\my\\dos\\dir\" \"\\\\\"\n"
+"dir = r\"\\this\\is\\my\\dos\\dir\\ \"[:-1]\n"
+"dir = \"\\\\this\\\\is\\\\my\\\\dos\\\\dir\\\\\""
 
 #: ../../faq/design.rst:661
 msgid "Why doesn't Python have a \"with\" statement for attribute assignments?"
 msgstr "왜 파이썬에는 어트리뷰트 대입을 위한 \"with\" 문이 없습니까?"
 
 #: ../../faq/design.rst:663
-#, fuzzy
 msgid ""
 "Python has a :keyword:`with` statement that wraps the execution of a "
 "block, calling code on the entrance and exit from the block.  Some "
 "languages have a construct that looks like this::"
 msgstr ""
-"파이썬에는 블록에 진입하고 탈출할 때 코드를 호출하면서 블록 실행을 감싸는 'with' 문이 있습니다. 일부 언어에는 다음과 같은 "
-"구조가 있습니다::"
+"파이썬에는 블록에 진입하고 탈출할 때 코드를 호출하면서 블록 실행을 감싸는 :keyword:`with` 문이 있습니다. 일부 "
+"언어에는 다음과 같은 구조가 있습니다::"
 
 #: ../../faq/design.rst:667
 msgid ""
@@ -1254,6 +1307,9 @@ msgid ""
 "    a = 1               # equivalent to obj.a = 1\n"
 "    total = total + 1   # obj.total = obj.total + 1"
 msgstr ""
+"with obj:\n"
+"    a = 1               # obj.a = 1 과 동등합니다\n"
+"    total = total + 1   # obj.total = obj.total + 1"
 
 #: ../../faq/design.rst:671
 msgid "In Python, such a construct would be ambiguous."
@@ -1291,9 +1347,11 @@ msgid ""
 "    with a:\n"
 "        print(x)"
 msgstr ""
+"def foo(a):\n"
+"    with a:\n"
+"        print(x)"
 
 #: ../../faq/design.rst:690
-#, fuzzy
 msgid ""
 "The snippet assumes that ``a`` must have a member attribute called ``x``."
 " However, there is nothing in Python that tells the interpreter this. "
@@ -1302,19 +1360,18 @@ msgid ""
 "block?  As you see, the dynamic nature of Python makes such choices much "
 "harder."
 msgstr ""
-"스니펫은 \"a\" 에 \"x\" 라는 멤버 어트리뷰트가 있어야 한다고 가정합니다. 그러나, 파이썬에는 인터프리터에게 이것을 "
-"알려주는 것이 없습니다. 가령, \"a\"가 정수이면 어떻게 됩니까? \"x\" 라는 전역 변수가 있으면, with 블록 내에서 "
-"사용됩니까? 보시다시피, 파이썬의 동적 특성은 이런 선택을 훨씬 더 어렵게 만듭니다."
+"스니펫은 ``a`` 에 ``x`` 라는 멤버 어트리뷰트가 있어야 한다고 가정합니다. 그러나, 파이썬에는 인터프리터에게 이것을 "
+"알려주는 것이 없습니다. 가령, ``a``\\가 정수이면 어떻게 됩니까? ``x`` 라는 전역 변수가 있으면, "
+":keyword:`with` 블록 내에서 사용됩니까? 보시다시피, 파이썬의 동적 특성은 이런 선택을 훨씬 더 어렵게 만듭니다."
 
 #: ../../faq/design.rst:696
-#, fuzzy
 msgid ""
 "The primary benefit of :keyword:`with` and similar language features "
 "(reduction of code volume) can, however, easily be achieved in Python by "
 "assignment.  Instead of::"
 msgstr ""
-"그러나, \"with\"와 유사한 언어 기능의 주요 이점(코드 볼륨 감소)은 대입을 통해 파이썬에서 쉽게 달성할 수 있습니다. "
-"다음과 같이 하는 대신에::"
+"그러나, :keyword:`with`\\와 유사한 언어 기능의 주요 이점(코드 볼륨 감소)은 대입을 통해 파이썬에서 쉽게 달성할 수"
+" 있습니다. 다음과 같이 하는 대신에::"
 
 #: ../../faq/design.rst:699
 msgid ""
@@ -1322,6 +1379,9 @@ msgid ""
 "function(args).mydict[index][index].b = 42\n"
 "function(args).mydict[index][index].c = 63"
 msgstr ""
+"function(args).mydict[index][index].a = 21\n"
+"function(args).mydict[index][index].b = 42\n"
+"function(args).mydict[index][index].c = 63"
 
 #: ../../faq/design.rst:703
 msgid "write this::"
@@ -1334,6 +1394,10 @@ msgid ""
 "ref.b = 42\n"
 "ref.c = 63"
 msgstr ""
+"ref = function(args).mydict[index][index]\n"
+"ref.a = 21\n"
+"ref.b = 42\n"
+"ref.c = 63"
 
 #: ../../faq/design.rst:710
 msgid ""
@@ -1380,6 +1444,8 @@ msgid ""
 "if a == b\n"
 "    print(a)"
 msgstr ""
+"if a == b\n"
+"    print(a)"
 
 #: ../../faq/design.rst:738
 msgid "versus ::"
@@ -1390,6 +1456,8 @@ msgid ""
 "if a == b:\n"
 "    print(a)"
 msgstr ""
+"if a == b:\n"
+"    print(a)"
 
 #: ../../faq/design.rst:743
 msgid ""
@@ -1430,6 +1498,12 @@ msgid ""
 "    \"B\": [6, 7],  # last trailing comma is optional but good style\n"
 "}"
 msgstr ""
+"[1, 2, 3,]\n"
+"('a', 'b', 'c',)\n"
+"d = {\n"
+"    \"A\": [1, 5],\n"
+"    \"B\": [6, 7],  # 마지막 후행 쉼표는 선택적이지만 좋은 스타일입니다\n"
+"}"
 
 #: ../../faq/design.rst:765
 msgid "There are several reasons to allow this."
@@ -1460,6 +1534,12 @@ msgid ""
 "  \"fum\"\n"
 "]"
 msgstr ""
+"x = [\n"
+"  \"fee\",\n"
+"  \"fie\"\n"
+"  \"foo\",\n"
+"  \"fum\"\n"
+"]"
 
 #: ../../faq/design.rst:782
 msgid ""
