@@ -17,9 +17,8 @@ msgstr ""
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/collections.abc.rst:2
-#, fuzzy
 msgid ":mod:`!collections.abc` --- Abstract Base Classes for Containers"
-msgstr ":mod:`collections.abc` --- 컨테이너의 추상 베이스 클래스"
+msgstr ":mod:`!collections.abc` --- 컨테이너의 추상 베이스 클래스"
 
 #: ../../library/collections.abc.rst:10
 msgid "Formerly, this module was part of the :mod:`collections` module."
@@ -30,7 +29,6 @@ msgid "**Source code:** :source:`Lib/_collections_abc.py`"
 msgstr "**소스 코드:** :source:`Lib/_collections_abc.py`"
 
 #: ../../library/collections.abc.rst:23
-#, fuzzy
 msgid ""
 "This module provides :term:`abstract base classes <abstract base class>` "
 "that can be used to test whether a class provides a particular interface;"
@@ -38,7 +36,8 @@ msgid ""
 ":term:`mapping`."
 msgstr ""
 "이 모듈은 클래스가 특정 인터페이스를 제공하는지를 검사하는 데 사용할 수 있는 :term:`추상 베이스 클래스 <abstract "
-"base class>`\\를 제공합니다; 예를 들어, 해시 가능한지 또는 매핑인지입니다."
+"base class>`\\를 제공합니다; 예를 들어, :term:`해시 가능 <hashable>`\\인지 또는 :term:`매핑 "
+"<mapping>`\\인지입니다."
 
 #: ../../library/collections.abc.rst:27
 msgid ""
@@ -64,6 +63,11 @@ msgid ""
 "    def count(self, value): ...         # Optionally override a mixin "
 "method"
 msgstr ""
+"class C(Sequence):                      # 직접 상속\n"
+"    def __init__(self): ...             # ABC 가 요구하지 않는 추가 메서드\n"
+"    def __getitem__(self, index):  ...  # 필수 추상 메서드\n"
+"    def __len__(self):  ...             # 필수 추상 메서드\n"
+"    def count(self, value): ...         # 선택적으로 믹스인 메서드를 재정의합니다"
 
 #: ../../library/collections.abc.rst:43
 msgid ""
@@ -72,6 +76,10 @@ msgid ""
 ">>> isinstance(C(), Sequence)\n"
 "True"
 msgstr ""
+">>> issubclass(C, Sequence)\n"
+"True\n"
+">>> isinstance(C(), Sequence)\n"
+"True"
 
 #: ../../library/collections.abc.rst:50
 msgid ""
@@ -96,6 +104,14 @@ msgid ""
 "\n"
 "Sequence.register(D)                     # Register instead of inherit"
 msgstr ""
+"class D:                                 # 상속 없음\n"
+"    def __init__(self): ...              # ABC 가 요구하지 않는 추가 메서드\n"
+"    def __getitem__(self, index):  ...   # 추상 메서드\n"
+"    def __len__(self):  ...              # 추상 메서드\n"
+"    def count(self, value): ...          # 믹스인 메서드\n"
+"    def index(self, value): ...          # 믹스인 메서드\n"
+"\n"
+"Sequence.register(D)                     # 상속하는 대신 등록합니다"
 
 #: ../../library/collections.abc.rst:69
 msgid ""
@@ -104,6 +120,10 @@ msgid ""
 ">>> isinstance(D(), Sequence)\n"
 "True"
 msgstr ""
+">>> issubclass(D, Sequence)\n"
+"True\n"
+">>> isinstance(D(), Sequence)\n"
+"True"
 
 #: ../../library/collections.abc.rst:76
 msgid ""
@@ -126,6 +146,9 @@ msgid ""
 "    def __iter__(self): ...\n"
 "    def __next__(self): ..."
 msgstr ""
+"class E:\n"
+"    def __iter__(self): ...\n"
+"    def __next__(self): ..."
 
 #: ../../library/collections.abc.rst:91
 msgid ""
@@ -134,6 +157,10 @@ msgid ""
 ">>> isinstance(E(), Iterable)\n"
 "True"
 msgstr ""
+">>> issubclass(E, Iterable)\n"
+"True\n"
+">>> isinstance(E(), Iterable)\n"
+"True"
 
 #: ../../library/collections.abc.rst:98
 msgid ""
@@ -179,36 +206,32 @@ msgid "Mixin Methods"
 msgstr "믹스인 메서드"
 
 #: ../../library/collections.abc.rst:122
-#, fuzzy
 msgid ":class:`Container` [1]_"
-msgstr ":class:`Container`"
+msgstr ":class:`Container` [1]_"
 
 #: ../../library/collections.abc.rst:122
 msgid "``__contains__``"
 msgstr "``__contains__``"
 
 #: ../../library/collections.abc.rst:123
-#, fuzzy
 msgid ":class:`Hashable` [1]_"
-msgstr ":class:`Hashable`"
+msgstr ":class:`Hashable` [1]_"
 
 #: ../../library/collections.abc.rst:123
 msgid "``__hash__``"
 msgstr "``__hash__``"
 
 #: ../../library/collections.abc.rst:124
-#, fuzzy
 msgid ":class:`Iterable` [1]_ [2]_"
-msgstr ":class:`Iterable`"
+msgstr ":class:`Iterable` [1]_ [2]_"
 
 #: ../../library/collections.abc.rst:124 ../../library/collections.abc.rst:125
 msgid "``__iter__``"
 msgstr "``__iter__``"
 
 #: ../../library/collections.abc.rst:125
-#, fuzzy
 msgid ":class:`Iterator` [1]_"
-msgstr ":class:`Iterator`"
+msgstr ":class:`Iterator` [1]_"
 
 #: ../../library/collections.abc.rst:125 ../../library/collections.abc.rst:126
 msgid ":class:`Iterable`"
@@ -219,18 +242,16 @@ msgid "``__next__``"
 msgstr "``__next__``"
 
 #: ../../library/collections.abc.rst:126
-#, fuzzy
 msgid ":class:`Reversible` [1]_"
-msgstr ":class:`Reversible`"
+msgstr ":class:`Reversible` [1]_"
 
 #: ../../library/collections.abc.rst:126
 msgid "``__reversed__``"
 msgstr "``__reversed__``"
 
 #: ../../library/collections.abc.rst:127
-#, fuzzy
 msgid ":class:`Generator`  [1]_"
-msgstr ":class:`Generator`"
+msgstr ":class:`Generator`  [1]_"
 
 #: ../../library/collections.abc.rst:127
 msgid ":class:`Iterator`"
@@ -245,27 +266,24 @@ msgid "``close``, ``__iter__``, ``__next__``"
 msgstr "``close``, ``__iter__``, ``__next__``"
 
 #: ../../library/collections.abc.rst:128
-#, fuzzy
 msgid ":class:`Sized`  [1]_"
-msgstr ":class:`Sized`"
+msgstr ":class:`Sized`  [1]_"
 
 #: ../../library/collections.abc.rst:128
 msgid "``__len__``"
 msgstr "``__len__``"
 
 #: ../../library/collections.abc.rst:129
-#, fuzzy
 msgid ":class:`Callable`  [1]_"
-msgstr ":class:`Callable`"
+msgstr ":class:`Callable`  [1]_"
 
 #: ../../library/collections.abc.rst:129
 msgid "``__call__``"
 msgstr "``__call__``"
 
 #: ../../library/collections.abc.rst:130
-#, fuzzy
 msgid ":class:`Collection`  [1]_"
-msgstr ":class:`Collection`"
+msgstr ":class:`Collection`  [1]_"
 
 #: ../../library/collections.abc.rst:130
 msgid ":class:`Sized`, :class:`Iterable`, :class:`Container`"
@@ -301,13 +319,12 @@ msgid "``__getitem__``, ``__setitem__``, ``__delitem__``, ``__len__``, ``insert`
 msgstr "``__getitem__``, ``__setitem__``, ``__delitem__``, ``__len__``, ``insert``"
 
 #: ../../library/collections.abc.rst:137
-#, fuzzy
 msgid ""
 "Inherited :class:`Sequence` methods and ``append``, ``clear``, "
 "``reverse``, ``extend``, ``pop``, ``remove``, and ``__iadd__``"
 msgstr ""
-"상속된 :class:`Sequence` 메서드와 ``append``, ``reverse``, ``extend``, ``pop``, "
-"``remove`` 및 ``__iadd__``"
+"상속된 :class:`Sequence` 메서드와 ``append``, ``clear``, ``reverse``, "
+"``extend``, ``pop``, ``remove`` 및 ``__iadd__``"
 
 #: ../../library/collections.abc.rst:143
 msgid ":class:`ByteString`"
@@ -326,14 +343,14 @@ msgid ":class:`Collection`"
 msgstr ":class:`Collection`"
 
 #: ../../library/collections.abc.rst:146
-#, fuzzy
 msgid ""
 "``__le__``, ``__lt__``, ``__eq__``, ``__ne__``, ``__gt__``, ``__ge__``, "
 "``__and__``, ``__or__``, ``__sub__``, ``__rsub__``, ``__xor__``, "
 "``__rxor__`` and ``isdisjoint``"
 msgstr ""
 "``__le__``, ``__lt__``, ``__eq__``, ``__ne__``, ``__gt__``, ``__ge__``, "
-"``__and__``, ``__or__``, ``__sub__``, ``__xor__`` 및 ``isdisjoint``"
+"``__and__``, ``__or__``, ``__sub__``, ``__rsub__``, ``__xor__``, "
+"``__rxor__`` 및 ``isdisjoint``"
 
 #: ../../library/collections.abc.rst:151
 msgid ":class:`MutableSet`"
@@ -396,9 +413,8 @@ msgid ":class:`Sized`"
 msgstr ":class:`Sized`"
 
 #: ../../library/collections.abc.rst:168
-#, fuzzy
 msgid "``__init__``, ``__len__`` and ``__repr__``"
-msgstr "``__getitem__``, ``__len__``"
+msgstr "``__init__``, ``__len__`` 및 ``__repr__``"
 
 #: ../../library/collections.abc.rst:169
 msgid ":class:`ItemsView`"
@@ -426,18 +442,16 @@ msgid ":class:`MappingView`, :class:`Collection`"
 msgstr ":class:`MappingView`, :class:`Collection`"
 
 #: ../../library/collections.abc.rst:175
-#, fuzzy
 msgid ":class:`Awaitable` [1]_"
-msgstr ":class:`Awaitable`"
+msgstr ":class:`Awaitable` [1]_"
 
 #: ../../library/collections.abc.rst:175
 msgid "``__await__``"
 msgstr "``__await__``"
 
 #: ../../library/collections.abc.rst:176
-#, fuzzy
 msgid ":class:`Coroutine` [1]_"
-msgstr ":class:`Coroutine`"
+msgstr ":class:`Coroutine` [1]_"
 
 #: ../../library/collections.abc.rst:176
 msgid ":class:`Awaitable`"
@@ -448,18 +462,16 @@ msgid "``close``"
 msgstr "``close``"
 
 #: ../../library/collections.abc.rst:177
-#, fuzzy
 msgid ":class:`AsyncIterable` [1]_"
-msgstr ":class:`AsyncIterable`"
+msgstr ":class:`AsyncIterable` [1]_"
 
 #: ../../library/collections.abc.rst:177 ../../library/collections.abc.rst:178
 msgid "``__aiter__``"
 msgstr "``__aiter__``"
 
 #: ../../library/collections.abc.rst:178
-#, fuzzy
 msgid ":class:`AsyncIterator` [1]_"
-msgstr ":class:`AsyncIterator`"
+msgstr ":class:`AsyncIterator` [1]_"
 
 #: ../../library/collections.abc.rst:178
 msgid ":class:`AsyncIterable`"
@@ -470,9 +482,8 @@ msgid "``__anext__``"
 msgstr "``__anext__``"
 
 #: ../../library/collections.abc.rst:179
-#, fuzzy
 msgid ":class:`AsyncGenerator` [1]_"
-msgstr ":class:`AsyncGenerator`"
+msgstr ":class:`AsyncGenerator` [1]_"
 
 #: ../../library/collections.abc.rst:179
 msgid ":class:`AsyncIterator`"
@@ -487,18 +498,16 @@ msgid "``aclose``, ``__aiter__``, ``__anext__``"
 msgstr "``aclose``, ``__aiter__``, ``__anext__``"
 
 #: ../../library/collections.abc.rst:180
-#, fuzzy
 msgid ":class:`Buffer` [1]_"
-msgstr ":class:`Set`"
+msgstr ":class:`Buffer` [1]_"
 
 #: ../../library/collections.abc.rst:180
-#, fuzzy
 msgid "``__buffer__``"
-msgstr "``__iter__``"
+msgstr "``__buffer__``"
 
 #: ../../library/collections.abc.rst:185
 msgid "Footnotes"
-msgstr ""
+msgstr "각주"
 
 #: ../../library/collections.abc.rst:186
 msgid ""
@@ -510,7 +519,6 @@ msgid ""
 msgstr ""
 
 #: ../../library/collections.abc.rst:192
-#, fuzzy
 msgid ""
 "Checking ``isinstance(obj, Iterable)`` detects classes that are "
 "registered as :class:`Iterable` or that have an "
@@ -520,34 +528,29 @@ msgid ""
 "``iter(obj)``."
 msgstr ""
 "``isinstance(obj, Iterable)``\\를 검사하면 :class:`Iterable`\\로 등록되었거나 "
-":meth:`__iter__` 메서드가 있는 클래스를 감지하지만, :meth:`__getitem__` 메서드로 이터레이트 하는 "
-"클래스는 감지하지 않습니다. 객체가 :term:`이터러블 <iterable>`\\인지를 확인하는 유일하게 신뢰성 있는 방법은 "
-"``iter(obj)``\\를 호출하는 것입니다."
+":meth:`~container.__iter__` 메서드가 있는 클래스를 감지하지만, "
+":meth:`~object.__getitem__` 메서드로 이터레이트 하는 클래스는 감지하지 않습니다. 객체가 :term:`이터러블"
+" <iterable>`\\인지를 확인하는 유일하게 신뢰성 있는 방법은 ``iter(obj)``\\를 호출하는 것입니다."
 
 #: ../../library/collections.abc.rst:200
-#, fuzzy
 msgid "Collections Abstract Base Classes -- Detailed Descriptions"
-msgstr "Collections 추상 베이스 클래스"
+msgstr "Collections 추상 베이스 클래스 -- 상세한 설명"
 
 #: ../../library/collections.abc.rst:205
-#, fuzzy
 msgid "ABC for classes that provide the :meth:`~object.__contains__` method."
-msgstr ":meth:`__contains__` 메서드를 제공하는 클래스의 ABC."
+msgstr ":meth:`~object.__contains__` 메서드를 제공하는 클래스의 ABC."
 
 #: ../../library/collections.abc.rst:209
-#, fuzzy
 msgid "ABC for classes that provide the :meth:`~object.__hash__` method."
-msgstr ":meth:`__hash__` 메서드를 제공하는 클래스의 ABC."
+msgstr ":meth:`~object.__hash__` 메서드를 제공하는 클래스의 ABC."
 
 #: ../../library/collections.abc.rst:213
-#, fuzzy
 msgid "ABC for classes that provide the :meth:`~object.__len__` method."
-msgstr ":meth:`__len__` 메서드를 제공하는 클래스의 ABC."
+msgstr ":meth:`~object.__len__` 메서드를 제공하는 클래스의 ABC."
 
 #: ../../library/collections.abc.rst:217
-#, fuzzy
 msgid "ABC for classes that provide the :meth:`~object.__call__` method."
-msgstr ":meth:`__call__` 메서드를 제공하는 클래스의 ABC."
+msgstr ":meth:`~object.__call__` 메서드를 제공하는 클래스의 ABC."
 
 #: ../../library/collections.abc.rst:219
 msgid ""
@@ -556,12 +559,10 @@ msgid ""
 msgstr ""
 
 #: ../../library/collections.abc.rst:224
-#, fuzzy
 msgid "ABC for classes that provide the :meth:`~container.__iter__` method."
-msgstr ":meth:`__iter__` 메서드를 제공하는 클래스의 ABC."
+msgstr ":meth:`~container.__iter__` 메서드를 제공하는 클래스의 ABC."
 
 #: ../../library/collections.abc.rst:226
-#, fuzzy
 msgid ""
 "Checking ``isinstance(obj, Iterable)`` detects classes that are "
 "registered as :class:`Iterable` or that have an "
@@ -571,9 +572,9 @@ msgid ""
 "``iter(obj)``."
 msgstr ""
 "``isinstance(obj, Iterable)``\\를 검사하면 :class:`Iterable`\\로 등록되었거나 "
-":meth:`__iter__` 메서드가 있는 클래스를 감지하지만, :meth:`__getitem__` 메서드로 이터레이트 하는 "
-"클래스는 감지하지 않습니다. 객체가 :term:`이터러블 <iterable>`\\인지를 확인하는 유일하게 신뢰성 있는 방법은 "
-"``iter(obj)``\\를 호출하는 것입니다."
+":meth:`~container.__iter__` 메서드가 있는 클래스를 감지하지만, "
+":meth:`~object.__getitem__` 메서드로 이터레이트 하는 클래스는 감지하지 않습니다. 객체가 :term:`이터러블"
+" <iterable>`\\인지를 확인하는 유일하게 신뢰성 있는 방법은 ``iter(obj)``\\를 호출하는 것입니다."
 
 #: ../../library/collections.abc.rst:235
 msgid "ABC for sized iterable container classes."
@@ -589,14 +590,12 @@ msgstr ""
 "ABC. :term:`이터레이터 <iterator>`\\의 정의도 참조하십시오."
 
 #: ../../library/collections.abc.rst:247
-#, fuzzy
 msgid ""
 "ABC for iterable classes that also provide the "
 ":meth:`~object.__reversed__` method."
-msgstr ":meth:`__reversed__` 메서드도 제공하는 이터러블 클래스의 ABC."
+msgstr ":meth:`~object.__reversed__` 메서드도 제공하는 이터러블 클래스의 ABC."
 
 #: ../../library/collections.abc.rst:254
-#, fuzzy
 msgid ""
 "ABC for :term:`generator` classes that implement the protocol defined in "
 ":pep:`342` that extends :term:`iterators <iterator>` with the "
@@ -604,8 +603,8 @@ msgid ""
 ":meth:`~generator.close` methods."
 msgstr ""
 ":meth:`~generator.send`, :meth:`~generator.throw` 및 "
-":meth:`~generator.close` 메서드로 이터레이터를 확장하는 :pep:`342`\\에 정의된 프로토콜을 구현하는 "
-"제너레이터 클래스의 ABC. :term:`제너레이터 <generator>`\\의 정의도 참조하십시오."
+":meth:`~generator.close` 메서드로 :term:`이터레이터 <iterator>`\\를 확장하는 "
+":pep:`342`\\에 정의된 프로토콜을 구현하는 :term:`제너레이터 <generator>` 클래스의 ABC."
 
 #: ../../library/collections.abc.rst:259
 msgid ""
@@ -618,7 +617,6 @@ msgid "ABCs for read-only and mutable :term:`sequences <sequence>`."
 msgstr "읽기 전용과 가변 :term:`시퀀스 <sequence>`\\의 ABC."
 
 #: ../../library/collections.abc.rst:270
-#, fuzzy
 msgid ""
 "Implementation note: Some of the mixin methods, such as "
 ":meth:`~container.__iter__`, :meth:`~object.__reversed__` and "
@@ -630,10 +628,11 @@ msgid ""
 "mixins will have quadratic performance and will likely need to be "
 "overridden."
 msgstr ""
-"구현 참고 사항: :meth:`__iter__`, :meth:`__reversed__` 및 :meth:`index`\\와 같은 일부"
-" 믹스인(mixin) 메서드는 하부 :meth:`__getitem__` 메서드를 반복적으로 호출합니다. 따라서, "
-":meth:`__getitem__`\\이 상수 액세스 속도로 구현되면 믹스인 메서드는 선형 성능을 갖습니다; 그러나 하부 메서드가 "
-"선형이면 (링크드 리스트에서처럼), 믹스인은 2차 함수 성능을 가지므로 재정의해야 할 수 있습니다."
+"구현 참고 사항: :meth:`~container.__iter__`, :meth:`~object.__reversed__` 및 "
+":meth:`index`\\와 같은 일부 믹스인(mixin) 메서드는 하부 :meth:`~object.__getitem__` "
+"메서드를 반복적으로 호출합니다. 따라서, :meth:`~object.__getitem__`\\이 상수 액세스 속도로 구현되면 믹스인"
+" 메서드는 선형 성능을 갖습니다; 그러나 하부 메서드가 선형이면 (링크드 리스트에서처럼), 믹스인은 2차 함수 성능을 가지므로 "
+"재정의해야 할 수 있습니다."
 
 #: ../../library/collections.abc.rst:279
 msgid "The index() method added support for *stop* and *start* arguments."
@@ -648,9 +647,8 @@ msgid ""
 msgstr ""
 
 #: ../../library/collections.abc.rst:292
-#, fuzzy
 msgid "ABCs for read-only and mutable :ref:`sets <types-set>`."
-msgstr "읽기 전용과 가변 집합의 ABC."
+msgstr "읽기 전용과 가변 :ref:`집합 <types-set>`\\의 ABC."
 
 #: ../../library/collections.abc.rst:297
 msgid "ABCs for read-only and mutable :term:`mappings <mapping>`."
@@ -661,14 +659,13 @@ msgid "ABCs for mapping, items, keys, and values :term:`views <dictionary view>`
 msgstr "매핑, 항목, 키 및 값 :term:`뷰 <dictionary view>`\\의 ABC."
 
 #: ../../library/collections.abc.rst:308
-#, fuzzy
 msgid ""
 "ABC for :term:`awaitable` objects, which can be used in :keyword:`await` "
 "expressions.  Custom implementations must provide the "
 ":meth:`~object.__await__` method."
 msgstr ""
 ":keyword:`await` 표현식에서 사용할 수 있는 :term:`어웨이터블 <awaitable>` 객체의 ABC. 사용자 정의"
-" 구현은 :meth:`__await__` 메서드를 제공해야 합니다."
+" 구현은 :meth:`~object.__await__` 메서드를 제공해야 합니다."
 
 #: ../../library/collections.abc.rst:312
 msgid ""
@@ -679,7 +676,6 @@ msgstr ""
 "인스턴스는 모두 이 ABC의 인스턴스입니다."
 
 #: ../../library/collections.abc.rst:316
-#, fuzzy
 msgid ""
 "In CPython, generator-based coroutines (:term:`generators <generator>` "
 "decorated with :func:`@types.coroutine <types.coroutine>`) are "
@@ -687,13 +683,12 @@ msgid ""
 "method. Using ``isinstance(gencoro, Awaitable)`` for them will return "
 "``False``. Use :func:`inspect.isawaitable` to detect them."
 msgstr ""
-"CPython에서, 제너레이터 기반 코루틴(:func:`types.coroutine`\\이나 "
-":func:`asyncio.coroutine`\\으로 데코레이트 된 제너레이터)은, :meth:`__await__` 메서드가 없어도"
-" *어웨이터블* 입니다. 이들에 대해 ``isinstance(gencoro, Awaitable)``\\를 사용하면 "
+"CPython에서, 제너레이터 기반 코루틴(:func:`@types.coroutine <types.coroutine>`\\으로 "
+"데코레이트 된 :term:`제너레이터 <generator>`)은, :meth:`~object.__await__` 메서드가 없어도 "
+"*어웨이터블* 입니다. 이들에 대해 ``isinstance(gencoro, Awaitable)``\\를 사용하면 "
 "``False``\\가 반환됩니다. 이들을 감지하려면 :func:`inspect.isawaitable`\\을 사용하십시오."
 
 #: ../../library/collections.abc.rst:326
-#, fuzzy
 msgid ""
 "ABC for :term:`coroutine` compatible classes.  These implement the "
 "following methods, defined in :ref:`coroutine-objects`: "
@@ -702,14 +697,12 @@ msgid ""
 ":meth:`~object.__await__`.  All :class:`Coroutine` instances are also "
 "instances of :class:`Awaitable`."
 msgstr ""
-"코루틴 호환 클래스의 ABC. :ref:`coroutine-objects`\\에 정의된 다음 메서드를 구현합니다: "
-":meth:`~coroutine.send`, :meth:`~coroutine.throw` 및 "
-":meth:`~coroutine.close`. 사용자 정의 구현은 :meth:`__await__`\\도 구현해야 합니다. 모든 "
-":class:`Coroutine` 인스턴스는 :class:`Awaitable`\\의 인스턴스이기도 합니다. :term:`코루틴 "
-"<coroutine>`\\의 정의도 참조하십시오."
+":term:`코루틴 <coroutine>` 호환 클래스의 ABC. :ref:`coroutine-objects`\\에 정의된 다음 "
+"메서드를 구현합니다: :meth:`~coroutine.send`, :meth:`~coroutine.throw` 및 "
+":meth:`~coroutine.close`. 사용자 정의 구현은 :meth:`~object.__await__`\\도 구현해야 "
+"합니다. 모든 :class:`Coroutine` 인스턴스는 :class:`Awaitable`\\의 인스턴스이기도 합니다."
 
 #: ../../library/collections.abc.rst:334
-#, fuzzy
 msgid ""
 "In CPython, generator-based coroutines (:term:`generators <generator>` "
 "decorated with :func:`@types.coroutine <types.coroutine>`) are "
@@ -717,9 +710,9 @@ msgid ""
 "method. Using ``isinstance(gencoro, Coroutine)`` for them will return "
 "``False``. Use :func:`inspect.isawaitable` to detect them."
 msgstr ""
-"CPython에서, 제너레이터 기반 코루틴(:func:`types.coroutine`\\이나 "
-":func:`asyncio.coroutine`\\으로 데코레이트 된 제너레이터)은, :meth:`__await__` 메서드가 없어도"
-" *어웨이터블* 입니다. 이들에 대해 ``isinstance(gencoro, Coroutine)``\\을 사용하면 "
+"CPython에서, 제너레이터 기반 코루틴(:func:`@types.coroutine <types.coroutine>`\\으로 "
+"데코레이트 된 :term:`제너레이터 <generator>`)은, :meth:`~object.__await__` 메서드가 없어도 "
+"*어웨이터블* 입니다. 이들에 대해 ``isinstance(gencoro, Coroutine)``\\을 사용하면 "
 "``False``\\가 반환됩니다. 이들을 감지하려면 :func:`inspect.isawaitable`\\을 사용하십시오."
 
 #: ../../library/collections.abc.rst:340
@@ -730,7 +723,6 @@ msgid ""
 msgstr ""
 
 #: ../../library/collections.abc.rst:349
-#, fuzzy
 msgid ""
 "ABC for classes that provide an ``__aiter__`` method.  See also the "
 "definition of :term:`asynchronous iterable`."
@@ -747,11 +739,12 @@ msgstr ""
 "<asynchronous iterator>`\\의 정의도 참조하십시오."
 
 #: ../../library/collections.abc.rst:363
-#, fuzzy
 msgid ""
 "ABC for :term:`asynchronous generator` classes that implement the "
 "protocol defined in :pep:`525` and :pep:`492`."
-msgstr ":pep:`525`\\와 :pep:`492`\\에 정의된 프로토콜을 구현하는 비동기 제너레이터 클래스의 ABC."
+msgstr ""
+":pep:`525`\\와 :pep:`492`\\에 정의된 프로토콜을 구현하는 :term:`비동기 제너레이터 <asynchronous"
+" generator>` 클래스의 ABC."
 
 #: ../../library/collections.abc.rst:366
 msgid ""
@@ -767,14 +760,13 @@ msgstr ""
 
 #: ../../library/collections.abc.rst:379
 msgid "Examples and Recipes"
-msgstr ""
+msgstr "예제와 조리법"
 
 #: ../../library/collections.abc.rst:381
-#, fuzzy
 msgid ""
 "ABCs allow us to ask classes or instances if they provide particular "
 "functionality, for example::"
-msgstr "이러한 ABC들은 클래스나 인스턴스가 특정 기능을 제공하는지 묻는 것을 허용합니다, 예를 들어::"
+msgstr "ABC들은 클래스나 인스턴스가 특정 기능을 제공하는지 묻는 것을 허용합니다, 예를 들어::"
 
 #: ../../library/collections.abc.rst:384
 msgid ""
@@ -782,9 +774,11 @@ msgid ""
 "if isinstance(myvar, collections.abc.Sized):\n"
 "    size = len(myvar)"
 msgstr ""
+"size = None\n"
+"if isinstance(myvar, collections.abc.Sized):\n"
+"    size = len(myvar)"
 
 #: ../../library/collections.abc.rst:388
-#, fuzzy
 msgid ""
 "Several of the ABCs are also useful as mixins that make it easier to "
 "develop classes supporting container APIs.  For example, to write a class"
@@ -795,9 +789,10 @@ msgid ""
 ":meth:`~frozenset.isdisjoint`::"
 msgstr ""
 "ABC 중 일부는 믹스인으로도 유용하여 컨테이너 API를 지원하는 클래스를 쉽게 개발할 수 있게 합니다. 예를 들어, 전체 "
-":class:`Set` API를 지원하는 클래스를 작성하려면, :meth:`__contains__`, :meth:`__iter__`"
-" 및 :meth:`__len__`\\의 세 가지 하부 추상 메서드 만 제공하면 됩니다. ABC는 :meth:`__and__`\\와 "
-":meth:`isdisjoint`\\와 같은 나머지 메서드를 제공합니다::"
+":class:`Set` API를 지원하는 클래스를 작성하려면, :meth:`~object.__contains__`, "
+":meth:`~container.__iter__` 및 :meth:`~object.__len__`\\의 세 가지 하부 추상 메서드 만"
+" 제공하면 됩니다. ABC는 :meth:`!__and__`\\와 :meth:`~frozenset.isdisjoint`\\와 같은 "
+"나머지 메서드를 제공합니다::"
 
 #: ../../library/collections.abc.rst:395
 msgid ""
@@ -824,13 +819,33 @@ msgid ""
 "overlap = s1 & s2            # The __and__() method is supported "
 "automatically"
 msgstr ""
+"class ListBasedSet(collections.abc.Set):\n"
+"    ''' 속도보다 공간을 선호하고 집합 원소가\n"
+"        해시 가능할 필요가 없는 대안 집합 구현. '''\n"
+"    def __init__(self, iterable):\n"
+"        self.elements = lst = []\n"
+"        for value in iterable:\n"
+"            if value not in lst:\n"
+"                lst.append(value)\n"
+"\n"
+"    def __iter__(self):\n"
+"        return iter(self.elements)\n"
+"\n"
+"    def __contains__(self, value):\n"
+"        return value in self.elements\n"
+"\n"
+"    def __len__(self):\n"
+"        return len(self.elements)\n"
+"\n"
+"s1 = ListBasedSet('abcdef')\n"
+"s2 = ListBasedSet('defghi')\n"
+"overlap = s1 & s2            # __and__() 메서드는 자동으로 지원됩니다"
 
 #: ../../library/collections.abc.rst:417
 msgid "Notes on using :class:`Set` and :class:`MutableSet` as a mixin:"
 msgstr ":class:`Set`\\과 :class:`MutableSet`\\을 믹스인으로 사용할 때의 주의 사항:"
 
 #: ../../library/collections.abc.rst:420
-#, fuzzy
 msgid ""
 "Since some set operations create new sets, the default mixin methods need"
 " a way to create new instances from an :term:`iterable`. The class "
@@ -842,24 +857,23 @@ msgid ""
 "need to override :meth:`!_from_iterable` with a classmethod or regular "
 "method that can construct new instances from an iterable argument."
 msgstr ""
-"일부 집합 연산은 새로운 집합을 만들기 때문에, 기본 믹스인 메서드는 이터러블로부터 새 인스턴스를 만드는 방법이 필요합니다. 클래스"
-" 생성자가 ``ClassName(iterable)`` 형식의 서명을 가진 것으로 가정합니다. 이 가정은 새로운 집합을 생성하기 위해"
-" ``cls(iterable)``\\를 호출하는 :meth:`_from_iterable`\\이라는 내부 클래스 메서드로 "
-"분리되었습니다. :class:`Set` 믹스인이 다른 생성자 서명을 갖는 클래스에서 사용되고 있으면, 이터러블 인자로부터 새 "
-"인스턴스를 생성할 수 있는 클래스 메서드나 일반 메서드로 :meth:`_from_iterable`\\을 재정의해야 합니다."
+"일부 집합 연산은 새로운 집합을 만들기 때문에, 기본 믹스인 메서드는 :term:`이터러블 <iterable>`\\로부터 새 "
+"인스턴스를 만드는 방법이 필요합니다. 클래스 생성자가 ``ClassName(iterable)`` 형식의 서명을 가진 것으로 "
+"가정합니다. 이 가정은 새로운 집합을 생성하기 위해 ``cls(iterable)``\\를 호출하는 "
+":meth:`!_from_iterable`\\이라는 내부 :class:`classmethod`\\로 분리되었습니다. "
+":class:`Set` 믹스인이 다른 생성자 서명을 갖는 클래스에서 사용되고 있으면, 이터러블 인자로부터 새 인스턴스를 생성할 수 "
+"있는 클래스 메서드나 일반 메서드로 :meth:`!_from_iterable`\\을 재정의해야 합니다."
 
 #: ../../library/collections.abc.rst:431
-#, fuzzy
 msgid ""
 "To override the comparisons (presumably for speed, as the semantics are "
 "fixed), redefine :meth:`~object.__le__` and :meth:`~object.__ge__`, then "
 "the other operations will automatically follow suit."
 msgstr ""
-"비교를 재정의하려면 (의미는 고정되었으므로, 아마도 속도 때문에), :meth:`__le__`\\와 :meth:`__ge__`\\를"
-" 재정의하십시오, 그러면 다른 연산은 자동으로 맞춰집니다."
+"비교를 재정의하려면 (의미는 고정되었으므로, 아마도 속도 때문에), :meth:`~object.__le__`\\와 "
+":meth:`~object.__ge__`\\를 재정의하십시오, 그러면 다른 연산은 자동으로 맞춰집니다."
 
 #: ../../library/collections.abc.rst:437
-#, fuzzy
 msgid ""
 "The :class:`Set` mixin provides a :meth:`!_hash` method to compute a hash"
 " value for the set; however, :meth:`~object.__hash__` is not defined "
@@ -867,10 +881,10 @@ msgid ""
 "hashability using mixins, inherit from both :meth:`Set` and "
 ":meth:`Hashable`, then define ``__hash__ = Set._hash``."
 msgstr ""
-":class:`Set` 믹스인은 집합의 해시값을 계산하는 :meth:`_hash` 메서드를 제공합니다; 그러나 모든 집합이 해시 "
-"가능하거나 불변이지는 않기 때문에 :meth:`__hash__`\\는 정의되지 않습니다. 믹스인을 사용하여 집합 해시 가능성을 "
-"추가하려면, :meth:`Set`\\와 :meth:`Hashable`\\을 모두 상속한 다음, ``__hash__ = "
-"Set._hash``\\를 정의하십시오."
+":class:`Set` 믹스인은 집합의 해시값을 계산하는 :meth:`!_hash` 메서드를 제공합니다; 그러나 모든 집합이 "
+":term:`해시 가능 <hashable>`\\하거나 불변이지는 않기 때문에 :meth:`~object.__hash__`\\는 "
+"정의되지 않습니다. 믹스인을 사용하여 집합 해시 가능성을 추가하려면, :meth:`Set`\\와 :meth:`Hashable`\\을"
+" 모두 상속한 다음, ``__hash__ = Set._hash``\\를 정의하십시오."
 
 #: ../../library/collections.abc.rst:445
 msgid ""
