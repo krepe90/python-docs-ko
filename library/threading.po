@@ -17,22 +17,18 @@ msgstr ""
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/threading.rst:2
-#, fuzzy
 msgid ":mod:`!threading` --- Thread-based parallelism"
-msgstr ":mod:`threading` --- 스레드 기반 병렬 처리"
+msgstr ":mod:`!threading` --- 스레드 기반 병렬 처리"
 
 #: ../../library/threading.rst:7
 msgid "**Source code:** :source:`Lib/threading.py`"
 msgstr "**소스 코드:** :source:`Lib/threading.py`"
 
 #: ../../library/threading.rst:11
-#, fuzzy
 msgid ""
 "This module constructs higher-level threading interfaces on top of the "
 "lower level :mod:`_thread` module."
-msgstr ""
-"이 모듈은 저수준 :mod:`_thread` 모듈 위에 고수준 스레딩 인터페이스를 구축합니다. :mod:`queue` 모듈도 "
-"참조하십시오."
+msgstr "이 모듈은 저수준 :mod:`_thread` 모듈 위에 고수준 스레딩 인터페이스를 구축합니다."
 
 #: ../../library/threading.rst:14
 msgid "This module used to be optional, it is now always available."
@@ -230,7 +226,6 @@ msgid "Added support for GNU/kFreeBSD."
 msgstr ""
 
 #: ../../library/threading.rst:140
-#, fuzzy
 msgid ""
 "Return a list of all :class:`Thread` objects currently active.  The list "
 "includes daemonic threads and dummy thread objects created by "
@@ -238,9 +233,9 @@ msgid ""
 "have not yet been started.  However, the main thread is always part of "
 "the result, even when terminated."
 msgstr ""
-"현재 살아있는 모든 :class:`Thread` 객체의 리스트를 반환합니다. 이 리스트에는 데몬 스레드, "
-":func:`current_thread`\\에서 만든 더미 스레드 객체 및 메인 스레드가 포함됩니다. 종료된 스레드와 아직 시작되지"
-" 않은 스레드는 제외합니다."
+"현재 활성인 모든 :class:`Thread` 객체의 리스트를 반환합니다. 이 리스트에는 데몬 스레드와 "
+":func:`current_thread`\\에서 만든 더미 스레드 객체가 포함됩니다. 종료된 스레드와 아직 시작되지 않은 스레드는 "
+"제외합니다. 그러나, 메인 스레드는 종료되었을 때 조차 항상 결과의 일부입니다."
 
 #: ../../library/threading.rst:149
 msgid ""
@@ -258,22 +253,18 @@ msgstr ""
 ":meth:`~Thread.run` 메서드가 호출되기 전에 각 스레드에 대해 :func:`sys.settrace`\\로 전달됩니다."
 
 #: ../../library/threading.rst:166
-#, fuzzy
 msgid ""
 "Set a trace function for all threads started from the :mod:`threading` "
 "module and all Python threads that are currently executing."
-msgstr ""
-":mod:`threading` 모듈에서 시작된 모든 스레드에 대한 추적 함수를 설정합니다. *func*\\는 "
-":meth:`~Thread.run` 메서드가 호출되기 전에 각 스레드에 대해 :func:`sys.settrace`\\로 전달됩니다."
+msgstr ":mod:`threading` 모듈에서 시작된 모든 스레드와 현재 실행 중인 모든 파이썬 스레드에 대한 추적 함수를 설정합니다."
 
 #: ../../library/threading.rst:169
-#, fuzzy
 msgid ""
 "The *func* will be passed to  :func:`sys.settrace` for each thread, "
 "before its :meth:`~Thread.run` method is called."
 msgstr ""
-":mod:`threading` 모듈에서 시작된 모든 스레드에 대한 추적 함수를 설정합니다. *func*\\는 "
-":meth:`~Thread.run` 메서드가 호출되기 전에 각 스레드에 대해 :func:`sys.settrace`\\로 전달됩니다."
+"*func*\\는 :meth:`~Thread.run` 메서드가 호출되기 전에 각 스레드에 대해 "
+":func:`sys.settrace`\\로 전달됩니다."
 
 #: ../../library/threading.rst:180
 msgid "Get the trace function as set by :func:`settrace`."
@@ -290,24 +281,18 @@ msgstr ""
 "전달됩니다."
 
 #: ../../library/threading.rst:195
-#, fuzzy
 msgid ""
 "Set a profile function for all threads started from the :mod:`threading` "
 "module and all Python threads that are currently executing."
-msgstr ""
-":mod:`threading` 모듈에서 시작된 모든 스레드에 대한 프로파일 함수를 설정합니다. *func*\\는 "
-":meth:`~Thread.run` 메서드가 호출되기 전에 각 스레드에 대해 :func:`sys.setprofile`\\로 "
-"전달됩니다."
+msgstr ":mod:`threading` 모듈에서 시작된 모든 스레드와 현재 실행 중인 모든 파이썬 스레드에 대한 프로파일 함수를 설정합니다."
 
 #: ../../library/threading.rst:198
-#, fuzzy
 msgid ""
 "The *func* will be passed to  :func:`sys.setprofile` for each thread, "
 "before its :meth:`~Thread.run` method is called."
 msgstr ""
-":mod:`threading` 모듈에서 시작된 모든 스레드에 대한 프로파일 함수를 설정합니다. *func*\\는 "
-":meth:`~Thread.run` 메서드가 호출되기 전에 각 스레드에 대해 :func:`sys.setprofile`\\로 "
-"전달됩니다."
+"*func*\\는 :meth:`~Thread.run` 메서드가 호출되기 전에 각 스레드에 대해 "
+":func:`sys.setprofile`\\로 전달됩니다."
 
 #: ../../library/threading.rst:207
 msgid "Get the profiler function as set by :func:`setprofile`."
@@ -404,6 +389,8 @@ msgid ""
 "mydata = threading.local()\n"
 "mydata.x = 1"
 msgstr ""
+"mydata = threading.local()\n"
+"mydata.x = 1"
 
 #: ../../library/threading.rst:270
 msgid "The instance's values will be different for separate threads."
@@ -414,18 +401,18 @@ msgid "A class that represents thread-local data."
 msgstr "스레드 로컬 데이터를 나타내는 클래스."
 
 #: ../../library/threading.rst:277
-#, fuzzy
 msgid ""
 "For more details and extensive examples, see the documentation string of "
 "the :mod:`!_threading_local` module: :source:`Lib/_threading_local.py`."
-msgstr "자세한 내용과 광범위한 예는, :mod:`_threading_local` 모듈의 독스트링을 참조하십시오."
+msgstr ""
+"자세한 내용과 광범위한 예는, :mod:`!_threading_local` 모듈의 독스트링을 참조하십시오: "
+":source:`Lib/_threading_local.py`."
 
 #: ../../library/threading.rst:284
 msgid "Thread Objects"
 msgstr "Thread 객체"
 
 #: ../../library/threading.rst:286
-#, fuzzy
 msgid ""
 "The :class:`Thread` class represents an activity that is run in a "
 "separate thread of control.  There are two ways to specify the activity: "
@@ -437,8 +424,8 @@ msgid ""
 msgstr ""
 ":class:`Thread` 클래스는 별도의 제어 스레드에서 실행되는 활동을 나타냅니다. 활동을 지정하는 두 가지 방법이 있습니다:"
 " 콜러블 객체를 생성자에 전달하거나, 서브 클래스에서 :meth:`~Thread.run` 메서드를 재정의합니다. 서브 클래스에서는 "
-"다른 메서드(생성자를 제외하고)를 재정의해서는 안 됩니다. 즉, *오직* 이 클래스의 "
-":meth:`~Thread.__init__`\\와 :meth:`~Thread.run` 메서드만 재정의합니다."
+"다른 메서드(생성자를 제외하고)를 재정의해서는 안 됩니다. 즉, *오직* 이 클래스의 ``__init__()``\\와 "
+":meth:`~Thread.run` 메서드만 재정의합니다."
 
 #: ../../library/threading.rst:293
 msgid ""
@@ -517,7 +504,6 @@ msgid ""
 msgstr "\"메인 스레드\" 객체가 있습니다; 이것은 파이썬 프로그램의 초기 제어 스레드에 해당합니다. 이것은 데몬 스레드가 아닙니다."
 
 #: ../../library/threading.rst:328
-#, fuzzy
 msgid ""
 "There is the possibility that \"dummy thread objects\" are created. These"
 " are thread objects corresponding to \"alien threads\", which are threads"
@@ -529,8 +515,8 @@ msgid ""
 msgstr ""
 "\"더미 스레드 객체\"가 만들어질 수 있습니다. 이들은 \"외부 스레드\"에 해당하는 스레드 객체로, C 코드에서 직접 만든 "
 "것처럼 threading 모듈 외부에서 시작된 제어 스레드입니다. 더미 스레드 객체는 기능이 제한적입니다; 항상 살아 있고 데몬으로"
-" 간주하며, :meth:`~Thread.join`\\할 수 없습니다. 외부 스레드의 종료를 감지하는 것이 불가능하므로 삭제되지 "
-"않습니다."
+" 간주하며, :ref:`조인 <meth-thread-join>`\\할 수 없습니다. 외부 스레드의 종료를 감지하는 것이 불가능하므로"
+" 삭제되지 않습니다."
 
 #: ../../library/threading.rst:339
 msgid ""
@@ -539,12 +525,11 @@ msgid ""
 msgstr "이 생성자는 항상 키워드 인자로 호출해야 합니다. 인자는 다음과 같습니다:"
 
 #: ../../library/threading.rst:342
-#, fuzzy
 msgid ""
 "*group* should be ``None``; reserved for future extension when a "
 ":class:`!ThreadGroup` class is implemented."
 msgstr ""
-"*group*\\은 ``None``\\이어야 합니다; :class:`ThreadGroup` 클래스가 구현될 때 향후 확장을 위해 "
+"*group*\\은 ``None``\\이어야 합니다; :class:`!ThreadGroup` 클래스가 구현될 때 향후 확장을 위해 "
 "예약되어 있습니다."
 
 #: ../../library/threading.rst:345
@@ -556,7 +541,6 @@ msgstr ""
 "호출되지 않습니다."
 
 #: ../../library/threading.rst:348
-#, fuzzy
 msgid ""
 "*name* is the thread name. By default, a unique name is constructed of "
 "the form \"Thread-*N*\" where *N* is a small decimal number, or "
@@ -564,14 +548,14 @@ msgid ""
 "*target* argument is specified."
 msgstr ""
 "*name*\\은 스레드 이름입니다. 기본적으로, 고유한 이름이 \"Thread-*N*\" 형식으로 구성되는데, 여기서 *N*\\은"
-" 작은 십진수입니다."
+" 작은 십진수입니다. 혹은 *target* 인자가 지정되면, \"Thread-*N* (target)\" 형식인데, 여기서 "
+"\"target\"은 ``target.__name__``\\입니다."
 
 #: ../../library/threading.rst:353
-#, fuzzy
 msgid ""
 "*args* is a list or tuple of arguments for the target invocation.  "
 "Defaults to ``()``."
-msgstr "*args*\\는 target 호출을 위한 인자 튜플입니다. 기본값은 ``()``\\입니다."
+msgstr "*args*\\는 target 호출을 위한 인자의 리스트나 튜플입니다. 기본값은 ``()``\\입니다."
 
 #: ../../library/threading.rst:355
 #, python-brace-format
@@ -599,9 +583,8 @@ msgstr ""
 "생성자(``Thread.__init__()``)를 호출해야 합니다."
 
 #: ../../library/threading.rst:366
-#, fuzzy
 msgid "Added the *daemon* parameter."
-msgstr "*daemon* 인자를 추가했습니다."
+msgstr "*daemon* 매개 변수를 추가했습니다."
 
 #: ../../library/threading.rst:369
 msgid "Use the *target* name if *name* argument is omitted."
@@ -647,9 +630,8 @@ msgid ""
 msgstr ""
 
 #: ../../library/threading.rst:395
-#, fuzzy
 msgid "Example::"
-msgstr "예를 들면::"
+msgstr "예제::"
 
 #: ../../library/threading.rst:397
 msgid ""
@@ -661,6 +643,13 @@ msgid ""
 ">>> t.run()\n"
 "1"
 msgstr ""
+">>> from threading import Thread\n"
+">>> t = Thread(target=print, args=[1])\n"
+">>> t.run()\n"
+"1\n"
+">>> t = Thread(target=print, args=(1,))\n"
+">>> t.run()\n"
+"1"
 
 #: ../../library/threading.rst:409
 msgid ""
@@ -673,7 +662,6 @@ msgstr ""
 "예외를 통해 종료하거나 선택적 시간제한 초과가 발생할 때까지 호출하는 스레드를 블록 합니다."
 
 #: ../../library/threading.rst:414
-#, fuzzy
 msgid ""
 "When the *timeout* argument is present and not ``None``, it should be a "
 "floating-point number specifying a timeout for the operation in seconds "
@@ -694,9 +682,8 @@ msgid ""
 msgstr "*timeout* 인자가 없거나 ``None``\\이면, 스레드가 종료될 때까지 작업이 블록 됩니다."
 
 #: ../../library/threading.rst:424
-#, fuzzy
 msgid "A thread can be joined many times."
-msgstr "스레드는 여러 번 :meth:`~Thread.join`\\될 수 있습니다."
+msgstr "스레드는 여러 번 조인될 수 있습니다."
 
 #: ../../library/threading.rst:426
 msgid ""
@@ -717,11 +704,10 @@ msgid ""
 msgstr "식별 목적으로만 사용되는 문자열. 의미는 없습니다. 여러 스레드에 같은 이름을 지정할 수 있습니다. 초기 이름은 생성자가 설정합니다."
 
 #: ../../library/threading.rst:440
-#, fuzzy
 msgid ""
 "Deprecated getter/setter API for :attr:`~Thread.name`; use it directly as"
 " a property instead."
-msgstr ":attr:`~Thread.name`\\을 위한 오래된 getter/setter API; 대신 프로퍼티로 직접 사용하십시오."
+msgstr ":attr:`~Thread.name`\\을 위한 폐지된 getter/setter API; 대신 프로퍼티로 직접 사용하십시오."
 
 #: ../../library/threading.rst:447
 msgid ""
@@ -736,7 +722,6 @@ msgstr ""
 "있습니다. 스레드가 종료된 후에도 식별자를 사용할 수 있습니다."
 
 #: ../../library/threading.rst:455
-#, fuzzy
 msgid ""
 "The Thread ID (``TID``) of this thread, as assigned by the OS (kernel). "
 "This is a non-negative integer, or ``None`` if the thread has not been "
@@ -744,10 +729,9 @@ msgid ""
 "to uniquely identify this particular thread system-wide (until the thread"
 " terminates, after which the value may be recycled by the OS)."
 msgstr ""
-"이 스레드의 네이티브 정수 스레드 ID. 음수가 아닌 정수, 또는 스레드가 시작되지 않았으면 ``None``\\입니다. "
-":func:`get_native_id` 함수를 참조하십시오. OS(커널)에 의해 스레드에 할당된 스레드 ID(``TID``)를 "
-"나타냅니다. 이 값은 시스템 전체에서 이 특정 스레드를 고유하게 식별하는 데 사용될 수 있습니다 (스레드가 종료될 때까지, OS가 "
-"값을 재활용 할 수 있습니다)."
+"OS(커널)에서 할당된, 이 스레드의 스레드 ID (``TID``). 음수가 아닌 정수, 또는 스레드가 시작되지 않았으면 "
+"``None``\\입니다. :func:`get_native_id` 함수를 참조하십시오. 이 값은 시스템 전체에서 이 특정 스레드를 "
+"고유하게 식별하는 데 사용될 수 있습니다 (스레드가 종료될 때까지, OS가 값을 재활용 할 수 있습니다)."
 
 #: ../../library/threading.rst:464
 msgid ""
@@ -773,7 +757,6 @@ msgstr ""
 "반환합니다."
 
 #: ../../library/threading.rst:482
-#, fuzzy
 msgid ""
 "A boolean value indicating whether this thread is a daemon thread "
 "(``True``) or not (``False``).  This must be set before "
@@ -782,21 +765,20 @@ msgid ""
 "thread is not a daemon thread and therefore all threads created in the "
 "main thread default to :attr:`~Thread.daemon` = ``False``."
 msgstr ""
-"이 스레드가 데몬 스레드인지(True) 아닌지(False)를 나타내는 불리언 값. :meth:`~Thread.start`\\가 "
-"호출되기 전에 설정되어야 합니다, 그렇지 않으면 :exc:`RuntimeError`\\가 발생합니다. 초깃값은 만드는 스레드에서 "
-"상속됩니다; 메인 스레드는 데몬 스레드가 아니므로 메인 스레드에서 만드는 모든 스레드의 기본값은 "
-":attr:`~Thread.daemon` = ``False``\\입니다."
+"이 스레드가 데몬 스레드인지(``True``) 아닌지(``False``)를 나타내는 불리언 값. "
+":meth:`~Thread.start`\\가 호출되기 전에 설정되어야 합니다, 그렇지 않으면 "
+":exc:`RuntimeError`\\가 발생합니다. 초깃값은 만드는 스레드에서 상속됩니다; 메인 스레드는 데몬 스레드가 아니므로 "
+"메인 스레드에서 만드는 모든 스레드의 기본값은 :attr:`~Thread.daemon` = ``False``\\입니다."
 
 #: ../../library/threading.rst:489
 msgid "The entire Python program exits when no alive non-daemon threads are left."
 msgstr "살아있는 데몬이 아닌 스레드가 남아 있지 않으면 전체 파이썬 프로그램이 종료됩니다."
 
 #: ../../library/threading.rst:494
-#, fuzzy
 msgid ""
 "Deprecated getter/setter API for :attr:`~Thread.daemon`; use it directly "
 "as a property instead."
-msgstr ":attr:`~Thread.daemon`\\을 위한 오래된 getter/setter API; 대신 프로퍼티로 직접 사용하십시오."
+msgstr ":attr:`~Thread.daemon`\\을 위한 폐지된 getter/setter API; 대신 프로퍼티로 직접 사용하십시오."
 
 #: ../../library/threading.rst:503
 msgid "Lock Objects"
@@ -894,7 +876,6 @@ msgstr ""
 "설정하고 ``True``\\를 반환합니다."
 
 #: ../../library/threading.rst:554
-#, fuzzy
 msgid ""
 "When invoked with the floating-point *timeout* argument set to a positive"
 " value, block for at most the number of seconds specified by *timeout* "
@@ -903,8 +884,8 @@ msgid ""
 "*timeout* when *blocking* is ``False``."
 msgstr ""
 "양수 값으로 설정된 부동 소수점 *timeout* 인자로 호출하면, 록을 획득할 수 없는 한 최대 *timeout*\\에 지정된 초"
-" 동안 블록 합니다. ``-1``\\의 *timeout* 인자는 제한 없는 대기를 지정합니다. *blocking*\\이 거짓일 때 "
-"*timeout*\\을 지정하는 것은 금지되어 있습니다."
+" 동안 블록 합니다. ``-1``\\의 *timeout* 인자는 제한 없는 대기를 지정합니다. *blocking*\\이 "
+"``False``\\일 때 *timeout*\\을 지정하는 것은 금지되어 있습니다."
 
 #: ../../library/threading.rst:560
 msgid ""
@@ -949,9 +930,8 @@ msgid "There is no return value."
 msgstr "반환 값이 없습니다."
 
 #: ../../library/threading.rst:586
-#, fuzzy
 msgid "Return ``True`` if the lock is acquired."
-msgstr "록이 획득되면 참을 반환합니다."
+msgstr "록이 획득되면 ``True``\\를 반환합니다."
 
 #: ../../library/threading.rst:593
 msgid "RLock Objects"
@@ -985,7 +965,6 @@ msgid ""
 msgstr ""
 
 #: ../../library/threading.rst:611
-#, fuzzy
 msgid ""
 "RLock's :meth:`~RLock.acquire`/:meth:`~RLock.release` call pairs may be "
 "nested, unlike Lock's :meth:`~Lock.acquire`/:meth:`~Lock.release`. Only "
@@ -993,11 +972,10 @@ msgid ""
 "outermost pair) resets the lock to an unlocked state and allows another "
 "thread blocked in :meth:`~RLock.acquire` to proceed."
 msgstr ""
-"록을 잠그기 위해, 스레드는 :meth:`~RLock.acquire` 메서드를 호출합니다; 일단 스레드가 잠금을 소유하면 "
-"반환합니다. 록을 잠금 해제하기 위해, 스레드는 :meth:`~Lock.release` 메서드를 호출합니다. "
-":meth:`~Lock.acquire`/ :meth:`~Lock.release` 호출 쌍은 중첩될 수 있습니다; 오직 마지막 "
-":meth:`~Lock.release`\\(가장 바깥쪽 쌍의 :meth:`~Lock.release`)만 록을 잠금 해제로 재설정하고"
-" :meth:`~Lock.acquire`\\에서 블록 된 다른 스레드가 진행하도록 할 수 있습니다."
+"RLock의 :meth:`~RLock.acquire`/:meth:`~RLock.release` 호출 쌍은 Lock의 "
+":meth:`~Lock.acquire`/:meth:`~Lock.release`\\와 달리 중첩될 수 있습니다. 오직 마지막 "
+":meth:`~RLock.release`\\(가장 바깥쪽 쌍의 :meth:`~Lock.release`)만 록을 잠금 해제 상태로 "
+"재설정하고 :meth:`~RLock.acquire`\\에서 블록 된 다른 스레드가 진행하도록 할 수 있습니다."
 
 #: ../../library/threading.rst:617
 msgid ""
@@ -1037,11 +1015,8 @@ msgid ""
 msgstr ""
 
 #: ../../library/threading.rst:645
-#, fuzzy
 msgid "When invoked with the *blocking* argument set to ``True`` (the default):"
-msgstr ""
-"*blocking* 인자를 ``True``\\(기본값)로 설정하여 호출하면, 록이 잠금 해제될 때까지 블록 한 다음, 잠금으로 "
-"설정하고 ``True``\\를 반환합니다."
+msgstr "*blocking* 인자를 ``True``\\(기본값)로 설정하여 호출할 때:"
 
 #: ../../library/threading.rst:647 ../../library/threading.rst:659
 msgid "If no thread owns the lock, acquire the lock and return immediately."
@@ -1062,9 +1037,8 @@ msgid ""
 msgstr ""
 
 #: ../../library/threading.rst:657
-#, fuzzy
 msgid "When invoked with the *blocking* argument set to ``False``:"
-msgstr "인자 없이 호출될 때:"
+msgstr "*blocking* 인자를 ``False``\\로 설정하여 호출할 때:"
 
 #: ../../library/threading.rst:661
 msgid "If another thread owns the lock, return immediately."
@@ -1104,13 +1078,12 @@ msgstr ""
 "여전히 0이 아니면, 록은 잠금이고, 호출하는 스레드에 의해 소유된 채로 유지됩니다."
 
 #: ../../library/threading.rst:686
-#, fuzzy
 msgid ""
 "Only call this method when the calling thread owns the lock. A "
 ":exc:`RuntimeError` is raised if this method is called when the lock is "
 "not acquired."
 msgstr ""
-"호출하는 스레드가 록을 소유했을 때만 이 메서드를 호출하십시오. 록이 잠금 해제일 때 이 메서드가 호출되면 "
+"호출하는 스레드가 록을 소유했을 때만 이 메서드를 호출하십시오. 록을 획득하지 않았을 때 이 메서드가 호출되면 "
 ":exc:`RuntimeError`\\가 발생합니다."
 
 #: ../../library/threading.rst:696
@@ -1209,6 +1182,16 @@ msgid ""
 "    make_an_item_available()\n"
 "    cv.notify()"
 msgstr ""
+"# 한 항목을 소비합니다\n"
+"with cv:\n"
+"    while not an_item_is_available():\n"
+"        cv.wait()\n"
+"    get_an_available_item()\n"
+"\n"
+"# 한 항목을 생산합니다\n"
+"with cv:\n"
+"    make_an_item_available()\n"
+"    cv.notify()"
 
 #: ../../library/threading.rst:745
 msgid ""
@@ -1232,6 +1215,10 @@ msgid ""
 "    cv.wait_for(an_item_is_available)\n"
 "    get_an_available_item()"
 msgstr ""
+"# 한 항목을 소비합니다\n"
+"with cv:\n"
+"    cv.wait_for(an_item_is_available)\n"
+"    get_an_available_item()"
 
 #: ../../library/threading.rst:757
 msgid ""
@@ -1303,7 +1290,6 @@ msgstr ""
 "깨어나거나 시간제한이 만료되면, 록을 다시 획득하고 반환합니다."
 
 #: ../../library/threading.rst:796
-#, fuzzy
 msgid ""
 "When the *timeout* argument is present and not ``None``, it should be a "
 "floating-point number specifying a timeout for the operation in seconds "
@@ -1368,6 +1354,8 @@ msgid ""
 "while not predicate():\n"
 "    cv.wait()"
 msgstr ""
+"while not predicate():\n"
+"    cv.wait()"
 
 #: ../../library/threading.rst:831
 msgid ""
@@ -1510,14 +1498,14 @@ msgstr ""
 "의존해서는 안 됩니다."
 
 #: ../../library/threading.rst:913
-#, fuzzy
 msgid ""
 "When invoked with *blocking* set to ``False``, do not block.  If a call "
 "without an argument would block, return ``False`` immediately; otherwise,"
 " do the same thing as when called without arguments, and return ``True``."
 msgstr ""
-"거짓으로 설정한 *blocking*\\으로 호출하면 블록 하지 않습니다. 인자가 없는 호출이 블록 할 것이라면, 즉시 "
-"``False``\\를 반환합니다; 그렇지 않으면, 인자 없이 호출할 때와 같은 작업을 수행하고, ``True``\\를 반환합니다."
+"``False``\\로 설정한 *blocking*\\으로 호출하면 블록 하지 않습니다. 인자가 없는 호출이 블록 할 것이라면, 즉시"
+" ``False``\\를 반환합니다; 그렇지 않으면, 인자 없이 호출할 때와 같은 작업을 수행하고, ``True``\\를 "
+"반환합니다."
 
 #: ../../library/threading.rst:917
 msgid ""
@@ -1574,6 +1562,9 @@ msgid ""
 "# ...\n"
 "pool_sema = BoundedSemaphore(value=maxconnections)"
 msgstr ""
+"maxconnections = 5\n"
+"# ...\n"
+"pool_sema = BoundedSemaphore(value=maxconnections)"
 
 #: ../../library/threading.rst:960
 msgid ""
@@ -1590,6 +1581,12 @@ msgid ""
 "    finally:\n"
 "        conn.close()"
 msgstr ""
+"with pool_sema:\n"
+"    conn = connectdb()\n"
+"    try:\n"
+"        # ... 연결을 사용합니다 ...\n"
+"    finally:\n"
+"        conn.close()"
 
 #: ../../library/threading.rst:970
 msgid ""
@@ -1666,14 +1663,11 @@ msgid ""
 msgstr ""
 
 #: ../../library/threading.rst:1023
-#, fuzzy
 msgid ""
 "When the timeout argument is present and not ``None``, it should be a "
 "floating-point number specifying a timeout for the operation in seconds, "
 "or fractions thereof."
-msgstr ""
-"timeout 인자가 있고 ``None``\\이 아니면, 작업의 시간제한을 초(또는 부분 초)로 지정하는 부동 소수점 숫자여야 "
-"합니다."
+msgstr "timeout 인자가 있고 ``None``\\이 아니면, 작업의 시간제한을 초 또는 부분 초로 지정하는 부동 소수점 숫자여야 합니다."
 
 #: ../../library/threading.rst:1034
 msgid "Timer Objects"
@@ -1690,7 +1684,6 @@ msgstr ""
 ":class:`Thread`\\의 서브 클래스이며 사용자 정의 스레드를 만드는 예제로도 기능합니다."
 
 #: ../../library/threading.rst:1040
-#, fuzzy
 msgid ""
 "Timers are started, as with threads, by calling their :meth:`Timer.start "
 "<Thread.start>` method.  The timer can be stopped (before its action has "
@@ -1698,7 +1691,7 @@ msgid ""
 "timer will wait before executing its action may not be exactly the same "
 "as the interval specified by the user."
 msgstr ""
-"타이머는 스레드와 마찬가지로, :meth:`~Timer.start` 메서드를 호출하여 시작됩니다. "
+"타이머는 스레드와 마찬가지로, :meth:`Timer.start <Thread.start>` 메서드를 호출하여 시작됩니다. "
 ":meth:`~Timer.cancel` 메서드를 호출하여 (조치를 시작하기 전에) 타이머를 중지할 수 있습니다. 조치를 실행하기 "
 "전에 타이머가 대기하는 간격은 사용자가 지정한 간격과 정확히 같지 않을 수 있습니다."
 
@@ -1714,6 +1707,11 @@ msgid ""
 "t = Timer(30.0, hello)\n"
 "t.start()  # after 30 seconds, \"hello, world\" will be printed"
 msgstr ""
+"def hello():\n"
+"    print(\"hello, world\")\n"
+"\n"
+"t = Timer(30.0, hello)\n"
+"t.start()  # 30초 후에, \"hello, world\" 가 인쇄됩니다"
 
 #: ../../library/threading.rst:1057
 msgid ""
@@ -1778,6 +1776,20 @@ msgid ""
 "        connection = make_connection()\n"
 "        process_client_connection(connection)"
 msgstr ""
+"b = Barrier(2, timeout=5)\n"
+"\n"
+"def server():\n"
+"    start_server()\n"
+"    b.wait()\n"
+"    while True:\n"
+"        connection = accept_connection()\n"
+"        process_server_connection(connection)\n"
+"\n"
+"def client():\n"
+"    b.wait()\n"
+"    while True:\n"
+"        connection = make_connection()\n"
+"        process_client_connection(connection)"
 
 #: ../../library/threading.rst:1104
 msgid ""
@@ -1815,6 +1827,10 @@ msgid ""
 "    # Only one thread needs to print this\n"
 "    print(\"passed the barrier\")"
 msgstr ""
+"i = barrier.wait()\n"
+"if i == 0:\n"
+"    # 오직 한 스레드만 이것을 인쇄하면 됩니다\n"
+"    print(\"passed the barrier\")"
 
 #: ../../library/threading.rst:1125
 msgid ""
@@ -1895,7 +1911,6 @@ msgid "Using locks, conditions, and semaphores in the :keyword:`!with` statement
 msgstr ":keyword:`!with` 문으로 록, 조건 및 세마포어 사용하기"
 
 #: ../../library/threading.rst:1178
-#, fuzzy
 msgid ""
 "All of the objects provided by this module that have ``acquire`` and "
 "``release`` methods can be used as context managers for a :keyword:`with`"
@@ -1903,15 +1918,17 @@ msgid ""
 "entered, and ``release`` will be called when the block is exited.  Hence,"
 " the following snippet::"
 msgstr ""
-"이 모듈에서 제공하는 :meth:`acquire`\\와 :meth:`release` 메서드가 있는 모든 객체는 "
-":keyword:`with` 문의 컨텍스트 관리자로 사용될 수 있습니다. 블록에 진입할 때 :meth:`acquire` 메서드가 "
-"호출되고, 블록을 벗어날 때 :meth:`release`\\가 호출됩니다. 따라서, 다음 코드 조각은::"
+"이 모듈에서 제공하는 ``acquire``\\와 ``release`` 메서드가 있는 모든 객체는 :keyword:`with` 문의 "
+"컨텍스트 관리자로 사용될 수 있습니다. 블록에 진입할 때 ``acquire`` 메서드가 호출되고, 블록을 벗어날 때 "
+"``release``\\가 호출됩니다. 따라서, 다음 코드 조각은::"
 
 #: ../../library/threading.rst:1184
 msgid ""
 "with some_lock:\n"
 "    # do something..."
 msgstr ""
+"with some_lock:\n"
+"    # 뭔가 합니다..."
 
 #: ../../library/threading.rst:1187
 msgid "is equivalent to::"
@@ -1925,6 +1942,11 @@ msgid ""
 "finally:\n"
 "    some_lock.release()"
 msgstr ""
+"some_lock.acquire()\n"
+"try:\n"
+"    # 뭔가 합니다...\n"
+"finally:\n"
+"    some_lock.release()"
 
 #: ../../library/threading.rst:1195
 msgid ""
@@ -1937,15 +1959,15 @@ msgstr ""
 
 #: ../../library/threading.rst:158 ../../library/threading.rst:176
 msgid "trace function"
-msgstr ""
+msgstr "추적 함수"
 
 #: ../../library/threading.rst:176
 msgid "debugger"
-msgstr ""
+msgstr "디버거"
 
 #: ../../library/threading.rst:187 ../../library/threading.rst:205
 msgid "profile function"
-msgstr ""
+msgstr "프로파일 함수"
 
 #~ msgid ""
 #~ "While they are not listed below, "
