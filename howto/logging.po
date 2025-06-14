@@ -93,11 +93,12 @@ msgid ""
 msgstr "프로그램의 정상 작동 중에 발생하는 이벤트 보고 (가령 상태 모니터링이나 결함 조사)"
 
 #: ../../howto/logging.rst:44
-#, fuzzy
 msgid ""
 "A logger's :meth:`~Logger.info` (or :meth:`~Logger.debug` method for very"
 " detailed output for diagnostic purposes)"
-msgstr ":func:`logging.info` (또는 진단 목적의 아주 자세한 출력의 경우 :func:`logging.debug`)"
+msgstr ""
+"로거의 :meth:`~Logger.info` (또는 진단 목적의 아주 자세한 출력의 경우 :meth:`~Logger.debug` "
+"메서드)"
 
 #: ../../howto/logging.rst:49
 msgid "Issue a warning regarding a particular runtime event"
@@ -112,14 +113,13 @@ msgstr ""
 "수정되어야 하는 경우"
 
 #: ../../howto/logging.rst:54
-#, fuzzy
 msgid ""
 "A logger's :meth:`~Logger.warning` method if there is nothing the client "
 "application can do about the situation, but the event should still be "
 "noted"
 msgstr ""
-":func:`logging.warning`: 클라이언트 응용 프로그램이 할 수 있는 일이 없는 상황이지만 이벤트를 계속 주목해야 "
-"하는 경우"
+"로거의 :meth:`~Logger.warning` 메서드: 클라이언트 응용 프로그램이 할 수 있는 일이 없는 상황이지만 이벤트를 "
+"계속 주목해야 하는 경우"
 
 #: ../../howto/logging.rst:60
 msgid "Report an error regarding a particular runtime event"
@@ -136,23 +136,21 @@ msgid ""
 msgstr "예외를 발생시키지 않고 에러의 억제를 보고 (가령 장기 실행 서버 프로세스의 에러 처리기)"
 
 #: ../../howto/logging.rst:63
-#, fuzzy
 msgid ""
 "A logger's :meth:`~Logger.error`, :meth:`~Logger.exception` or "
 ":meth:`~Logger.critical` method as appropriate for the specific error and"
 " application domain"
 msgstr ""
-"구체적인 에러와 응용 프로그램 영역에 적절한 :func:`logging.error`, "
-":func:`logging.exception`, :func:`logging.critical`"
+"구체적인 에러와 응용 프로그램 영역에 적절한 로거의 :meth:`~Logger.error`, "
+":meth:`~Logger.exception`, :meth:`~Logger.critical` 메서드"
 
 #: ../../howto/logging.rst:70
-#, fuzzy
 msgid ""
 "The logger methods are named after the level or severity of the events "
 "they are used to track. The standard levels and their applicability are "
 "described below (in increasing order of severity):"
 msgstr ""
-"로깅 함수는 추적되는 이벤트의 수준 또는 심각도를 따라 명명됩니다. 표준 수준과 그 용도는 아래에 설명되어 있습니다 (심각도가 "
+"로거 메서드는 추적되는 이벤트의 수준 또는 심각도를 따라 명명됩니다. 표준 수준과 그 용도는 아래에 설명되어 있습니다 (심각도가 "
 "높아지는 순서대로).:"
 
 #: ../../howto/logging.rst:77 ../../howto/logging.rst:875
@@ -213,14 +211,13 @@ msgid ""
 msgstr "심각한 에러. 프로그램 자체가 계속 실행되지 않을 수 있음을 나타냅니다."
 
 #: ../../howto/logging.rst:97
-#, fuzzy
 msgid ""
 "The default level is ``WARNING``, which means that only events of this "
 "severity and higher will be tracked, unless the logging package is "
 "configured to do otherwise."
 msgstr ""
-"기본 수준은 ``WARNING`` 입니다. 이는 logging 패키지가 달리 구성되지 않는 한, 이 수준 이상의 이벤트만 추적된다는"
-" 것을 의미합니다."
+"기본 수준은 ``WARNING`` 입니다. 이는 logging 패키지가 달리 구성되지 않는 한, 이 심각도 이상의 이벤트만 "
+"추적된다는 것을 의미합니다."
 
 #: ../../howto/logging.rst:100
 msgid ""
@@ -245,6 +242,9 @@ msgid ""
 "logging.warning('Watch out!')  # will print a message to the console\n"
 "logging.info('I told you so')  # will not print anything"
 msgstr ""
+"import logging\n"
+"logging.warning('Watch out!')  # 콘솔에 메시지를 인쇄합니다\n"
+"logging.info('I told you so')  # 아무것도 인쇄하지 않습니다"
 
 #: ../../howto/logging.rst:116
 msgid "If you type these lines into a script and run it, you'll see:"
@@ -252,10 +252,9 @@ msgstr "이 줄들을 스크립트에 입력하고 실행하면:"
 
 #: ../../howto/logging.rst:118
 msgid "WARNING:root:Watch out!"
-msgstr ""
+msgstr "WARNING:root:Watch out!"
 
 #: ../../howto/logging.rst:122
-#, fuzzy
 msgid ""
 "printed out on the console. The ``INFO`` message doesn't appear because "
 "the default level is ``WARNING``. The printed message includes the "
@@ -265,9 +264,8 @@ msgid ""
 "later."
 msgstr ""
 "이 콘솔에 출력됩니다. 기본 수준이 ``WARNING`` 이므로, ``INFO`` 메시지는 나타나지 않습니다. 인쇄된 메시지에는 "
-"수준 표시와 로깅 호출에 제공된 이벤트의 설명(즉, 'Watch out!')이 포함됩니다. 당장은 'root' 부분에 대해서는 "
-"걱정하지 마십시오: 나중에 설명합니다. 필요한 경우 실제 출력을 매우 유연하게 포맷 할 수 있습니다; 포매팅 옵션도 나중에 "
-"설명합니다."
+"수준 표시와 로깅 호출에 제공된 이벤트의 설명(즉, 'Watch out!')이 포함됩니다. 필요한 경우 실제 출력을 매우 유연하게 "
+"포맷 할 수 있습니다; 포매팅 옵션도 나중에 설명합니다."
 
 #: ../../howto/logging.rst:128
 msgid ""
@@ -286,7 +284,6 @@ msgid "Logging to a file"
 msgstr "파일에 로깅 하기"
 
 #: ../../howto/logging.rst:139
-#, fuzzy
 msgid ""
 "A very common situation is that of recording logging events in a file, so"
 " let's look at that next. Be sure to try the following in a newly started"
@@ -307,6 +304,14 @@ msgid ""
 "logger.warning('And this, too')\n"
 "logger.error('And non-ASCII stuff, too, like Øresund and Malmö')"
 msgstr ""
+"import logging\n"
+"logger = logging.getLogger(__name__)\n"
+"logging.basicConfig(filename='example.log', encoding='utf-8', "
+"level=logging.DEBUG)\n"
+"logger.debug('This message should go to the log file')\n"
+"logger.info('So should this')\n"
+"logger.warning('And this, too')\n"
+"logger.error('And non-ASCII stuff, too, like Øresund and Malmö')"
 
 #: ../../howto/logging.rst:151
 msgid ""
@@ -333,6 +338,10 @@ msgid ""
 "WARNING:__main__:And this, too\n"
 "ERROR:__main__:And non-ASCII stuff, too, like Øresund and Malmö"
 msgstr ""
+"DEBUG:__main__:This message should go to the log file\n"
+"INFO:__main__:So should this\n"
+"WARNING:__main__:And this, too\n"
+"ERROR:__main__:And non-ASCII stuff, too, like Øresund and Malmö"
 
 #: ../../howto/logging.rst:168
 msgid ""
@@ -348,9 +357,8 @@ msgid "If you want to set the logging level from a command-line option such as:"
 msgstr "다음과 같은 방식으로 명령행 옵션에서 로깅 수준을 설정하려고 하고:"
 
 #: ../../howto/logging.rst:174
-#, fuzzy
 msgid "--log=INFO"
-msgstr "로깅 흐름"
+msgstr "--log=INFO"
 
 #: ../../howto/logging.rst:178
 msgid ""
@@ -360,7 +368,7 @@ msgstr "어떤 변수 *loglevel* 에 ``--log`` 로 전달된 매개 변수의 �
 
 #: ../../howto/logging.rst:181
 msgid "getattr(logging, loglevel.upper())"
-msgstr ""
+msgstr "getattr(logging, loglevel.upper())"
 
 #: ../../howto/logging.rst:183
 msgid ""
@@ -382,6 +390,13 @@ msgid ""
 "    raise ValueError('Invalid log level: %s' % loglevel)\n"
 "logging.basicConfig(level=numeric_level, ...)"
 msgstr ""
+"# loglevel이 명령행 인자에서 얻은 문자열 값에 연결되어\n"
+"# 있다고 가정합니다. 사용자가 --log=DEBUG 또는\n"
+"# --log=debug를 지정할 수 있도록 대문자로 변환합니다.\n"
+"numeric_level = getattr(logging, loglevel.upper(), None)\n"
+"if not isinstance(numeric_level, int):\n"
+"    raise ValueError('Invalid log level: %s' % loglevel)\n"
+"logging.basicConfig(level=numeric_level, ...)"
 
 #: ../../howto/logging.rst:195
 msgid ""
@@ -408,6 +423,8 @@ msgid ""
 "logging.basicConfig(filename='example.log', filemode='w', "
 "level=logging.DEBUG)"
 msgstr ""
+"logging.basicConfig(filename='example.log', filemode='w', "
+"level=logging.DEBUG)"
 
 #: ../../howto/logging.rst:206
 msgid ""
@@ -431,6 +448,8 @@ msgid ""
 "import logging\n"
 "logging.warning('%s before you %s', 'Look', 'leap!')"
 msgstr ""
+"import logging\n"
+"logging.warning('%s before you %s', 'Look', 'leap!')"
 
 #: ../../howto/logging.rst:219
 msgid "will display:"
@@ -438,7 +457,7 @@ msgstr "이것은 다음과 같이 출력합니다:"
 
 #: ../../howto/logging.rst:221
 msgid "WARNING:root:Look before you leap!"
-msgstr ""
+msgstr "WARNING:root:Look before you leap!"
 
 #: ../../howto/logging.rst:225
 #, python-format
@@ -476,6 +495,12 @@ msgid ""
 "logging.info('So should this')\n"
 "logging.warning('And this, too')"
 msgstr ""
+"import logging\n"
+"logging.basicConfig(format='%(levelname)s:%(message)s', "
+"level=logging.DEBUG)\n"
+"logging.debug('This message should appear on the console')\n"
+"logging.info('So should this')\n"
+"logging.warning('And this, too')"
 
 #: ../../howto/logging.rst:245
 msgid "which would print:"
@@ -487,6 +512,9 @@ msgid ""
 "INFO:So should this\n"
 "WARNING:And this, too"
 msgstr ""
+"DEBUG:This message should appear on the console\n"
+"INFO:So should this\n"
+"WARNING:And this, too"
 
 #: ../../howto/logging.rst:253
 msgid ""
@@ -520,6 +548,9 @@ msgid ""
 "logging.basicConfig(format='%(asctime)s %(message)s')\n"
 "logging.warning('is when this event was logged.')"
 msgstr ""
+"import logging\n"
+"logging.basicConfig(format='%(asctime)s %(message)s')\n"
+"logging.warning('is when this event was logged.')"
 
 #: ../../howto/logging.rst:271
 msgid "which should print something like this:"
@@ -527,7 +558,7 @@ msgstr "이것은 이런 식으로 인쇄합니다:"
 
 #: ../../howto/logging.rst:273
 msgid "2010-12-12 11:41:42,612 is when this event was logged."
-msgstr ""
+msgstr "2010-12-12 11:41:42,612 is when this event was logged."
 
 #: ../../howto/logging.rst:277
 msgid ""
@@ -547,6 +578,10 @@ msgid ""
 "%I:%M:%S %p')\n"
 "logging.warning('is when this event was logged.')"
 msgstr ""
+"import logging\n"
+"logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y "
+"%I:%M:%S %p')\n"
+"logging.warning('is when this event was logged.')"
 
 #: ../../howto/logging.rst:285
 msgid "which would display something like this:"
@@ -554,7 +589,7 @@ msgstr "그러면 다음과 같이 표시됩니다:"
 
 #: ../../howto/logging.rst:287
 msgid "12/12/2010 11:46:36 AM is when this event was logged."
-msgstr ""
+msgstr "12/12/2010 11:46:36 AM is when this event was logged."
 
 #: ../../howto/logging.rst:291
 msgid ""
@@ -579,7 +614,6 @@ msgstr ""
 "준비하시고 계속합시다."
 
 #: ../../howto/logging.rst:304
-#, fuzzy
 msgid ""
 "If your logging needs are simple, then use the above examples to "
 "incorporate logging into your own scripts, and if you run into problems "
@@ -590,8 +624,8 @@ msgid ""
 msgstr ""
 "로깅 요구가 간단하면, 위의 예제를 사용하여 자신의 스크립트에 로깅을 통합하십시오. 문제가 발생하거나 이해할 수 없는 부분이 있으면"
 " comp.lang.python 유즈넷 그룹에 질문을 올리십시오 "
-"(https://groups.google.com/forum/#!forum/comp.lang.python 에 있습니다). 도움을 받는"
-" 데 아주 오래 걸리지는 않을 겁니다."
+"(https://groups.google.com/g/comp.lang.python 에 있습니다). 도움을 받는 데 아주 오래 "
+"걸리지는 않을 겁니다."
 
 #: ../../howto/logging.rst:310
 msgid ""
@@ -661,7 +695,7 @@ msgstr "로거의 이름을 지을 때 사용할 좋은 규칙은 다음과 같�
 
 #: ../../howto/logging.rst:343
 msgid "logger = logging.getLogger(__name__)"
-msgstr ""
+msgstr "logger = logging.getLogger(__name__)"
 
 #: ../../howto/logging.rst:345
 msgid ""
@@ -722,7 +756,7 @@ msgstr "메시지에 대해 :func:`basicConfig` 에 의해 설정된 기본 포�
 
 #: ../../howto/logging.rst:371
 msgid "severity:logger name:message"
-msgstr ""
+msgstr "severity:logger name:message"
 
 #: ../../howto/logging.rst:375
 msgid ""
@@ -941,7 +975,6 @@ msgstr ""
 " 처리기를 만들지 않는) 응용 프로그램 개발자와 관련이 있는 처리기 메서드는 다음과 같은 구성 메서드뿐입니다:"
 
 #: ../../howto/logging.rst:531
-#, fuzzy
 msgid ""
 "The :meth:`~Handler.setLevel` method, just as in logger objects, "
 "specifies the lowest severity that will be dispatched to the appropriate "
@@ -951,8 +984,8 @@ msgid ""
 "messages that handler will send on."
 msgstr ""
 ":meth:`~Handler.setLevel` 메서드는 로거 객체에서와 마찬가지로 적절한 목적지로 보내지는 가장 낮은 심각도를 "
-"지정합니다. 왜 두 개의 :func:`setLevel` 메서드가 있어야 할까요? 로거에 설정된 수준은 처리기에 전달할 메시지의 "
-"심각도를 판별합니다. 각 처리기에 설정된 수준은 처리기가 전송할 메시지를 결정합니다."
+"지정합니다. 왜 두 개의 :meth:`~Handler.setLevel` 메서드가 있어야 할까요? 로거에 설정된 수준은 처리기에 "
+"전달할 메시지의 심각도를 판별합니다. 각 처리기에 설정된 수준은 처리기가 전송할 메시지를 결정합니다."
 
 #: ../../howto/logging.rst:537
 msgid ""
@@ -1008,20 +1041,18 @@ msgstr ""
 #: ../../howto/logging.rst:564
 #, python-format
 msgid "%Y-%m-%d %H:%M:%S"
-msgstr ""
+msgstr "%Y-%m-%d %H:%M:%S"
 
 #: ../../howto/logging.rst:568
-#, fuzzy
 msgid ""
 "with the milliseconds tacked on at the end. The ``style`` is one of "
 "``'%'``, ``'{'``, or ``'$'``. If one of these is not specified, then "
 "``'%'`` will be used."
 msgstr ""
-"끝에 밀리 초가 기록됩니다. ``style`` 은 `%`, '{' 또는 '$' 중 하나입니다. 이 중 하나가 지정되지 않으면, "
-"'%' 가 사용됩니다."
+"끝에 밀리 초가 기록됩니다. ``style`` 은 ``'%'``, ``'{'`` 또는 ``'$'`` 중 하나입니다. 이 중 하나가 "
+"지정되지 않으면, ``'%'`` 가 사용됩니다."
 
 #: ../../howto/logging.rst:571
-#, fuzzy
 msgid ""
 "If the ``style`` is ``'%'``, the message format string uses "
 "``%(<dictionary key>)s`` styled string substitution; the possible keys "
@@ -1031,10 +1062,11 @@ msgid ""
 "``'$'`` then the message format string should conform to what is expected"
 " by :meth:`string.Template.substitute`."
 msgstr ""
-"``style`` 이 '%' 이면, 메시지 포맷 문자열은 ``%(<dictionary key>)s`` 스타일의 문자열 치환을 "
-"사용합니다; 가능한 키는 :ref:`logrecord-attributes` 에 문서로 만들어져 있습니다. style이 '{' 인 "
-"경우 메시지 포맷 문자열은 :meth:`str.format`\\(키워드 인자 사용)과 호환되는 것으로 가정하고, 스타일이 '$' "
-"이면 메시지 포맷 문자열은 :meth:`string.Template.substitute` 가 기대하는 것과 일치해야 합니다."
+"``style`` 이 ``'%'`` 이면, 메시지 포맷 문자열은 ``%(<dictionary key>)s`` 스타일의 문자열 치환을"
+" 사용합니다; 가능한 키는 :ref:`logrecord-attributes` 에 문서로 만들어져 있습니다. style이 "
+"``'{'`` 인 경우 메시지 포맷 문자열은 :meth:`str.format`\\(키워드 인자 사용)과 호환되는 것으로 가정하고, "
+"스타일이 ``'$'`` 이면 메시지 포맷 문자열은 :meth:`string.Template.substitute` 가 기대하는 것과 "
+"일치해야 합니다."
 
 #: ../../howto/logging.rst:578
 msgid "Added the ``style`` parameter."
@@ -1050,7 +1082,7 @@ msgstr "다음 메시지 포맷 문자열은 사람이 읽을 수 있는 형식�
 #: ../../howto/logging.rst:585
 #, python-format
 msgid "'%(asctime)s - %(levelname)s - %(message)s'"
-msgstr ""
+msgstr "'%(asctime)s - %(levelname)s - %(message)s'"
 
 #: ../../howto/logging.rst:587
 msgid ""
@@ -1134,6 +1166,32 @@ msgid ""
 "logger.error('error message')\n"
 "logger.critical('critical message')"
 msgstr ""
+"import logging\n"
+"\n"
+"# 로거를 만듭니다\n"
+"logger = logging.getLogger('simple_example')\n"
+"logger.setLevel(logging.DEBUG)\n"
+"\n"
+"# 콘솔 처리기를 만들고 수준을 DEBUG 로 설정합니다\n"
+"ch = logging.StreamHandler()\n"
+"ch.setLevel(logging.DEBUG)\n"
+"\n"
+"# 포매터를 만듭니다\n"
+"formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - "
+"%(message)s')\n"
+"\n"
+"# 포매터를 ch 에 추가합니다\n"
+"ch.setFormatter(formatter)\n"
+"\n"
+"# ch 를 로거에 추가합니다\n"
+"logger.addHandler(ch)\n"
+"\n"
+"# '응용 프로그램' 코드\n"
+"logger.debug('debug message')\n"
+"logger.info('info message')\n"
+"logger.warning('warn message')\n"
+"logger.error('error message')\n"
+"logger.critical('critical message')"
 
 #: ../../howto/logging.rst:640
 msgid "Running this module from the command line produces the following output:"
@@ -1148,6 +1206,12 @@ msgid ""
 "2005-03-19 15:10:26,697 - simple_example - ERROR - error message\n"
 "2005-03-19 15:10:26,773 - simple_example - CRITICAL - critical message"
 msgstr ""
+"$ python simple_logging_module.py\n"
+"2005-03-19 15:10:26,618 - simple_example - DEBUG - debug message\n"
+"2005-03-19 15:10:26,620 - simple_example - INFO - info message\n"
+"2005-03-19 15:10:26,695 - simple_example - WARNING - warn message\n"
+"2005-03-19 15:10:26,697 - simple_example - ERROR - error message\n"
+"2005-03-19 15:10:26,773 - simple_example - CRITICAL - critical message"
 
 #: ../../howto/logging.rst:651
 msgid ""
@@ -1173,6 +1237,20 @@ msgid ""
 "logger.error('error message')\n"
 "logger.critical('critical message')"
 msgstr ""
+"import logging\n"
+"import logging.config\n"
+"\n"
+"logging.config.fileConfig('logging.conf')\n"
+"\n"
+"# 로거를 만듭니다\n"
+"logger = logging.getLogger('simpleExample')\n"
+"\n"
+"# '응용 프로그램' 코드\n"
+"logger.debug('debug message')\n"
+"logger.info('info message')\n"
+"logger.warning('warn message')\n"
+"logger.error('error message')\n"
+"logger.critical('critical message')"
 
 #: ../../howto/logging.rst:670
 msgid "Here is the logging.conf file:"
@@ -1209,6 +1287,33 @@ msgid ""
 "[formatter_simpleFormatter]\n"
 "format=%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 msgstr ""
+"[loggers]\n"
+"keys=root,simpleExample\n"
+"\n"
+"[handlers]\n"
+"keys=consoleHandler\n"
+"\n"
+"[formatters]\n"
+"keys=simpleFormatter\n"
+"\n"
+"[logger_root]\n"
+"level=DEBUG\n"
+"handlers=consoleHandler\n"
+"\n"
+"[logger_simpleExample]\n"
+"level=DEBUG\n"
+"handlers=consoleHandler\n"
+"qualname=simpleExample\n"
+"propagate=0\n"
+"\n"
+"[handler_consoleHandler]\n"
+"class=StreamHandler\n"
+"level=DEBUG\n"
+"formatter=simpleFormatter\n"
+"args=(sys.stdout,)\n"
+"\n"
+"[formatter_simpleFormatter]\n"
+"format=%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 
 #: ../../howto/logging.rst:702
 msgid ""
@@ -1225,6 +1330,12 @@ msgid ""
 "2005-03-19 15:38:56,055 - simpleExample - ERROR - error message\n"
 "2005-03-19 15:38:56,130 - simpleExample - CRITICAL - critical message"
 msgstr ""
+"$ python simple_logging_config.py\n"
+"2005-03-19 15:38:55,977 - simpleExample - DEBUG - debug message\n"
+"2005-03-19 15:38:55,979 - simpleExample - INFO - info message\n"
+"2005-03-19 15:38:56,054 - simpleExample - WARNING - warn message\n"
+"2005-03-19 15:38:56,055 - simpleExample - ERROR - error message\n"
+"2005-03-19 15:38:56,130 - simpleExample - CRITICAL - critical message"
 
 #: ../../howto/logging.rst:713
 msgid ""
@@ -1328,6 +1439,24 @@ msgid ""
 "  level: DEBUG\n"
 "  handlers: [console]"
 msgstr ""
+"version: 1\n"
+"formatters:\n"
+"  simple:\n"
+"    format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'\n"
+"handlers:\n"
+"  console:\n"
+"    class: logging.StreamHandler\n"
+"    level: DEBUG\n"
+"    formatter: simple\n"
+"    stream: ext://sys.stdout\n"
+"loggers:\n"
+"  simpleExample:\n"
+"    level: DEBUG\n"
+"    handlers: [console]\n"
+"    propagate: no\n"
+"root:\n"
+"  level: DEBUG\n"
+"  handlers: [console]"
 
 #: ../../howto/logging.rst:779
 msgid ""
@@ -1340,17 +1469,13 @@ msgid "What happens if no configuration is provided"
 msgstr "구성이 제공되지 않으면 어떻게 되는가"
 
 #: ../../howto/logging.rst:785
-#, fuzzy
 msgid ""
 "If no logging configuration is provided, it is possible to have a "
 "situation where a logging event needs to be output, but no handlers can "
 "be found to output the event."
-msgstr ""
-"로깅 구성이 제공되지 않으면, 로깅 이벤트를 출력해야 하지만 이벤트를 출력하는 처리기를 찾을 수 없는 상황이 발생할 수 있습니다. "
-"이러한 상황에서 logging 패키지의 동작은 파이썬 버전에 따라 다릅니다."
+msgstr "로깅 구성이 제공되지 않으면, 로깅 이벤트를 출력해야 하지만 이벤트를 출력하는 처리기를 찾을 수 없는 상황이 발생할 수 있습니다."
 
 #: ../../howto/logging.rst:789
-#, fuzzy
 msgid ""
 "The event is output using a 'handler of last resort', stored in "
 ":data:`lastResort`. This internal handler is not associated with any "
@@ -1361,9 +1486,9 @@ msgid ""
 "message is printed. The handler's level is set to ``WARNING``, so all "
 "events at this and greater severities will be output."
 msgstr ""
-"이 이벤트는 ``logging.lastResort`` 에 저장된 '최후 수단 처리기'를 사용하여 출력됩니다. 이 내부 처리기는 어떤"
-" 로거와도 연관되어 있지 않고, 이벤트 설명 메시지를 ``sys.stderr`` 의 현재 값으로 쓰는 (따라서 현재 효과를 발휘하고"
-" 있는 모든 리디렉션을 존중합니다) :class:`~logging.StreamHandler` 처럼 동작합니다. 메시지에는 어떤 "
+"이 이벤트는 :data:`lastResort` 에 저장된 '최후 수단 처리기'를 사용하여 출력됩니다. 이 내부 처리기는 어떤 "
+"로거와도 연관되어 있지 않고, 이벤트 설명 메시지를 ``sys.stderr`` 의 현재 값으로 쓰는 (따라서 현재 효과를 발휘하고 "
+"있는 모든 리디렉션을 존중합니다) :class:`~logging.StreamHandler` 처럼 동작합니다. 메시지에는 어떤 "
 "포매팅도 적용되지 않습니다 - 이벤트 설명 메시지가 그대로 인쇄됩니다. 처리기의 수준은 ``WARNING`` 으로 설정되어 "
 "있으므로, 이보다 크거나 같은 심각도의 모든 이벤트가 출력됩니다."
 
@@ -1372,27 +1497,24 @@ msgid "For versions of Python prior to 3.2, the behaviour is as follows:"
 msgstr "3.2 이전의 파이썬 버전의 경우 동작은 다음과 같습니다:"
 
 #: ../../howto/logging.rst:802
-#, fuzzy
 msgid ""
 "If :data:`raiseExceptions` is ``False`` (production mode), the event is "
 "silently dropped."
-msgstr "*logging.raiseExceptions* 가 ``False`` (프로덕션 모드)이면, 이벤트가 조용히 무시됩니다."
+msgstr ":data:`raiseExceptions` 가 ``False`` (프로덕션 모드)이면, 이벤트가 조용히 무시됩니다."
 
 #: ../../howto/logging.rst:805
-#, fuzzy
 msgid ""
 "If :data:`raiseExceptions` is ``True`` (development mode), a message 'No "
 "handlers could be found for logger X.Y.Z' is printed once."
 msgstr ""
-"*logging.raiseExceptions* 가 ``True`` (개발 모드) 이면, 'No handlers could be "
+":data:`raiseExceptions` 가 ``True`` (개발 모드) 이면, 'No handlers could be "
 "found for logger X.Y.Z' 라는 메시지가 한 번 인쇄됩니다."
 
 #: ../../howto/logging.rst:808
-#, fuzzy
 msgid ""
 "To obtain the pre-3.2 behaviour, :data:`lastResort` can be set to "
 "``None``."
-msgstr "3.2 이전의 동작을 얻으려면, ``logging.lastResort`` 를 ``None`` 으로 설정할 수 있습니다."
+msgstr "3.2 이전의 동작을 얻으려면, :data:`lastResort` 를 ``None`` 으로 설정할 수 있습니다."
 
 #: ../../howto/logging.rst:814
 msgid "Configuring Logging for a Library"
@@ -1450,6 +1572,8 @@ msgid ""
 "import logging\n"
 "logging.getLogger('foo').addHandler(logging.NullHandler())"
 msgstr ""
+"import logging\n"
+"logging.getLogger('foo').addHandler(logging.NullHandler())"
 
 #: ../../howto/logging.rst:844
 msgid ""
@@ -1742,7 +1866,6 @@ msgstr ""
 ":mod:`multiprocessing` 모듈에 구현된 것과 같은 큐로 메시지를 보냅니다."
 
 #: ../../howto/logging.rst:989
-#, fuzzy
 msgid ""
 ":class:`NullHandler` instances do nothing with error messages. They are "
 "used by library developers who want to use logging, but want to avoid the"
@@ -1752,7 +1875,7 @@ msgid ""
 msgstr ""
 ":class:`NullHandler` 인스턴스는 에러 메시지로 아무것도 하지 않습니다. 라이브러리 개발자가 로깅을 사용하지만, "
 "라이브러리 사용자가 로깅을 구성하지 않으면 표시될 수 있는 'No handlers could be found for logger "
-"XXX' 라는 메시지를 피하려고 할 때 사용합니다. 자세한 정보는 :ref:`library-config` 를 보십시오."
+"*XXX*' 라는 메시지를 피하려고 할 때 사용합니다. 자세한 정보는 :ref:`library-config` 를 보십시오."
 
 #: ../../howto/logging.rst:995
 msgid "The :class:`NullHandler` class."
@@ -1784,16 +1907,14 @@ msgstr ""
 "사용하기에 적합한 포맷 문자열로 초기화됩니다."
 
 #: ../../howto/logging.rst:1010
-#, fuzzy
 msgid ""
 "For formatting multiple messages in a batch, instances of "
 ":class:`BufferingFormatter` can be used. In addition to the format string"
 " (which is applied to each message in the batch), there is provision for "
 "header and trailer format strings."
 msgstr ""
-"일괄 처리로 여러 개의 메시지를 포맷하려면, :class:`~handlers.BufferingFormatter` 의 인스턴스를 "
-"사용할 수 있습니다. 포맷 문자열(일괄 처리 때 각 메시지에 적용됩니다)에 더해, 헤더와 트레일러 포맷 문자열에 대한 고려가 "
-"있습니다."
+"일괄 처리로 여러 개의 메시지를 포맷하려면, :class:`BufferingFormatter` 의 인스턴스를 사용할 수 있습니다. "
+"포맷 문자열(일괄 처리 때 각 메시지에 적용됩니다)에 더해, 헤더와 트레일러 포맷 문자열에 대한 고려가 있습니다."
 
 #: ../../howto/logging.rst:1015
 msgid ""
@@ -1914,15 +2035,17 @@ msgid ""
 "    logger.debug('Message with %s, %s', expensive_func1(),\n"
 "                                        expensive_func2())"
 msgstr ""
+"if logger.isEnabledFor(logging.DEBUG):\n"
+"    logger.debug('Message with %s, %s', expensive_func1(),\n"
+"                                        expensive_func2())"
 
 #: ../../howto/logging.rst:1085
-#, fuzzy
 msgid ""
 "so that if the logger's threshold is set above ``DEBUG``, the calls to "
 "``expensive_func1`` and ``expensive_func2`` are never made."
 msgstr ""
-"그러면, 로거의 수준이 ``DEBUG`` 보다 높게 설정된 경우, :func:`expensive_func1` 과 "
-":func:`expensive_func2` 호출은 절대 일어나지 않습니다."
+"그러면, 로거의 수준이 ``DEBUG`` 보다 높게 설정된 경우, ``expensive_func1`` 과 "
+"``expensive_func2`` 호출은 절대 일어나지 않습니다."
 
 #: ../../howto/logging.rst:1088
 msgid ""
@@ -1980,18 +2103,16 @@ msgid "Threading information."
 msgstr "스레딩 정보."
 
 #: ../../howto/logging.rst:1111
-#, fuzzy
 msgid "Set ``logging.logThreads`` to ``False``."
-msgstr "``logging.logThreads`` 를 ``0`` 으로 설정하십시오."
+msgstr "``logging.logThreads`` 를 ``False`` 으로 설정하십시오."
 
 #: ../../howto/logging.rst:1113
 msgid "Current process ID (:func:`os.getpid`)"
 msgstr ""
 
 #: ../../howto/logging.rst:1113
-#, fuzzy
 msgid "Set ``logging.logProcesses`` to ``False``."
-msgstr "``logging.logProcesses`` 를 ``0`` 으로 설정하십시오."
+msgstr "``logging.logProcesses`` 를 ``False`` 으로 설정하십시오."
 
 #: ../../howto/logging.rst:1115
 msgid ""
@@ -2000,18 +2121,16 @@ msgid ""
 msgstr ""
 
 #: ../../howto/logging.rst:1115
-#, fuzzy
 msgid "Set ``logging.logMultiprocessing`` to ``False``."
-msgstr "``logging.logProcesses`` 를 ``0`` 으로 설정하십시오."
+msgstr "``logging.logMultiprocessing`` 를 ``False`` 으로 설정하십시오."
 
 #: ../../howto/logging.rst:1118
 msgid "Current :class:`asyncio.Task` name when using ``asyncio``."
 msgstr ""
 
 #: ../../howto/logging.rst:1118
-#, fuzzy
 msgid "Set ``logging.logAsyncioTasks`` to ``False``."
-msgstr "``logging.logThreads`` 를 ``0`` 으로 설정하십시오."
+msgstr "``logging.logAsyncioTasks`` 를 ``False`` 으로 설정하십시오."
 
 #: ../../howto/logging.rst:1122
 msgid ""
@@ -2024,7 +2143,7 @@ msgstr ""
 
 #: ../../howto/logging.rst:1129
 msgid "Other resources"
-msgstr ""
+msgstr "기타 자료"
 
 #: ../../howto/logging.rst:1133
 msgid "Module :mod:`logging`"
