@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the Python package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.6\n"
@@ -18,9 +17,8 @@ msgstr ""
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/__main__.rst:2
-#, fuzzy
 msgid ":mod:`!__main__` --- Top-level code environment"
-msgstr ":mod:`__main__` --- 최상위 스크립트 환경"
+msgstr ":mod:`!__main__` --- 최상위 코드 환경"
 
 #: ../../library/__main__.rst:10
 msgid ""
@@ -48,7 +46,7 @@ msgstr ""
 
 #: ../../library/__main__.rst:25
 msgid "``__name__ == '__main__'``"
-msgstr ""
+msgstr "``__name__ == '__main__'``"
 
 #: ../../library/__main__.rst:27
 msgid ""
@@ -63,6 +61,9 @@ msgid ""
 ">>> configparser.__name__\n"
 "'configparser'"
 msgstr ""
+">>> import configparser\n"
+">>> configparser.__name__\n"
+"'configparser'"
 
 #: ../../library/__main__.rst:35
 msgid ""
@@ -76,6 +77,9 @@ msgid ""
 ">>> process.__name__\n"
 "'concurrent.futures.process'"
 msgstr ""
+">>> from concurrent.futures import process\n"
+">>> process.__name__\n"
+"'concurrent.futures.process'"
 
 #: ../../library/__main__.rst:42
 msgid ""
@@ -84,9 +88,8 @@ msgid ""
 msgstr ""
 
 #: ../../library/__main__.rst:46
-#, fuzzy
 msgid "What is the \"top-level code environment\"?"
-msgstr ":mod:`__main__` --- 최상위 스크립트 환경"
+msgstr "\"최상위 코드 환경\" 이란 무엇인가요?"
 
 #: ../../library/__main__.rst:48
 msgid ""
@@ -110,6 +113,8 @@ msgid ""
 ">>> __name__\n"
 "'__main__'"
 msgstr ""
+">>> __name__\n"
+"'__main__'"
 
 #: ../../library/__main__.rst:60
 msgid "the Python module passed to the Python interpreter as a file argument:"
@@ -120,6 +125,8 @@ msgid ""
 "$ python helloworld.py\n"
 "Hello, world!"
 msgstr ""
+"$ python helloworld.py\n"
+"Hello, world!"
 
 #: ../../library/__main__.rst:67
 msgid ""
@@ -132,6 +139,8 @@ msgid ""
 "$ python -m tarfile\n"
 "usage: tarfile.py [-h] [-v] (...)"
 msgstr ""
+"$ python -m tarfile\n"
+"usage: tarfile.py [-h] [-v] (...)"
 
 #: ../../library/__main__.rst:75
 msgid "Python code read by the Python interpreter from standard input:"
@@ -146,6 +155,12 @@ msgid ""
 "Explicit is better than implicit.\n"
 "..."
 msgstr ""
+"$ echo \"import this\" | python\n"
+"The Zen of Python, by Tim Peters\n"
+"\n"
+"Beautiful is better than ugly.\n"
+"Explicit is better than implicit.\n"
+"..."
 
 #: ../../library/__main__.rst:86
 msgid ""
@@ -162,6 +177,12 @@ msgid ""
 "Explicit is better than implicit.\n"
 "..."
 msgstr ""
+"$ python -c \"import this\"\n"
+"The Zen of Python, by Tim Peters\n"
+"\n"
+"Beautiful is better than ugly.\n"
+"Explicit is better than implicit.\n"
+"..."
 
 #: ../../library/__main__.rst:97
 msgid ""
@@ -170,16 +191,14 @@ msgid ""
 msgstr ""
 
 #: ../../library/__main__.rst:100
-#, fuzzy
 msgid ""
 "As a result, a module can discover whether or not it is running in the "
 "top-level environment by checking its own ``__name__``, which allows a "
 "common idiom for conditionally executing code when the module is not "
 "initialized from an import statement::"
 msgstr ""
-"모듈은 자신의 ``__name__`` 을 검사하여 메인 스코프에서 실행 중인지를 확인할 수 있습니다. 이 때문에 임포트될 때는 "
-"실행되지 않지만, 스크립트로 실행되거나 ``python -m`` 으로 실행될 때 조건부로 동작하는 공통 관용구를 사용할 수 "
-"있습니다::"
+"결과적으로, 모듈은 자신의 ``__name__`` 을 검사하여 최상위 환경에서 실행 중인지를 확인할 수 있습니다. 이 때문에 모듈이"
+" 임포트 문에서 초기화되지 않을 때 조건부로 코드를 실행하는 공통 관용구를 사용할 수 있습니다::"
 
 #: ../../library/__main__.rst:105
 msgid ""
@@ -188,6 +207,9 @@ msgid ""
 "statement.\n"
 "    ..."
 msgstr ""
+"if __name__ == '__main__':\n"
+"    # 모듈이 임포트 문에서 초기화되지 않을 때 실행합니다.\n"
+"    ..."
 
 #: ../../library/__main__.rst:111
 msgid ""
@@ -243,6 +265,25 @@ msgid ""
 "if __name__ == '__main__':\n"
 "    sys.exit(main())  # next section explains the use of sys.exit"
 msgstr ""
+"# echo.py\n"
+"\n"
+"import shlex\n"
+"import sys\n"
+"\n"
+"def echo(phrase: str) -> None:\n"
+"   \"\"\"print 를 둘러싼 더미 래퍼.\"\"\"\n"
+"   # 시연의 목적으로, 이 함수 안에 쓸모있고 재사용할 수 있는\n"
+"   #  로직이 있다고 상상할 수 있습니다\n"
+"   print(phrase)\n"
+"\n"
+"def main() -> int:\n"
+"    \"\"\"입력 인자를 표준 출력으로 에코합니다\"\"\"\n"
+"    phrase = shlex.join(sys.argv)\n"
+"    echo(phrase)\n"
+"    return 0\n"
+"\n"
+"if __name__ == '__main__':\n"
+"    sys.exit(main())  # 다음 절에서 sys.exit 의 사용에 대해 설명합니다"
 
 #: ../../library/__main__.rst:151
 msgid ""
@@ -277,7 +318,7 @@ msgstr ""
 
 #: ../../library/__main__.rst:173
 msgid "sys.exit(main())"
-msgstr ""
+msgstr "sys.exit(main())"
 
 #: ../../library/__main__.rst:175
 msgid ""
@@ -331,6 +372,10 @@ msgid ""
 "  ├── __main__.py\n"
 "  └── student.py"
 msgstr ""
+"bandclass\n"
+"  ├── __init__.py\n"
+"  ├── __main__.py\n"
+"  └── student.py"
 
 #: ../../library/__main__.rst:213
 msgid ""
@@ -340,7 +385,7 @@ msgstr ""
 
 #: ../../library/__main__.rst:216
 msgid "$ python -m bandclass"
-msgstr ""
+msgstr "$ python -m bandclass"
 
 #: ../../library/__main__.rst:220
 msgid ""
@@ -361,6 +406,13 @@ msgid ""
 "student_name = sys.argv[1] if len(sys.argv) >= 2 else ''\n"
 "print(f'Found student: {search_students(student_name)}')"
 msgstr ""
+"# bandclass/__main__.py\n"
+"\n"
+"import sys\n"
+"from .student import search_students\n"
+"\n"
+"student_name = sys.argv[1] if len(sys.argv) >= 2 else ''\n"
+"print(f'Found student: {search_students(student_name)}')"
 
 #: ../../library/__main__.rst:233
 msgid ""
@@ -391,6 +443,9 @@ msgid ""
 ">>> asyncio.__main__.__name__\n"
 "'asyncio.__main__'"
 msgstr ""
+">>> import asyncio.__main__\n"
+">>> asyncio.__main__.__name__\n"
+"'asyncio.__main__'"
 
 #: ../../library/__main__.rst:254
 msgid ""
@@ -422,7 +477,7 @@ msgstr ""
 
 #: ../../library/__main__.rst:274
 msgid "``import __main__``"
-msgstr ""
+msgstr "``import __main__``"
 
 #: ../../library/__main__.rst:276
 msgid ""
@@ -455,6 +510,21 @@ msgid ""
 "    else:\n"
 "        print(__main__.my_name)"
 msgstr ""
+"# namely.py\n"
+"\n"
+"import __main__\n"
+"\n"
+"def did_user_define_their_name():\n"
+"    return 'my_name' in dir(__main__)\n"
+"\n"
+"def print_user_name():\n"
+"    if not did_user_define_their_name():\n"
+"        raise ValueError('Define the variable `my_name`!')\n"
+"\n"
+"    if '__file__' in dir(__main__):\n"
+"        print(__main__.my_name, \"found in file\", __main__.__file__)\n"
+"    else:\n"
+"        print(__main__.my_name)"
 
 #: ../../library/__main__.rst:300
 msgid "Example usage of this module could be as follows::"
@@ -479,6 +549,22 @@ msgid ""
 "if __name__ == \"__main__\":\n"
 "    sys.exit(main())"
 msgstr ""
+"# start.py\n"
+"\n"
+"import sys\n"
+"\n"
+"from namely import print_user_name\n"
+"\n"
+"# my_name = \"Dinsdale\"\n"
+"\n"
+"def main():\n"
+"    try:\n"
+"        print_user_name()\n"
+"    except ValueError as ve:\n"
+"        return str(ve)\n"
+"\n"
+"if __name__ == \"__main__\":\n"
+"    sys.exit(main())"
 
 #: ../../library/__main__.rst:319
 msgid "Now, if we started our program, the result would look like this:"
@@ -489,6 +575,8 @@ msgid ""
 "$ python start.py\n"
 "Define the variable `my_name`!"
 msgstr ""
+"$ python start.py\n"
+"Define the variable `my_name`!"
 
 #: ../../library/__main__.rst:326
 msgid ""
@@ -502,6 +590,8 @@ msgid ""
 "$ python start.py\n"
 "Dinsdale found in file /path/to/start.py"
 msgstr ""
+"$ python start.py\n"
+"Dinsdale found in file /path/to/start.py"
 
 #: ../../library/__main__.rst:335
 msgid ""
@@ -545,6 +635,18 @@ msgid ""
 ">>> namely.print_user_name()\n"
 "Jabberwocky"
 msgstr ""
+">>> import namely\n"
+">>> namely.did_user_define_their_name()\n"
+"False\n"
+">>> namely.print_user_name()\n"
+"Traceback (most recent call last):\n"
+"...\n"
+"ValueError: Define the variable `my_name`!\n"
+">>> my_name = 'Jabberwocky'\n"
+">>> namely.did_user_define_their_name()\n"
+"True\n"
+">>> namely.print_user_name()\n"
+"Jabberwocky"
 
 #: ../../library/__main__.rst:364
 msgid ""
