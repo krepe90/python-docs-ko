@@ -17,16 +17,14 @@ msgstr ""
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/json.rst:2
-#, fuzzy
 msgid ":mod:`!json` --- JSON encoder and decoder"
-msgstr ":mod:`json` --- JSON 인코더와 디코더"
+msgstr ":mod:`!json` --- JSON 인코더와 디코더"
 
 #: ../../library/json.rst:10
 msgid "**Source code:** :source:`Lib/json/__init__.py`"
 msgstr "**소스 코드:** :source:`Lib/json/__init__.py`"
 
 #: ../../library/json.rst:14
-#, fuzzy
 msgid ""
 "`JSON (JavaScript Object Notation) <https://json.org>`_, specified by "
 ":rfc:`7159` (which obsoletes :rfc:`4627`) and by `ECMA-404 <https://ecma-"
@@ -35,11 +33,11 @@ msgid ""
 "<https://en.wikipedia.org/wiki/JavaScript>`_ object literal syntax "
 "(although it is not a strict subset of JavaScript [#rfc-errata]_ )."
 msgstr ""
-":rfc:`7159`\\(:rfc:`4627`\\을 대체합니다)와 `ECMA-404 <http://www.ecma-"
-"international.org/publications/standards/Ecma-404.htm>`_\\로 규정되는 `JSON "
-"(JavaScript Object Notation) <http://json.org>`_\\은 `JavaScript "
-"<https://en.wikipedia.org/wiki/JavaScript>`_ 객체 리터럴 문법에서 영감을 얻은 경량 데이터 교환"
-" 형식입니다 (JavaScript [#rfc-errata]_\\의 엄격한 부분집합은 아닙니다)."
+":rfc:`7159`\\(:rfc:`4627`\\을 대체합니다)와 `ECMA-404 <https://ecma-"
+"international.org/publications-and-standards/standards/ecma-404/>`_\\로 "
+"규정되는 `JSON (JavaScript Object Notation) <https://json.org>`_\\은 "
+"`JavaScript <https://en.wikipedia.org/wiki/JavaScript>`_ 객체 리터럴 문법에서 영감을 "
+"얻은 경량 데이터 교환 형식입니다 (JavaScript [#rfc-errata]_\\의 엄격한 부분집합은 아닙니다)."
 
 #: ../../library/json.rst:22
 msgid ""
@@ -80,6 +78,22 @@ msgid ""
 ">>> io.getvalue()\n"
 "'[\"streaming API\"]'"
 msgstr ""
+">>> import json\n"
+">>> json.dumps(['foo', {'bar': ('baz', None, 1.0, 2)}])\n"
+"'[\"foo\", {\"bar\": [\"baz\", null, 1.0, 2]}]'\n"
+">>> print(json.dumps(\"\\\"foo\\bar\"))\n"
+"\"\\\"foo\\bar\"\n"
+">>> print(json.dumps('\\u1234'))\n"
+"\"\\u1234\"\n"
+">>> print(json.dumps('\\\\'))\n"
+"\"\\\\\"\n"
+">>> print(json.dumps({\"c\": 0, \"b\": 0, \"a\": 0}, sort_keys=True))\n"
+"{\"a\": 0, \"b\": 0, \"c\": 0}\n"
+">>> from io import StringIO\n"
+">>> io = StringIO()\n"
+">>> json.dump(['streaming API'], io)\n"
+">>> io.getvalue()\n"
+"'[\"streaming API\"]'"
 
 #: ../../library/json.rst:48
 msgid "Compact encoding::"
@@ -92,6 +106,9 @@ msgid ""
 ">>> json.dumps([1, 2, 3, {'4': 5, '6': 7}], separators=(',', ':'))\n"
 "'[1,2,3,{\"4\":5,\"6\":7}]'"
 msgstr ""
+">>> import json\n"
+">>> json.dumps([1, 2, 3, {'4': 5, '6': 7}], separators=(',', ':'))\n"
+"'[1,2,3,{\"4\":5,\"6\":7}]'"
 
 #: ../../library/json.rst:54
 msgid "Pretty printing::"
@@ -107,11 +124,16 @@ msgid ""
 "    \"6\": 7\n"
 "}"
 msgstr ""
+">>> import json\n"
+">>> print(json.dumps({'6': 7, '4': 5}, sort_keys=True, indent=4))\n"
+"{\n"
+"    \"4\": 5,\n"
+"    \"6\": 7\n"
+"}"
 
 #: ../../library/json.rst:63
-#, fuzzy
 msgid "Specializing JSON object encoding::"
-msgstr "JSON 객체 디코딩 특수화::"
+msgstr "JSON 객체 인코딩 특수화::"
 
 #: ../../library/json.rst:65
 #, python-brace-format
@@ -126,6 +148,15 @@ msgid ""
 ">>> json.dumps(1 + 2j, default=custom_json)\n"
 "'{\"__complex__\": true, \"real\": 1.0, \"imag\": 2.0}'"
 msgstr ""
+">>> import json\n"
+">>> def custom_json(obj):\n"
+"...     if isinstance(obj, complex):\n"
+"...         return {'__complex__': True, 'real': obj.real, 'imag': "
+"obj.imag}\n"
+"...     raise TypeError(f'Cannot serialize object of {type(obj)}')\n"
+"...\n"
+">>> json.dumps(1 + 2j, default=custom_json)\n"
+"'{\"__complex__\": true, \"real\": 1.0, \"imag\": 2.0}'"
 
 #: ../../library/json.rst:74
 msgid "Decoding JSON::"
@@ -144,6 +175,15 @@ msgid ""
 ">>> json.load(io)\n"
 "['streaming API']"
 msgstr ""
+">>> import json\n"
+">>> json.loads('[\"foo\", {\"bar\":[\"baz\", null, 1.0, 2]}]')\n"
+"['foo', {'bar': ['baz', None, 1.0, 2]}]\n"
+">>> json.loads('\"\\\\\"foo\\\\bar\"')\n"
+"'\"foo\\x08ar'\n"
+">>> from io import StringIO\n"
+">>> io = StringIO('[\"streaming API\"]')\n"
+">>> json.load(io)\n"
+"['streaming API']"
 
 #: ../../library/json.rst:86
 msgid "Specializing JSON object decoding::"
@@ -165,6 +205,18 @@ msgid ""
 ">>> json.loads('1.1', parse_float=decimal.Decimal)\n"
 "Decimal('1.1')"
 msgstr ""
+">>> import json\n"
+">>> def as_complex(dct):\n"
+"...     if '__complex__' in dct:\n"
+"...         return complex(dct['real'], dct['imag'])\n"
+"...     return dct\n"
+"...\n"
+">>> json.loads('{\"__complex__\": true, \"real\": 1, \"imag\": 2}',\n"
+"...     object_hook=as_complex)\n"
+"(1+2j)\n"
+">>> import decimal\n"
+">>> json.loads('1.1', parse_float=decimal.Decimal)\n"
+"Decimal('1.1')"
 
 #: ../../library/json.rst:101
 msgid "Extending :class:`JSONEncoder`::"
@@ -187,6 +239,20 @@ msgid ""
 ">>> list(ComplexEncoder().iterencode(2 + 1j))\n"
 "['[2.0', ', 1.0', ']']"
 msgstr ""
+">>> import json\n"
+">>> class ComplexEncoder(json.JSONEncoder):\n"
+"...     def default(self, obj):\n"
+"...         if isinstance(obj, complex):\n"
+"...             return [obj.real, obj.imag]\n"
+"...         # 베이스 클래스의 default 메서드가 TypeError를 발생 시키도록 합니다\n"
+"...         return super().default(obj)\n"
+"...\n"
+">>> json.dumps(2 + 1j, cls=ComplexEncoder)\n"
+"'[2.0, 1.0]'\n"
+">>> ComplexEncoder().encode(2 + 1j)\n"
+"'[2.0, 1.0]'\n"
+">>> list(ComplexEncoder().iterencode(2 + 1j))\n"
+"['[2.0', ', 1.0', ']']"
 
 #: ../../library/json.rst:119
 msgid "Using :mod:`json.tool` from the shell to validate and pretty-print:"
@@ -203,20 +269,26 @@ msgid ""
 "Expecting property name enclosed in double quotes: line 1 column 2 (char "
 "1)"
 msgstr ""
+"$ echo '{\"json\":\"obj\"}' | python -m json.tool\n"
+"{\n"
+"    \"json\": \"obj\"\n"
+"}\n"
+"$ echo '{1.2:3.4}' | python -m json.tool\n"
+"Expecting property name enclosed in double quotes: line 1 column 2 (char "
+"1)"
 
 #: ../../library/json.rst:130
 msgid "See :ref:`json-commandline` for detailed documentation."
 msgstr "자세한 설명은 :ref:`json-commandline`\\를 참조하십시오."
 
 #: ../../library/json.rst:134
-#, fuzzy
 msgid ""
 "JSON is a subset of `YAML <https://yaml.org/>`_ 1.2.  The JSON produced "
 "by this module's default settings (in particular, the default "
 "*separators* value) is also a subset of YAML 1.0 and 1.1.  This module "
 "can thus also be used as a YAML serializer."
 msgstr ""
-"JSON은 `YAML <http://yaml.org/>`_ 1.2의 부분 집합입니다. 이 모듈의 기본 설정(특히 기본 "
+"JSON은 `YAML <https://yaml.org/>`_ 1.2의 부분 집합입니다. 이 모듈의 기본 설정(특히 기본 "
 "*separators* 값)으로 생성된 JSON은 YAML 1.0과 1.1의 부분 집합이기도 합니다. 따라서 이 모듈을 YAML "
 "직렬화기로 사용할 수도 있습니다."
 
@@ -231,14 +303,14 @@ msgid "Basic Usage"
 msgstr "기본 사용법"
 
 #: ../../library/json.rst:153
-#, fuzzy
 msgid ""
 "Serialize *obj* as a JSON formatted stream to *fp* (a "
 "``.write()``-supporting :term:`file-like object`) using this :ref"
 ":`Python-to-JSON conversion table <py-to-json-table>`."
 msgstr ""
-"이 :ref:`변환표 <py-to-json-table>`\\를 사용하여 *obj*\\를 JSON 형식 스트림으로 "
-"*fp*\\(``.write()``\\를 지원하는 :term:`파일류 객체 <file-like object>`)로 직렬화합니다."
+"이 :ref:`파이썬-to-JSON 변환표 <py-to-json-table>`\\를 사용하여 *obj*\\를 JSON 형식 "
+"스트림으로 *fp*\\(``.write()``\\를 지원하는 :term:`파일류 객체 <file-like object>`)로 "
+"직렬화합니다."
 
 #: ../../library/json.rst:159
 msgid ""
@@ -251,55 +323,50 @@ msgstr ""
 
 #: ../../library/json.rst
 msgid "Parameters"
-msgstr ""
+msgstr "매개 변수"
 
 #: ../../library/json.rst:163
 msgid "The Python object to be serialized."
-msgstr ""
+msgstr "직렬화될 파이썬 객체."
 
 #: ../../library/json.rst:166
-#, fuzzy
 msgid ""
 "The file-like object *obj* will be serialized to. The :mod:`!json` module"
 " always produces :class:`str` objects, not :class:`bytes` objects, "
 "therefore ``fp.write()`` must support :class:`str` input."
 msgstr ""
-":mod:`json` 모듈은 항상 :class:`bytes` 객체가 아니라 :class:`str` 객체를 생성합니다. 따라서, "
-"``fp.write()``\\는 :class:`str` 입력을 지원해야 합니다."
+"*obj*\\가 직렬화될 파일류 객체. :mod:`!json` 모듈은 항상 :class:`bytes` 객체가 아니라 "
+":class:`str` 객체를 생성합니다, 따라서 ``fp.write()``\\는 :class:`str` 입력을 지원해야 합니다."
 
 #: ../../library/json.rst:173
-#, fuzzy
 msgid ""
 "If ``True``, keys that are not of a basic type (:class:`str`, "
 ":class:`int`, :class:`float`, :class:`bool`, ``None``) will be skipped "
 "instead of raising a :exc:`TypeError`. Default ``False``."
 msgstr ""
-"*skipkeys*\\가 참이면 (기본값: ``False``), 기본형(:class:`str`, :class:`int`, "
-":class:`float`, :class:`bool`, ``None``)이 아닌 딕셔너리 키는 :exc:`TypeError`\\를 "
-"발생시키는 대신 건너뜁니다."
+"``True``\\면, 기본형(:class:`str`, :class:`int`, :class:`float`, "
+":class:`bool`, ``None``)이 아닌 키는 :exc:`TypeError`\\를 발생시키는 대신 건너뜁니다. 기본값 "
+"``False``."
 
 #: ../../library/json.rst:179
-#, fuzzy
 msgid ""
 "If ``True`` (the default), the output is guaranteed to have all incoming "
 "non-ASCII characters escaped. If ``False``, these characters will be "
 "outputted as-is."
 msgstr ""
-"*ensure_ascii*\\가 참(기본값)이면, 출력에서 모든 비 ASCII 문자가 이스케이프 되도록 보장됩니다. "
-"*ensure_ascii*\\가 거짓이면, 그 문자들은 있는 그대로 출력됩니다."
+"``True``\\(기본값)이면, 출력에서 모든 비 ASCII 문자가 이스케이프 되도록 보장됩니다. ``False``\\면, 그 "
+"문자들은 있는 그대로 출력됩니다."
 
 #: ../../library/json.rst:184
-#, fuzzy
 msgid ""
 "If ``False``, the circular reference check for container types is skipped"
 " and a circular reference will result in a :exc:`RecursionError` (or "
 "worse). Default ``True``."
 msgstr ""
-"*check_circular*\\가 거짓이면 (기본값: ``True``), 컨테이너형에 대한 순환 참조 검사를 건너뛰고 순환 참조는"
-" :exc:`OverflowError`\\를 일으킵니다 (또는 더 나빠질 수 있습니다)."
+"``False``\\면, 컨테이너형에 대한 순환 참조 검사를 건너뛰고 순환 참조는 :exc:`RecursionError`\\를 "
+"일으키게 됩니다 (또는 더 나빠질 수 있습니다). 기본값 ``True``."
 
 #: ../../library/json.rst:189
-#, fuzzy
 msgid ""
 "If ``False``, serialization of out-of-range :class:`float` values "
 "(``nan``, ``inf``, ``-inf``) will result in a :exc:`ValueError`, in "
@@ -307,10 +374,10 @@ msgid ""
 " their JavaScript equivalents (``NaN``, ``Infinity``, ``-Infinity``) are "
 "used."
 msgstr ""
-"*allow_nan*\\이 거짓이면 (기본값: ``True``), JSON 사양을 엄격히 준수하여 범위를 벗어난 "
-":class:`float` 값(``nan``, ``inf``, ``-inf``)을 직렬화하면 :exc:`ValueError`\\를 "
-"일으킵니다. *allow_nan*\\이 참이면, JavaScript의 대응 물(``NaN``, ``Infinity``, "
-"``-Infinity``)이 사용됩니다."
+"``False``\\면, JSON 사양을 엄격히 준수하여, 범위를 벗어난 :class:`float` 값(``nan``, "
+"``inf``, ``-inf``)을 직렬화하면 :exc:`ValueError`\\를 일으킵니다. *allow_nan*\\이 "
+"``True``\\(기본값)면, JavaScript의 대응 물(``NaN``, ``Infinity``, ``-Infinity``)이"
+" 사용됩니다."
 
 #: ../../library/json.rst:196
 msgid ""
@@ -330,26 +397,25 @@ msgid ""
 msgstr ""
 
 #: ../../library/json.rst:213
-#, fuzzy
 msgid ""
 "A two-tuple: ``(item_separator, key_separator)``. If ``None`` (the "
 "default), *separators* defaults to ``(', ', ': ')`` if *indent* is "
 "``None``, and ``(',', ': ')`` otherwise. For the most compact JSON, "
 "specify ``(',', ':')`` to eliminate whitespace."
 msgstr ""
-"지정되면, *separators*\\는 ``(item_separator, key_separator)`` 튜플이어야 합니다. 기본값은"
-" *indent*\\가 ``None``\\이면 ``(', ', ': ')``\\이고, 그렇지 않으면 ``(',', ': "
-"')``\\입니다. 가장 간결한 JSON 표현을 얻으려면, ``(',', ':')``\\를 지정하여 공백을 제거해야 합니다."
+"2-튜플: ``(item_separator, key_separator)``. ``None`` (기본값) 이면, "
+"*separators*\\의 기본값은 *indent*\\가 ``None``\\이면 ``(', ', ': ')``\\이고, 그렇지 "
+"않으면 ``(',', ': ')``\\입니다. 가장 간결한 JSON 을 얻으려면, ``(',', ':')``\\를 지정하여 공백을 "
+"제거해야 합니다."
 
 #: ../../library/json.rst:222
-#, fuzzy
 msgid ""
 "A function that is called for objects that can't otherwise be serialized."
 " It should return a JSON encodable version of the object or raise a "
 ":exc:`TypeError`. If ``None`` (the default), :exc:`!TypeError` is raised."
 msgstr ""
-"지정되면, *default*\\는 달리 직렬화할 수 없는 객체에 대해 호출되는 함수여야 합니다. 객체의 JSON 인코딩 가능한 "
-"버전을 반환하거나 :exc:`TypeError`\\를 발생시켜야 합니다. 지정하지 않으면, :exc:`TypeError`\\가 "
+"달리 직렬화할 수 없는 객체에 대해 호출되는 함수. 객체의 JSON 인코딩 가능한 버전을 반환하거나 "
+":exc:`TypeError`\\를 발생시켜야 합니다. ``None``\\(기본값)이면, :exc:`!TypeError`\\가 "
 "발생합니다."
 
 #: ../../library/json.rst:229
@@ -395,24 +461,20 @@ msgstr ""
 "같지 않을 수 있습니다. 즉, x에 비 문자열 키가 있으면 ``loads(dumps(x)) != x``\\입니다."
 
 #: ../../library/json.rst:265
-#, fuzzy
 msgid ""
 "Deserialize *fp* to a Python object using the :ref:`JSON-to-Python "
 "conversion table <json-to-py-table>`."
 msgstr ""
-"이 :ref:`변환표 <json-to-py-table>`\\를 사용하여 *fp*\\(JSON 문서를 포함하는 "
-"``.read()``\\를 지원하는 :term:`텍스트 파일 <text file>`\\이나 :term:`바이너리 파일 <binary"
-" file>`)를 파이썬 객체로 역 직렬화합니다."
+":ref:`JSON-to-파이썬 변환표 <json-to-py-table>`\\를 사용하여 *fp*\\를 파이썬 객체로 역 "
+"직렬화합니다."
 
 #: ../../library/json.rst:268
-#, fuzzy
 msgid ""
 "A ``.read()``-supporting :term:`text file` or :term:`binary file` "
 "containing the JSON document to be deserialized."
 msgstr ""
-"이 :ref:`변환표 <json-to-py-table>`\\를 사용하여 *fp*\\(JSON 문서를 포함하는 "
-"``.read()``\\를 지원하는 :term:`텍스트 파일 <text file>`\\이나 :term:`바이너리 파일 <binary"
-" file>`)를 파이썬 객체로 역 직렬화합니다."
+"역 직렬화될 JSON 문서를 포함하는 ``.read()``\\를 지원하는 :term:`텍스트 파일 <text file>`\\이나 "
+":term:`바이너리 파일 <binary file>`."
 
 #: ../../library/json.rst:273
 msgid ""
@@ -422,7 +484,6 @@ msgid ""
 msgstr ""
 
 #: ../../library/json.rst:280
-#, fuzzy
 msgid ""
 "If set, a function that is called with the result of any object literal "
 "decoded (a :class:`dict`). The return value of this function will be used"
@@ -430,13 +491,12 @@ msgid ""
 "custom decoders, for example `JSON-RPC <https://www.jsonrpc.org>`_ class "
 "hinting. Default ``None``."
 msgstr ""
-"*object_hook*\\은 모든 오브젝트 리터럴의 디코딩된 결과(:class:`dict`)로 호출되는 선택적 함수입니다. "
-"*object_hook*\\의 반환 값이 :class:`dict` 대신에 사용됩니다. 이 기능은 사용자 정의 디코더를 구현하는 데 "
-"사용할 수 있습니다 (예를 들어, `JSON-RPC <http://www.jsonrpc.org>`_ 클래스 힌팅(class "
-"hinting))."
+"설정되면, 모든 오브젝트 리터럴의 디코딩된 결과(:class:`dict`)로 호출되는 함수. 이 함수의 반환 값이 "
+":class:`dict` 대신에 사용됩니다. 이 기능은 사용자 정의 디코더를 구현하는 데 사용할 수 있습니다, 예를 들어, "
+"`JSON-RPC <https://www.jsonrpc.org>`_ 클래스 힌팅(class hinting). 기본값 "
+"``None``."
 
 #: ../../library/json.rst:290
-#, fuzzy
 msgid ""
 "If set, a function that is called with the result of any object literal "
 "decoded with an ordered list of pairs. The return value of this function "
@@ -444,53 +504,48 @@ msgid ""
 "implement custom decoders. If *object_hook* is also set, "
 "*object_pairs_hook* takes priority. Default ``None``."
 msgstr ""
-"*object_pairs_hook*\\은 모든 오브젝트 리터럴의 쌍의 순서 있는 목록으로 디코딩된 결과로 호출되는 선택적 "
-"함수입니다. :class:`dict` 대신 *object_pairs_hook*\\의 반환 값이 사용됩니다. 이 기능은 사용자 정의 "
-"디코더를 구현하는 데 사용할 수 있습니다. *object_hook*\\도 정의되어 있으면, *object_pairs_hook*\\이"
-" 우선순위를 갖습니다."
+"설정되면, 모든 오브젝트 리터럴이 쌍의 순서 있는 목록으로 디코딩된 결과로 호출되는 함수. :class:`dict` 대신 이 함수의"
+" 반환 값이 사용됩니다. 이 기능은 사용자 정의 디코더를 구현하는 데 사용할 수 있습니다. *object_hook*\\도 설정되면,"
+" *object_pairs_hook*\\이 우선순위를 갖습니다. 기본값 ``None``."
 
 #: ../../library/json.rst:300
-#, fuzzy
 msgid ""
 "If set, a function that is called with the string of every JSON float to "
 "be decoded. If ``None`` (the default), it is equivalent to "
 "``float(num_str)``. This can be used to parse JSON floats into custom "
 "datatypes, for example :class:`decimal.Decimal`."
 msgstr ""
-"*parse_float*\\가 지정되면, 디코딩될 모든 JSON float의 문자열로 호출됩니다. 기본적으로, 이것은 "
-"``float(num_str)``\\와 동등합니다. JSON float에 대해 다른 데이터형이나 구문 분석기를 사용하고자 할 때 "
-"사용될 수 있습니다 (예를 들어, :class:`decimal.Decimal`)."
+"설정되면, 디코딩될 모든 JSON float의 문자열로 호출되는 함수. ``None``\\(기본값)이면, 이것은 "
+"``float(num_str)``\\와 동등합니다. JSON float를 사용자 정의 데이터형으로 구문 분석하는 데 사용될 수 "
+"있습니다, 예를 들어 :class:`decimal.Decimal`."
 
 #: ../../library/json.rst:308
-#, fuzzy
 msgid ""
 "If set, a function that is called with the string of every JSON int to be"
 " decoded. If ``None`` (the default), it is equivalent to "
 "``int(num_str)``. This can be used to parse JSON integers into custom "
 "datatypes, for example :class:`float`."
 msgstr ""
-"*parse_int*\\가 지정되면, 디코딩될 모든 JSON int의 문자열로 호출됩니다. 기본적으로 이것은 "
-"``int(num_str)``\\와 동등합니다. JSON 정수에 대해 다른 데이터형이나 구문 분석기를 사용하고자 할 때 사용될 수 "
-"있습니다 (예를 들어 :class:`float`)."
+"설정되면, 디코딩될 모든 JSON int의 문자열로 호출되는 함수. ``None``\\(기본값)이면, 이것은 "
+"``int(num_str)``\\와 동등합니다. JSON 정수를 사용자 정의 데이터형으로 구문 분석하는 데 사용될 수 있습니다, "
+"예를 들어 :class:`float`."
 
 #: ../../library/json.rst:316
-#, fuzzy
 msgid ""
 "If set, a function that is called with one of the following strings: "
 "``'-Infinity'``, ``'Infinity'``, or ``'NaN'``. This can be used to raise "
 "an exception if invalid JSON numbers are encountered. Default ``None``."
 msgstr ""
-"*parse_constant*\\가 지정되면, 다음과 같은 문자열 중 하나로 호출됩니다: ``'-Infinity'``, "
-"``'Infinity'``, ``'NaN'``. 잘못된 JSON 숫자를 만날 때 예외를 발생시키는 데 사용할 수 있습니다."
+"설정되면, 다음과 같은 문자열 중 하나로 호출되는 함수: ``'-Infinity'``, ``'Infinity'`` 또는 "
+"``'NaN'``. 잘못된 JSON 숫자를 만날 때 예외를 발생시키는 데 사용할 수 있습니다. 기본값 ``None``."
 
 #: ../../library/json.rst
 msgid "Raises"
-msgstr ""
+msgstr "예외 발생"
 
 #: ../../library/json.rst:324
-#, fuzzy
 msgid "When the data being deserialized is not a valid JSON document."
-msgstr "역 직렬화되는 데이터가 유효한 JSON 문서가 아니면, :exc:`JSONDecodeError`\\가 발생합니다."
+msgstr "역 직렬화되는 데이터가 유효한 JSON 문서가 아닐 때."
 
 #: ../../library/json.rst:327
 msgid ""
@@ -499,9 +554,8 @@ msgid ""
 msgstr ""
 
 #: ../../library/json.rst:333
-#, fuzzy
 msgid "Added the optional *object_pairs_hook* parameter."
-msgstr "*object_pairs_hook*\\에 대한 지원이 추가되었습니다."
+msgstr "선택적 *object_pairs_hook* 매개 변수가 추가되었습니다."
 
 #: ../../library/json.rst:334
 msgid "*parse_constant* doesn't get called on 'null', 'true', 'false' anymore."
@@ -524,15 +578,15 @@ msgid ""
 msgstr ""
 
 #: ../../library/json.rst:350
-#, fuzzy
 msgid ""
 "Identical to :func:`load`, but instead of a file-like object, deserialize"
 " *s* (a :class:`str`, :class:`bytes` or :class:`bytearray` instance "
 "containing a JSON document) to a Python object using this "
 ":ref:`conversion table <json-to-py-table>`."
 msgstr ""
-"이 :ref:`변환표 <json-to-py-table>`\\를 사용하여 *s*\\(JSON 문서를 포함하는 :class:`str`,"
-" :class:`bytes` 또는 :class:`bytearray` 인스턴스)를 파이썬 객체로 역 직렬화합니다."
+":func:`load`\\와 동일하지만, 파일류 객체를 역 질렬화하는 대신, 이 :ref:`변환표 <json-to-py-"
+"table>`\\를 사용하여 *s*\\(JSON 문서를 포함하는 :class:`str`, :class:`bytes` 또는 "
+":class:`bytearray` 인스턴스)를 파이썬 객체로 역 직렬화합니다."
 
 #: ../../library/json.rst:355
 msgid ""
@@ -639,7 +693,6 @@ msgstr ""
 " JSON 명세에 속하지 않습니다."
 
 #: ../../library/json.rst:397
-#, fuzzy
 msgid ""
 "*object_hook* is an optional function that will be called with the result"
 " of every JSON object decoded and its return value will be used in place "
@@ -647,12 +700,11 @@ msgid ""
 "deserializations (e.g. to support `JSON-RPC <https://www.jsonrpc.org>`_ "
 "class hinting)."
 msgstr ""
-"*object_hook*\\이 지정되면, 모든 JSON 오브젝트의 디코딩된 결과로 호출되며, 반환 값을 주어진 "
+"*object_hook*\\은 지정되면, 모든 JSON 오브젝트의 디코딩된 결과로 호출될 선택적 함수이고, 반환 값을 주어진 "
 ":class:`dict` 대신 사용합니다. 사용자 정의 역 직렬화를 제공하는 데 사용할 수 있습니다 (예를 들어, `JSON-RPC"
-" <http://www.jsonrpc.org>`_ 클래스 힌팅을 지원하기 위해)."
+" <https://www.jsonrpc.org>`_ 클래스 힌팅을 지원하기 위해)."
 
 #: ../../library/json.rst:402
-#, fuzzy
 msgid ""
 "*object_pairs_hook* is an optional function that will be called with the "
 "result of every JSON object decoded with an ordered list of pairs.  The "
@@ -660,7 +712,7 @@ msgid ""
 ":class:`dict`.  This feature can be used to implement custom decoders.  "
 "If *object_hook* is also defined, the *object_pairs_hook* takes priority."
 msgstr ""
-"*object_pairs_hook*\\은 모든 오브젝트 리터럴의 쌍의 순서 있는 목록으로 디코딩된 결과로 호출되는 선택적 "
+"*object_pairs_hook*\\은 모든 JSON 오브젝트가 쌍의 순서 있는 목록으로 디코딩된 결과로 호출될 선택적 "
 "함수입니다. :class:`dict` 대신 *object_pairs_hook*\\의 반환 값이 사용됩니다. 이 기능은 사용자 정의 "
 "디코더를 구현하는 데 사용할 수 있습니다. *object_hook*\\도 정의되어 있으면, *object_pairs_hook*\\이"
 " 우선순위를 갖습니다."
@@ -670,38 +722,35 @@ msgid "Added support for *object_pairs_hook*."
 msgstr "*object_pairs_hook*\\에 대한 지원이 추가되었습니다."
 
 #: ../../library/json.rst:411
-#, fuzzy
 msgid ""
 "*parse_float* is an optional function that will be called with the string"
 " of every JSON float to be decoded.  By default, this is equivalent to "
 "``float(num_str)``.  This can be used to use another datatype or parser "
 "for JSON floats (e.g. :class:`decimal.Decimal`)."
 msgstr ""
-"*parse_float*\\가 지정되면, 디코딩될 모든 JSON float의 문자열로 호출됩니다. 기본적으로, 이것은 "
+"*parse_float*\\는 디코딩될 모든 JSON float의 문자열로 호출될 선택적 함수입니다. 기본적으로, 이것은 "
 "``float(num_str)``\\와 동등합니다. JSON float에 대해 다른 데이터형이나 구문 분석기를 사용하고자 할 때 "
 "사용될 수 있습니다 (예를 들어, :class:`decimal.Decimal`)."
 
 #: ../../library/json.rst:416
-#, fuzzy
 msgid ""
 "*parse_int* is an optional function that will be called with the string "
 "of every JSON int to be decoded.  By default, this is equivalent to "
 "``int(num_str)``.  This can be used to use another datatype or parser for"
 " JSON integers (e.g. :class:`float`)."
 msgstr ""
-"*parse_int*\\가 지정되면, 디코딩될 모든 JSON int의 문자열로 호출됩니다. 기본적으로 이것은 "
+"*parse_int*\\는 디코딩될 모든 JSON int의 문자열로 호출될 선택적 함수입니다. 기본적으로 이것은 "
 "``int(num_str)``\\와 동등합니다. JSON 정수에 대해 다른 데이터형이나 구문 분석기를 사용하고자 할 때 사용될 수 "
 "있습니다 (예를 들어 :class:`float`)."
 
 #: ../../library/json.rst:421
-#, fuzzy
 msgid ""
 "*parse_constant* is an optional function that will be called with one of "
 "the following strings: ``'-Infinity'``, ``'Infinity'``, ``'NaN'``.  This "
 "can be used to raise an exception if invalid JSON numbers are "
 "encountered."
 msgstr ""
-"*parse_constant*\\가 지정되면, 다음과 같은 문자열 중 하나로 호출됩니다: ``'-Infinity'``, "
+"*parse_constant*\\는 다음과 같은 문자열 중 하나로 호출될 선택적 함수입니다: ``'-Infinity'``, "
 "``'Infinity'``, ``'NaN'``. 잘못된 JSON 숫자를 만날 때 예외를 발생시키는 데 사용할 수 있습니다."
 
 #: ../../library/json.rst:425
@@ -777,7 +826,6 @@ msgid "Added support for int- and float-derived Enum classes."
 msgstr "int와 float 파생 Enum 클래스에 대한 지원이 추가되었습니다."
 
 #: ../../library/json.rst:483
-#, fuzzy
 msgid ""
 "To extend this to recognize other objects, subclass and implement a "
 ":meth:`~JSONEncoder.default` method with another method that returns a "
@@ -786,19 +834,18 @@ msgid ""
 msgstr ""
 "다른 객체를 인식하도록 확장하려면, 서브 클래스를 만들고, 가능하면 ``o``\\에 대한 직렬화 가능 객체를 반환하고, 그렇지 "
 "않으면 (:exc:`TypeError`\\를 발생시키기 위해) 슈퍼 클래스 구현을 호출하는 다른 메서드로 "
-":meth:`default` 메서드를 구현합니다."
+":meth:`~JSONEncoder.default` 메서드를 구현합니다."
 
 #: ../../library/json.rst:488
-#, fuzzy
 msgid ""
 "If *skipkeys* is false (the default), a :exc:`TypeError` will be raised "
 "when trying to encode keys that are not :class:`str`, :class:`int`, "
 ":class:`float`, :class:`bool` or ``None``.  If *skipkeys* is true, such "
 "items are simply skipped."
 msgstr ""
-"*skipkeys*\\가 거짓(기본값)이면, :class:`str`, :class:`int`, :class:`float` 또는 "
-"``None``\\이 아닌 키를 인코딩하려고 시도할 때 :exc:`TypeError`\\가 발생합니다. *skipkeys*\\가 "
-"참이면 이러한 항목은 단순히 건너뜁니다."
+"*skipkeys*\\가 거짓(기본값)이면, :class:`str`, :class:`int`, :class:`float`, "
+":class:`bool` 또는 ``None``\\이 아닌 키를 인코딩하려고 시도할 때 :exc:`TypeError`\\가 "
+"발생합니다. *skipkeys*\\가 참이면 이러한 항목은 단순히 건너뜁니다."
 
 #: ../../library/json.rst:492
 msgid ""
@@ -810,7 +857,6 @@ msgstr ""
 "*ensure_ascii*\\가 거짓이면, 그 문자들은 있는 그대로 출력됩니다."
 
 #: ../../library/json.rst:496
-#, fuzzy
 msgid ""
 "If *check_circular* is true (the default), then lists, dicts, and custom "
 "encoded objects will be checked for circular references during encoding "
@@ -818,7 +864,7 @@ msgid ""
 ":exc:`RecursionError`). Otherwise, no such check takes place."
 msgstr ""
 "*check_circular*\\가 참(기본값)이면, 리스트, 딕셔너리 및 사용자 정의 객체는 무한 재귀 "
-"(:exc:`OverflowError`\\를 유발할 수 있습니다)를 방지하기 위해 인코딩 중에 순환 참조를 검사합니다. 그렇지 "
+"(:exc:`RecursionError`\\를 유발할 수 있습니다)를 방지하기 위해 인코딩 중에 순환 참조를 검사합니다. 그렇지 "
 "않으면, 그러한 검사가 수행되지 않습니다."
 
 #: ../../library/json.rst:501
@@ -890,11 +936,12 @@ msgstr ""
 "클래스에 이 메서드를 구현하십시오."
 
 #: ../../library/json.rst:544
-#, fuzzy
 msgid ""
 "For example, to support arbitrary iterators, you could implement "
 ":meth:`~JSONEncoder.default` like this::"
-msgstr "예를 들어, 임의의 이터레이터를 지원하려면, 다음과 같이 :meth:`default`\\를 구현할 수 있습니다::"
+msgstr ""
+"예를 들어, 임의의 이터레이터를 지원하려면, 다음과 같이 :meth:`~JSONEncoder.default`\\를 구현할 수 "
+"있습니다::"
 
 #: ../../library/json.rst:547
 msgid ""
@@ -908,6 +955,15 @@ msgid ""
 "   # Let the base class default method raise the TypeError\n"
 "   return super().default(o)"
 msgstr ""
+"def default(self, o):\n"
+"   try:\n"
+"       iterable = iter(o)\n"
+"   except TypeError:\n"
+"       pass\n"
+"   else:\n"
+"       return list(iterable)\n"
+"   # 베이스 클래스의 default 메서드가 TypeError를 발생시키도록 합시다\n"
+"   return super().default(o)"
 
 #: ../../library/json.rst:560
 msgid ""
@@ -921,6 +977,8 @@ msgid ""
 ">>> json.JSONEncoder().encode({\"foo\": [\"bar\", \"baz\"]})\n"
 "'{\"foo\": [\"bar\", \"baz\"]}'"
 msgstr ""
+">>> json.JSONEncoder().encode({\"foo\": [\"bar\", \"baz\"]})\n"
+"'{\"foo\": [\"bar\", \"baz\"]}'"
 
 #: ../../library/json.rst:569
 msgid ""
@@ -933,6 +991,8 @@ msgid ""
 "for chunk in json.JSONEncoder().iterencode(bigobject):\n"
 "    mysocket.write(chunk)"
 msgstr ""
+"for chunk in json.JSONEncoder().iterencode(bigobject):\n"
+"    mysocket.write(chunk)"
 
 #: ../../library/json.rst:577
 msgid "Exceptions"
@@ -967,7 +1027,6 @@ msgid "Standard Compliance and Interoperability"
 msgstr "표준 준수와 상호 운용성"
 
 #: ../../library/json.rst:609
-#, fuzzy
 msgid ""
 "The JSON format is specified by :rfc:`7159` and by `ECMA-404 <https"
 "://ecma-international.org/publications-and-"
@@ -976,9 +1035,9 @@ msgid ""
 "and :class:`JSONDecoder` subclasses, and parameters other than those "
 "explicitly mentioned, are not considered."
 msgstr ""
-"JSON 형식은 :rfc:`7159`\\와 `ECMA-404 <http://www.ecma-"
-"international.org/publications/standards/Ecma-404.htm>`_\\에 의해 지정됩니다. 이 "
-"절에서는 이 모듈의 RFC 준수 수준에 대해 자세히 설명합니다. 단순화를 위해, :class:`JSONEncoder` 및 "
+"JSON 형식은 :rfc:`7159`\\와 `ECMA-404 <https://ecma-international.org"
+"/publications-and-standards/standards/ecma-404/>`_\\에 의해 지정됩니다. 이 절에서는 이 "
+"모듈의 RFC 준수 수준에 대해 자세히 설명합니다. 단순화를 위해, :class:`JSONEncoder` 및 "
 ":class:`JSONDecoder` 서브 클래스와 명시적으로 언급되지 않은 매개 변수는 고려되지 않습니다."
 
 #: ../../library/json.rst:615
@@ -1095,6 +1154,16 @@ msgid ""
 ">>> json.loads('NaN')\n"
 "nan"
 msgstr ""
+">>> # 이 호출 중 어느 것도 예외를 발생시키지 않지만, 결과는 유효한 JSON이 아닙니다\n"
+">>> json.dumps(float('-inf'))\n"
+"'-Infinity'\n"
+">>> json.dumps(float('nan'))\n"
+"'NaN'\n"
+">>> # 역 직렬화 때도 마찬가지입니다\n"
+">>> json.loads('-Infinity')\n"
+"-inf\n"
+">>> json.loads('NaN')\n"
+"nan"
 
 #: ../../library/json.rst:672
 msgid ""
@@ -1127,6 +1196,9 @@ msgid ""
 ">>> json.loads(weird_json)\n"
 "{'x': 3}"
 msgstr ""
+">>> weird_json = '{\"x\": 1, \"x\": 2, \"x\": 3}'\n"
+">>> json.loads(weird_json)\n"
+"{'x': 3}"
 
 #: ../../library/json.rst:689
 msgid "The *object_pairs_hook* parameter can be used to alter this behavior."
@@ -1216,13 +1288,12 @@ msgid ""
 msgstr ":mod:`json.tool` 모듈은 JSON 객체의 유효성을 검사하고 예쁘게 인쇄하는 간단한 명령 줄 인터페이스를 제공합니다."
 
 #: ../../library/json.rst:744
-#, fuzzy
 msgid ""
 "If the optional ``infile`` and ``outfile`` arguments are not specified, "
 ":data:`sys.stdin` and :data:`sys.stdout` will be used respectively:"
 msgstr ""
-"선택적 ``infile``\\과 ``outfile`` 인자가 지정되지 않으면, 각각 :attr:`sys.stdin`\\과 "
-":attr:`sys.stdout`\\이 사용됩니다:"
+"선택적 ``infile``\\과 ``outfile`` 인자가 지정되지 않으면, 각각 :data:`sys.stdin`\\과 "
+":data:`sys.stdout`\\이 사용됩니다:"
 
 #: ../../library/json.rst:747
 #, python-brace-format
@@ -1235,6 +1306,13 @@ msgid ""
 "Expecting property name enclosed in double quotes: line 1 column 2 (char "
 "1)"
 msgstr ""
+"$ echo '{\"json\": \"obj\"}' | python -m json.tool\n"
+"{\n"
+"    \"json\": \"obj\"\n"
+"}\n"
+"$ echo '{1.2:3.4}' | python -m json.tool\n"
+"Expecting property name enclosed in double quotes: line 1 column 2 (char "
+"1)"
 
 #: ../../library/json.rst:756
 msgid ""
@@ -1268,18 +1346,27 @@ msgid ""
 "    }\n"
 "]"
 msgstr ""
+"$ python -m json.tool mp_films.json\n"
+"[\n"
+"    {\n"
+"        \"title\": \"And Now for Something Completely Different\",\n"
+"        \"year\": 1971\n"
+"    },\n"
+"    {\n"
+"        \"title\": \"Monty Python and the Holy Grail\",\n"
+"        \"year\": 1975\n"
+"    }\n"
+"]"
 
 #: ../../library/json.rst:783
-#, fuzzy
 msgid "If *infile* is not specified, read from :data:`sys.stdin`."
-msgstr "*infile*\\이 지정되지 않으면, :attr:`sys.stdin`\\에서 읽습니다."
+msgstr "*infile*\\이 지정되지 않으면, :data:`sys.stdin`\\에서 읽습니다."
 
 #: ../../library/json.rst:787
-#, fuzzy
 msgid ""
 "Write the output of the *infile* to the given *outfile*. Otherwise, write"
 " it to :data:`sys.stdout`."
-msgstr "*infile*\\의 출력을 지정된 *outfile*\\에 씁니다. 그렇지 않으면, :attr:`sys.stdout`\\에 씁니다."
+msgstr "*infile*\\의 출력을 지정된 *outfile*\\에 씁니다. 그렇지 않으면, :data:`sys.stdout`\\에 씁니다."
 
 #: ../../library/json.rst:792
 msgid "Sort the output of dictionaries alphabetically by key."
