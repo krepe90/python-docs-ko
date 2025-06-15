@@ -17,9 +17,8 @@ msgstr ""
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../library/math.rst:2
-#, fuzzy
 msgid ":mod:`!math` --- Mathematical functions"
-msgstr ":mod:`math` --- 수학 함수"
+msgstr ":mod:`!math` --- 수학 함수"
 
 #: ../../library/math.rst:13
 msgid ""
@@ -51,96 +50,92 @@ msgid ""
 msgstr "이 모듈에서 제공하는 함수는 다음과 같습니다. 달리 명시되지 않는 한 모든 반환 값은 float입니다."
 
 #: ../../library/math.rst:30
-#, fuzzy
 msgid "**Number-theoretic functions**"
-msgstr "수론 및 표현 함수"
+msgstr "**수론적 함수**"
 
 #: ../../library/math.rst:32
 msgid ":func:`comb(n, k) <comb>`"
-msgstr ""
+msgstr ":func:`comb(n, k) <comb>`"
 
 #: ../../library/math.rst:32
-#, fuzzy
 msgid ""
 "Number of ways to choose *k* items from *n* items without repetition and "
 "without order"
-msgstr "반복과 순서 없이 *n* 개의 항목에서 *k* 개의 항목을 선택하는 방법의 수를 반환합니다."
+msgstr "반복과 순서 없이 *n* 개의 항목에서 *k* 개의 항목을 선택하는 방법의 수"
 
 #: ../../library/math.rst:33
 msgid ":func:`factorial(n) <factorial>`"
-msgstr ""
+msgstr ":func:`factorial(n) <factorial>`"
 
 #: ../../library/math.rst:33
 msgid "*n* factorial"
-msgstr ""
+msgstr "*n* 계승"
 
 #: ../../library/math.rst:34
 msgid ":func:`gcd(*integers) <gcd>`"
-msgstr ""
+msgstr ":func:`gcd(*integers) <gcd>`"
 
 #: ../../library/math.rst:34
 msgid "Greatest common divisor of the integer arguments"
-msgstr ""
+msgstr "정수 인자의 최대 공약수"
 
 #: ../../library/math.rst:35
 msgid ":func:`isqrt(n) <isqrt>`"
-msgstr ""
+msgstr ":func:`isqrt(n) <isqrt>`"
 
 #: ../../library/math.rst:35
 msgid "Integer square root of a nonnegative integer *n*"
-msgstr ""
+msgstr "음이 아닌 정수 *n*\\의 정수 제곱근"
 
 #: ../../library/math.rst:36
 msgid ":func:`lcm(*integers) <lcm>`"
-msgstr ""
+msgstr ":func:`lcm(*integers) <lcm>`"
 
 #: ../../library/math.rst:36
 msgid "Least common multiple of the integer arguments"
-msgstr ""
+msgstr "정수 인자의 최소 공배수"
 
 #: ../../library/math.rst:37
 msgid ":func:`perm(n, k) <perm>`"
-msgstr ""
+msgstr ":func:`perm(n, k) <perm>`"
 
 #: ../../library/math.rst:37
-#, fuzzy
 msgid ""
 "Number of ways to choose *k* items from *n* items without repetition and "
 "with order"
-msgstr "반복 없고 순서 있게 *n* 개의 항목에서 *k* 개의 항목을 선택하는 방법의 수를 반환합니다."
+msgstr "반복 없고 순서 있게 *n* 개의 항목에서 *k* 개의 항목을 선택하는 방법의 수"
 
 #: ../../library/math.rst:39
 msgid "**Floating point arithmetic**"
-msgstr ""
+msgstr "**부동 소수점 산술**"
 
 #: ../../library/math.rst:41
 msgid ":func:`ceil(x) <ceil>`"
-msgstr ""
+msgstr ":func:`ceil(x) <ceil>`"
 
 #: ../../library/math.rst:41
 msgid "Ceiling of *x*, the smallest integer greater than or equal to *x*"
-msgstr ""
+msgstr "*x*\\의 천장값, *x*\\보다 크거나 같은 가장 작은 정수"
 
 #: ../../library/math.rst:42
 msgid ":func:`fabs(x) <fabs>`"
-msgstr ""
+msgstr ":func:`fabs(x) <fabs>`"
 
 #: ../../library/math.rst:42
-#, fuzzy
 msgid "Absolute value of *x*"
-msgstr "*x*\\의 절댓값을 반환합니다."
+msgstr "*x*\\의 절댓값"
 
 #: ../../library/math.rst:43
 msgid ":func:`floor(x)  <floor>`"
-msgstr ""
+msgstr ":func:`floor(x)  <floor>`"
 
 #: ../../library/math.rst:43
 msgid "Floor of *x*, the largest integer less than or equal to *x*"
-msgstr ""
+msgstr "*x*\\의 바닥값, *x*\\보다 작거나 같은 가장 큰 정수"
 
 #: ../../library/math.rst:44
 msgid ":func:`fma(x, y, z) <fma>`"
-msgstr ""
+msgstr ":func:`fma(x, y, z) <fma>`"
 
 #: ../../library/math.rst:44
 msgid "Fused multiply-add operation: ``(x * y) + z``"
@@ -148,503 +143,469 @@ msgstr ""
 
 #: ../../library/math.rst:45
 msgid ":func:`fmod(x, y) <fmod>`"
-msgstr ""
+msgstr ":func:`fmod(x, y) <fmod>`"
 
 #: ../../library/math.rst:45
 msgid "Remainder of division ``x / y``"
-msgstr ""
+msgstr "나누기 ``x / y``\\의 나머지"
 
 #: ../../library/math.rst:46
 msgid ":func:`modf(x) <modf>`"
-msgstr ""
+msgstr ":func:`modf(x) <modf>`"
 
 #: ../../library/math.rst:46
 msgid "Fractional and integer parts of *x*"
-msgstr ""
+msgstr "*x*\\의 소수와 정수 부분"
 
 #: ../../library/math.rst:47
 msgid ":func:`remainder(x, y) <remainder>`"
-msgstr ""
+msgstr ":func:`remainder(x, y) <remainder>`"
 
 #: ../../library/math.rst:47
 msgid "Remainder of *x* with respect to *y*"
-msgstr ""
+msgstr "*y*\\에 대한 *x*\\의 나머지"
 
 #: ../../library/math.rst:48
 msgid ":func:`trunc(x) <trunc>`"
-msgstr ""
+msgstr ":func:`trunc(x) <trunc>`"
 
 #: ../../library/math.rst:48
 msgid "Integer part of *x*"
-msgstr ""
+msgstr "*x*\\의 정수부"
 
 #: ../../library/math.rst:50
 msgid "**Floating point manipulation functions**"
-msgstr ""
+msgstr "**부종 소수점 조작 함수**"
 
 #: ../../library/math.rst:52
 msgid ":func:`copysign(x, y) <copysign>`"
-msgstr ""
+msgstr ":func:`copysign(x, y) <copysign>`"
 
 #: ../../library/math.rst:52
 msgid "Magnitude (absolute value) of *x* with the sign of *y*"
-msgstr ""
+msgstr "*x*\\의 크기(절댓값)와 *y*\\의 부호를 갖는 값"
 
 #: ../../library/math.rst:53
 msgid ":func:`frexp(x) <frexp>`"
-msgstr ""
+msgstr ":func:`frexp(x) <frexp>`"
 
 #: ../../library/math.rst:53
 msgid "Mantissa and exponent of *x*"
-msgstr ""
+msgstr "*x*\\의 가수(mantissa)와 지수(exponent)"
 
 #: ../../library/math.rst:54
 msgid ":func:`isclose(a, b, rel_tol, abs_tol) <isclose>`"
-msgstr ""
+msgstr ":func:`isclose(a, b, rel_tol, abs_tol) <isclose>`"
 
 #: ../../library/math.rst:54
-#, fuzzy
 msgid "Check if the values *a* and *b* are close to each other"
-msgstr "값 *a*\\와 *b*\\가 서로 가까이 있으면 ``True``\\를, 그렇지 않으면 ``False``\\를 반환합니다."
+msgstr "값 *a*\\와 *b*\\가 서로 가까이 있는지 검사합니다"
 
 #: ../../library/math.rst:55
 msgid ":func:`isfinite(x) <isfinite>`"
-msgstr ""
+msgstr ":func:`isfinite(x) <isfinite>`"
 
 #: ../../library/math.rst:55
 msgid "Check if *x* is neither an infinity nor a NaN"
-msgstr ""
+msgstr "*x*\\가 무한대나 NaN이 아닌지 검사합니다"
 
 #: ../../library/math.rst:56
 msgid ":func:`isinf(x) <isinf>`"
-msgstr ""
+msgstr ":func:`isinf(x) <isinf>`"
 
 #: ../../library/math.rst:56
-#, fuzzy
 msgid "Check if *x* is a positive or negative infinity"
-msgstr "*x*\\가 양 또는 음의 무한대이면 ``True``\\를, 그렇지 않으면 ``False``\\를 반환합니다."
+msgstr "*x*\\가 양 또는 음의 무한대인지 검사합니다"
 
 #: ../../library/math.rst:57
 msgid ":func:`isnan(x) <isnan>`"
-msgstr ""
+msgstr ":func:`isnan(x) <isnan>`"
 
 #: ../../library/math.rst:57
-#, fuzzy
 msgid "Check if *x* is a NaN  (not a number)"
-msgstr "*x*\\가 NaN(not a number)이면, *x*\\를 반환합니다."
+msgstr "*x*\\가 NaN(not a number)인지 검사합니다"
 
 #: ../../library/math.rst:58
 msgid ":func:`ldexp(x, i) <ldexp>`"
-msgstr ""
+msgstr ":func:`ldexp(x, i) <ldexp>`"
 
 #: ../../library/math.rst:58
-#, fuzzy
 msgid "``x * (2**i)``, inverse of function :func:`frexp`"
-msgstr "``x * (2**i)``\\를 반환합니다. 이것은 본질적으로 함수 :func:`frexp`\\의 역입니다."
+msgstr "``x * (2**i)``, 함수 :func:`frexp`\\의 역"
 
 #: ../../library/math.rst:59
 msgid ":func:`nextafter(x, y, steps) <nextafter>`"
-msgstr ""
+msgstr ":func:`nextafter(x, y, steps) <nextafter>`"
 
 #: ../../library/math.rst:59
-#, fuzzy
 msgid "Floating-point value *steps* steps after *x* towards *y*"
-msgstr "*y*\\를 향한 *x* 다음의 부동 소수점 값을 반환합니다."
+msgstr "*x* 에서 *y* 방향으로 *steps* 스텝 다음의 부동 소수점 값"
 
 #: ../../library/math.rst:60
 msgid ":func:`ulp(x) <ulp>`"
-msgstr ""
+msgstr ":func:`ulp(x) <ulp>`"
 
 #: ../../library/math.rst:60
-#, fuzzy
 msgid "Value of the least significant bit of *x*"
-msgstr "float *x*\\의 최하위 비트 값을 반환합니다:"
+msgstr "*x*\\의 최하위 비트 값"
 
 #: ../../library/math.rst:62
-#, fuzzy
 msgid "**Power, exponential and logarithmic functions**"
-msgstr "지수와 로그 함수"
+msgstr "**거듭제곱, 지수 및 로그 함수**"
 
 #: ../../library/math.rst:64
 msgid ":func:`cbrt(x) <cbrt>`"
-msgstr ""
+msgstr ":func:`cbrt(x) <cbrt>`"
 
 #: ../../library/math.rst:64
-#, fuzzy
 msgid "Cube root of *x*"
-msgstr "*x*\\의 제곱근을 반환합니다."
+msgstr "*x*\\의 세제곱근"
 
 #: ../../library/math.rst:65
 msgid ":func:`exp(x) <exp>`"
-msgstr ""
+msgstr ":func:`exp(x) <exp>`"
 
 #: ../../library/math.rst:65
 msgid "*e* raised to the power *x*"
-msgstr ""
+msgstr "*e* 의 *x* 거듭제곱"
 
 #: ../../library/math.rst:66
 msgid ":func:`exp2(x) <exp2>`"
-msgstr ""
+msgstr ":func:`exp2(x) <exp2>`"
 
 #: ../../library/math.rst:66
 msgid "*2* raised to the power *x*"
-msgstr ""
+msgstr "*2* 의 *x* 거듭제곱"
 
 #: ../../library/math.rst:67
 msgid ":func:`expm1(x) <expm1>`"
-msgstr ""
+msgstr ":func:`expm1(x) <expm1>`"
 
 #: ../../library/math.rst:67
 msgid "*e* raised to the power *x*, minus 1"
-msgstr ""
+msgstr "*e* 의 *x* 거듭제곱 빼기 1"
 
 #: ../../library/math.rst:68
 msgid ":func:`log(x, base) <log>`"
-msgstr ""
+msgstr ":func:`log(x, base) <log>`"
 
 #: ../../library/math.rst:68
 msgid "Logarithm of *x* to the given base (*e* by default)"
-msgstr ""
+msgstr "주어진 밑(기본값 *e*)의 *x* 의 로그"
 
 #: ../../library/math.rst:69
 msgid ":func:`log1p(x) <log1p>`"
-msgstr ""
+msgstr ":func:`log1p(x) <log1p>`"
 
 #: ../../library/math.rst:69
-#, fuzzy
 msgid "Natural logarithm of *1+x* (base *e*)"
-msgstr "하나의 인자를 제공하면, *x*\\의 자연로그를 반환합니다 (밑 *e*)."
+msgstr "*x*\\의 자연로그 (밑 *e*)"
 
 #: ../../library/math.rst:70
 msgid ":func:`log2(x) <log2>`"
-msgstr ""
+msgstr ":func:`log2(x) <log2>`"
 
 #: ../../library/math.rst:70
 msgid "Base-2 logarithm of *x*"
-msgstr ""
+msgstr "*x*\\의 밑이 2인 로그"
 
 #: ../../library/math.rst:71
 msgid ":func:`log10(x) <log10>`"
-msgstr ""
+msgstr ":func:`log10(x) <log10>`"
 
 #: ../../library/math.rst:71
 msgid "Base-10 logarithm of *x*"
-msgstr ""
+msgstr "*x*\\의 밑이 10인 로그"
 
 #: ../../library/math.rst:72
 msgid ":func:`pow(x, y) <math.pow>`"
-msgstr ""
+msgstr ":func:`pow(x, y) <math.pow>`"
 
 #: ../../library/math.rst:72
 msgid "*x* raised to the power *y*"
-msgstr ""
+msgstr "*x*\\의 *y* 거듭제곱"
 
 #: ../../library/math.rst:73
 msgid ":func:`sqrt(x) <sqrt>`"
-msgstr ""
+msgstr ":func:`sqrt(x) <sqrt>`"
 
 #: ../../library/math.rst:73
-#, fuzzy
 msgid "Square root of *x*"
-msgstr "*x*\\의 제곱근을 반환합니다."
+msgstr "*x*\\의 제곱근"
 
 #: ../../library/math.rst:75
 msgid "**Summation and product functions**"
-msgstr ""
+msgstr "**합과 곱 함수**"
 
 #: ../../library/math.rst:77
 msgid ":func:`dist(p, q) <dist>`"
-msgstr ""
+msgstr ":func:`dist(p, q) <dist>`"
 
 #: ../../library/math.rst:77
-#, fuzzy
 msgid ""
 "Euclidean distance between two points *p* and *q* given as an iterable of"
 " coordinates"
-msgstr ""
-"각각 좌표 시퀀스(또는 이터러블)로 제공되는, 두 점 *p*\\와 *q* 사이의 유클리드 거리를 반환합니다. 두 점의 "
-"차원(dimension)은 같아야 합니다."
+msgstr "좌표의 이터러블로 제공되는, 두 점 *p*\\와 *q* 사이의 유클리드 거리"
 
 #: ../../library/math.rst:78
 msgid ":func:`fsum(iterable) <fsum>`"
-msgstr ""
+msgstr ":func:`fsum(iterable) <fsum>`"
 
 #: ../../library/math.rst:78
 msgid "Sum of values in the input *iterable*"
-msgstr ""
+msgstr "입력 *iterable*\\에 있는 값들의 합"
 
 #: ../../library/math.rst:79
 msgid ":func:`hypot(*coordinates) <hypot>`"
-msgstr ""
+msgstr ":func:`hypot(*coordinates) <hypot>`"
 
 #: ../../library/math.rst:79
 msgid "Euclidean norm of an iterable of coordinates"
-msgstr ""
+msgstr "좌표 이터러블의 유클리드 크기(norm)"
 
 #: ../../library/math.rst:80
 msgid ":func:`prod(iterable, start) <prod>`"
-msgstr ""
+msgstr ":func:`prod(iterable, start) <prod>`"
 
 #: ../../library/math.rst:80
-#, fuzzy
 msgid "Product of elements in the input *iterable* with a *start* value"
-msgstr "입력 *이터러블(iterable)*\\에 있는 모든 요소의 곱을 계산합니다. 곱의 기본 *start* 값은 ``1``\\입니다."
+msgstr "*start* 값으로 시작하는, 입력 *iterable*\\에 있는 요소들의 곱"
 
 #: ../../library/math.rst:81
 msgid ":func:`sumprod(p, q) <sumprod>`"
-msgstr ""
+msgstr ":func:`sumprod(p, q) <sumprod>`"
 
 #: ../../library/math.rst:81
 msgid "Sum of products from two iterables *p* and *q*"
 msgstr ""
 
 #: ../../library/math.rst:83
-#, fuzzy
 msgid "**Angular conversion**"
-msgstr "각도 변환"
+msgstr "**각도 변환**"
 
 #: ../../library/math.rst:85
 msgid ":func:`degrees(x) <degrees>`"
-msgstr ""
+msgstr ":func:`degrees(x) <degrees>`"
 
 #: ../../library/math.rst:85
-#, fuzzy
 msgid "Convert angle *x* from radians to degrees"
-msgstr "각도 *x*\\를 라디안에서 도(degree)로 변환합니다."
+msgstr "각도 *x*\\를 라디안에서 도(degree)로 변환합니다"
 
 #: ../../library/math.rst:86
 msgid ":func:`radians(x) <radians>`"
-msgstr ""
+msgstr ":func:`radians(x) <radians>`"
 
 #: ../../library/math.rst:86
-#, fuzzy
 msgid "Convert angle *x* from degrees to radians"
-msgstr "각도 *x*\\를 도(degree)에서 라디안으로 변환합니다."
+msgstr "각도 *x*\\를 도(degree)에서 라디안으로 변환합니다"
 
 #: ../../library/math.rst:88
-#, fuzzy
 msgid "**Trigonometric functions**"
-msgstr "삼각 함수"
+msgstr "**삼각 함수**"
 
 #: ../../library/math.rst:90
 msgid ":func:`acos(x) <acos>`"
-msgstr ""
+msgstr ":func:`acos(x) <acos>`"
 
 #: ../../library/math.rst:90
-#, fuzzy
 msgid "Arc cosine of *x*"
-msgstr "*x*\\의 쌍곡 코사인(hyperbolic cosine)을 반환합니다."
+msgstr "*x*\\의 아크 코사인(arc cosine)"
 
 #: ../../library/math.rst:91
 msgid ":func:`asin(x) <asin>`"
-msgstr ""
+msgstr ":func:`asin(x) <asin>`"
 
 #: ../../library/math.rst:91
 msgid "Arc sine of *x*"
-msgstr ""
+msgstr "*x*\\의 아크 사인(arc sine)"
 
 #: ../../library/math.rst:92
 msgid ":func:`atan(x) <atan>`"
-msgstr ""
+msgstr ":func:`atan(x) <atan>`"
 
 #: ../../library/math.rst:92
-#, fuzzy
 msgid "Arc tangent of *x*"
-msgstr "*x*\\의 쌍곡 탄젠트(hyperbolic tangent)를 반환합니다."
+msgstr "*x*\\의 아크 탄젠트(arc tangent)"
 
 #: ../../library/math.rst:93
 msgid ":func:`atan2(y, x) <atan2>`"
-msgstr ""
+msgstr ":func:`atan2(y, x) <atan2>`"
 
 #: ../../library/math.rst:93
 msgid "``atan(y / x)``"
-msgstr ""
+msgstr "``atan(y / x)``"
 
 #: ../../library/math.rst:94
 msgid ":func:`cos(x) <cos>`"
-msgstr ""
+msgstr ":func:`cos(x) <cos>`"
 
 #: ../../library/math.rst:94
 msgid "Cosine of *x*"
-msgstr ""
+msgstr "*x*\\의 코사인"
 
 #: ../../library/math.rst:95
 msgid ":func:`sin(x) <sin>`"
-msgstr ""
+msgstr ":func:`sin(x) <sin>`"
 
 #: ../../library/math.rst:95
 msgid "Sine of *x*"
-msgstr ""
+msgstr "*x*\\의 사인"
 
 #: ../../library/math.rst:96
 msgid ":func:`tan(x) <tan>`"
-msgstr ""
+msgstr ":func:`tan(x) <tan>`"
 
 #: ../../library/math.rst:96
 msgid "Tangent of *x*"
-msgstr ""
+msgstr "*x*\\의 탄젠트"
 
 #: ../../library/math.rst:98
-#, fuzzy
 msgid "**Hyperbolic functions**"
-msgstr "쌍곡선 함수"
+msgstr "**쌍곡선 함수**"
 
 #: ../../library/math.rst:100
 msgid ":func:`acosh(x) <acosh>`"
-msgstr ""
+msgstr ":func:`acosh(x) <acosh>`"
 
 #: ../../library/math.rst:100
-#, fuzzy
 msgid "Inverse hyperbolic cosine of *x*"
-msgstr "*x*\\의 역 쌍곡 코사인(inverse hyperbolic cosine)을 반환합니다."
+msgstr "*x*\\의 역 쌍곡 코사인(inverse hyperbolic cosine)"
 
 #: ../../library/math.rst:101
 msgid ":func:`asinh(x) <asinh>`"
-msgstr ""
+msgstr ":func:`asinh(x) <asinh>`"
 
 #: ../../library/math.rst:101
-#, fuzzy
 msgid "Inverse hyperbolic sine of *x*"
-msgstr "*x*\\의 역 쌍곡 사인(inverse hyperbolic sine)을 반환합니다."
+msgstr "*x*\\의 역 쌍곡 사인(inverse hyperbolic sine)"
 
 #: ../../library/math.rst:102
 msgid ":func:`atanh(x) <atanh>`"
-msgstr ""
+msgstr ":func:`atanh(x) <atanh>`"
 
 #: ../../library/math.rst:102
-#, fuzzy
 msgid "Inverse hyperbolic tangent of *x*"
-msgstr "*x*\\의 역 쌍곡 탄젠트(inverse hyperbolic tangent)를 반환합니다."
+msgstr "*x*\\의 역 쌍곡 탄젠트(inverse hyperbolic tangent)"
 
 #: ../../library/math.rst:103
 msgid ":func:`cosh(x) <cosh>`"
-msgstr ""
+msgstr ":func:`cosh(x) <cosh>`"
 
 #: ../../library/math.rst:103
-#, fuzzy
 msgid "Hyperbolic cosine of *x*"
-msgstr "*x*\\의 쌍곡 코사인(hyperbolic cosine)을 반환합니다."
+msgstr "*x*\\의 쌍곡 코사인(hyperbolic cosine)"
 
 #: ../../library/math.rst:104
 msgid ":func:`sinh(x) <sinh>`"
-msgstr ""
+msgstr ":func:`sinh(x) <sinh>`"
 
 #: ../../library/math.rst:104
-#, fuzzy
 msgid "Hyperbolic sine of *x*"
-msgstr "*x*\\의 쌍곡 사인(hyperbolic sine)을 반환합니다."
+msgstr "*x*\\의 쌍곡 사인(hyperbolic sine)"
 
 #: ../../library/math.rst:105
 msgid ":func:`tanh(x) <tanh>`"
-msgstr ""
+msgstr ":func:`tanh(x) <tanh>`"
 
 #: ../../library/math.rst:105
-#, fuzzy
 msgid "Hyperbolic tangent of *x*"
-msgstr "*x*\\의 쌍곡 탄젠트(hyperbolic tangent)를 반환합니다."
+msgstr "*x*\\의 쌍곡 탄젠트(hyperbolic tangent)"
 
 #: ../../library/math.rst:107
-#, fuzzy
 msgid "**Special functions**"
-msgstr "특수 함수"
+msgstr "**특수 함수**"
 
 #: ../../library/math.rst:109
 msgid ":func:`erf(x) <erf>`"
-msgstr ""
+msgstr ":func:`erf(x) <erf>`"
 
 #: ../../library/math.rst:109
-#, fuzzy
 msgid "`Error function <https://en.wikipedia.org/wiki/Error_function>`_ at *x*"
 msgstr ""
 "*x*\\의 `오차 함수(error function) "
-"<https://en.wikipedia.org/wiki/Error_function>`_\\를 반환합니다."
+"<https://en.wikipedia.org/wiki/Error_function>`_"
 
 #: ../../library/math.rst:110
 msgid ":func:`erfc(x) <erfc>`"
-msgstr ""
+msgstr ":func:`erfc(x) <erfc>`"
 
 #: ../../library/math.rst:110
-#, fuzzy
 msgid ""
 "`Complementary error function "
 "<https://en.wikipedia.org/wiki/Error_function>`_ at *x*"
 msgstr ""
-"*x*\\의 `오차 함수(error function) "
-"<https://en.wikipedia.org/wiki/Error_function>`_\\를 반환합니다."
+"*x*\\의 `여오차 함수(complementary error function) "
+"<https://en.wikipedia.org/wiki/Error_function>`_"
 
 #: ../../library/math.rst:111
 msgid ":func:`gamma(x) <gamma>`"
-msgstr ""
+msgstr ":func:`gamma(x) <gamma>`"
 
 #: ../../library/math.rst:111
-#, fuzzy
 msgid "`Gamma function <https://en.wikipedia.org/wiki/Gamma_function>`_ at *x*"
 msgstr ""
 "*x*\\의 `감마 함수(Gamma function) "
-"<https://en.wikipedia.org/wiki/Gamma_function>`_\\를 반환합니다."
+"<https://en.wikipedia.org/wiki/Gamma_function>`_"
 
 #: ../../library/math.rst:112
 msgid ":func:`lgamma(x) <lgamma>`"
-msgstr ""
+msgstr ":func:`lgamma(x) <lgamma>`"
 
 #: ../../library/math.rst:112
-#, fuzzy
 msgid ""
 "Natural logarithm of the absolute value of the `Gamma function "
 "<https://en.wikipedia.org/wiki/Gamma_function>`_ at *x*"
 msgstr ""
 "*x*\\의 `감마 함수(Gamma function) "
-"<https://en.wikipedia.org/wiki/Gamma_function>`_\\를 반환합니다."
+"<https://en.wikipedia.org/wiki/Gamma_function>`_\\의 절댓값의 자연로그"
 
 #: ../../library/math.rst:114
-#, fuzzy
 msgid "**Constants**"
-msgstr "상수"
+msgstr "**상수**"
 
 #: ../../library/math.rst:116
 msgid ":data:`pi`"
-msgstr ""
+msgstr ":data:`pi`"
 
 #: ../../library/math.rst:116
 msgid "*π* = 3.141592..."
-msgstr ""
+msgstr "*π* = 3.141592..."
 
 #: ../../library/math.rst:117
 msgid ":data:`e`"
-msgstr ""
+msgstr ":data:`e`"
 
 #: ../../library/math.rst:117
 msgid "*e* = 2.718281..."
-msgstr ""
+msgstr "*e* = 2.718281..."
 
 #: ../../library/math.rst:118
 msgid ":data:`tau`"
-msgstr ""
+msgstr ":data:`tau`"
 
 #: ../../library/math.rst:118
 msgid "*τ* = 2\\ *π* = 6.283185..."
-msgstr ""
+msgstr "*τ* = 2\\ *π* = 6.283185..."
 
 #: ../../library/math.rst:119
 msgid ":data:`inf`"
-msgstr ""
+msgstr ":data:`inf`"
 
 #: ../../library/math.rst:119
 msgid "Positive infinity"
-msgstr ""
+msgstr "양의 무한대"
 
 #: ../../library/math.rst:120
 msgid ":data:`nan`"
-msgstr ""
+msgstr ":data:`nan`"
 
 #: ../../library/math.rst:120
 msgid "\"Not a number\" (NaN)"
-msgstr ""
+msgstr "\"Not a number\" (NaN)"
 
 #: ../../library/math.rst:125
-#, fuzzy
 msgid "Number-theoretic functions"
-msgstr "수론 및 표현 함수"
+msgstr "수론적 함수"
 
 #: ../../library/math.rst:129
 msgid ""
@@ -659,12 +620,11 @@ msgid ""
 msgstr "``k <= n``\\이면 ``n! / (k! * (n - k)!)``\\로 평가되고, ``k > n``\\이면 0으로 평가됩니다."
 
 #: ../../library/math.rst:135
-#, fuzzy
 msgid ""
 "Also called the binomial coefficient because it is equivalent to the "
 "coefficient of k-th term in polynomial expansion of ``(1 + x)ⁿ``."
 msgstr ""
-"식 ``(1 + x) ** n``\\의 다항식 전개에서 k 번째 항의 계수와 같기 때문에 이항 계수(binomial "
+"``(1 + x)ⁿ``\\의 다항식 전개에서 k 번째 항의 계수와 같기 때문에 이항 계수(binomial "
 "coefficient)라고도 합니다."
 
 #: ../../library/math.rst:139 ../../library/math.rst:205
@@ -676,18 +636,16 @@ msgstr ""
 ":exc:`ValueError`\\를 발생시킵니다."
 
 #: ../../library/math.rst:147
-#, fuzzy
 msgid ""
 "Return *n* factorial as an integer.  Raises :exc:`ValueError` if *n* is "
 "not integral or is negative."
 msgstr ""
-"*x* 계승(factorial)을 정수로 반환합니다. *x*\\가 정수(integral)가 아니거나 음수면 "
+"*n* 계승(factorial)을 정수로 반환합니다. *n*\\이 정수(integral)가 아니거나 음수면 "
 ":exc:`ValueError`\\를 발생시킵니다."
 
 #: ../../library/math.rst:150
-#, fuzzy
 msgid "Floats with integral values (like ``5.0``) are no longer accepted."
-msgstr "정숫값 부동 소수점(``5.0``\\과 같은)을 허용하는 것은 폐지되었습니다."
+msgstr "정숫값 부동 소수점(``5.0``\\과 같은)은 더는 허용되지 않습니다."
 
 #: ../../library/math.rst:156
 msgid ""
@@ -750,18 +708,16 @@ msgid ""
 msgstr "``k <= n``\\이면 ``n! / (n - k)!`` 로 평가되고, ``k > n``\\이면 0으로 평가됩니다."
 
 #: ../../library/math.rst:202
-#, fuzzy
 msgid ""
 "If *k* is not specified or is ``None``, then *k* defaults to *n* and the "
 "function returns ``n!``."
-msgstr "*k*\\가 지정되지 않거나 None이면, *k*\\의 기본값은 *n*\\이고 함수는 ``n!`` 을 반환합니다."
+msgstr "*k*\\가 지정되지 않거나 ``None``\\이면, *k*\\의 기본값은 *n*\\이고 함수는 ``n!`` 을 반환합니다."
 
 #: ../../library/math.rst:212
 msgid "Floating point arithmetic"
-msgstr ""
+msgstr "부동 소수점 산술"
 
 #: ../../library/math.rst:216
-#, fuzzy
 msgid ""
 "Return the ceiling of *x*, the smallest integer greater than or equal to "
 "*x*. If *x* is not a float, delegates to :meth:`x.__ceil__ "
@@ -769,14 +725,14 @@ msgid ""
 "value."
 msgstr ""
 "*x*\\보다 크거나 같은 가장 작은 정수인 *x*\\의 천장값(ceiling)을 반환합니다. *x*\\가 float가 아니면, "
-"``x.__ceil__()``\\에 위임하고, 이것은 :class:`~numbers.Integral` 값을 반환해야 합니다."
+":meth:`x.__ceil__ <object.__ceil__>`\\에 위임하고, 이것은 "
+":class:`~numbers.Integral` 값을 반환해야 합니다."
 
 #: ../../library/math.rst:223
 msgid "Return the absolute value of *x*."
 msgstr "*x*\\의 절댓값을 반환합니다."
 
 #: ../../library/math.rst:228
-#, fuzzy
 msgid ""
 "Return the floor of *x*, the largest integer less than or equal to *x*.  "
 "If *x* is not a float, delegates to :meth:`x.__floor__ "
@@ -784,7 +740,8 @@ msgid ""
 "value."
 msgstr ""
 "*x*\\보다 작거나 같은 가장 큰 정수인 *x*\\의 바닥값(floor)을 반환합니다. *x*\\가 float가 아니면, "
-"``x.__floor__()``\\에 위임하고, 이것은 :class:`~numbers.Integral` 값을 반환해야 합니다."
+":meth:`x.__floor__ <object.__floor__>`\\에 위임하고, 이것은 "
+":class:`~numbers.Integral` 값을 반환해야 합니다."
 
 #: ../../library/math.rst:235
 msgid ""
@@ -804,7 +761,7 @@ msgid ""
 msgstr ""
 
 #: ../../library/math.rst:251
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Return the floating-point remainder of ``x / y``, as defined by the "
 "platform C library function ``fmod(x, y)``. Note that the Python "
@@ -820,15 +777,15 @@ msgid ""
 ":func:`fmod` is generally preferred when working with floats, while "
 "Python's ``x % y`` is preferred when working with integers."
 msgstr ""
-"플랫폼 C 라이브러리에서 정의한 대로 ``fmod(x, y)``\\를 반환합니다. 파이썬 표현식 ``x % y``\\가 같은 결과를"
-" 반환하지 않을 수 있음에 유의하십시오. C 표준의 의도는 어떤 정수 *n*\\에 대해 ``fmod(x, y)``\\가 ``x - "
-"n*y``\\와 정확히 (수학적으로; 무한 정밀도로) 같고, 결과는 *x*\\와 같은 부호를 가지며 크기(절댓값)는 "
-"``abs(y)``\\보다 작아지도록 하는 것입니다. 파이썬의 ``x % y``\\는 대신 *y*\\의 부호를 갖는 결과를 반환하며"
-" float 인자에 대해 정확하게 계산할 수 없을 수 있습니다. 예를 들어, ``fmod(-1e-100, 1e100)``\\는 "
-"``-1e-100``\\이지만, 파이썬의 ``-1e-100 % 1e100``\\의 결과는 ``1e100-1e-100``\\이며, "
-"부동 소수점으로 정확하게 표현할 수 없어서, 의외의 ``1e100``\\으로 반올림됩니다. 이러한 이유로, 함수 "
-":func:`fmod`\\는 일반적으로 float로 작업할 때 선호되는 반면 파이썬의 ``x % y``\\는 정수로 작업할 때 "
-"선호됩니다."
+"플랫폼 C 라이브러리 함수 ``fmod(x, y)``\\이 정의한 대로, ``x / y``\\의 부동 소수점 나머지를 반환합니다. "
+"파이썬 표현식 ``x % y``\\가 같은 결과를 반환하지 않을 수 있음에 유의하십시오. C 표준의 의도는 어떤 정수 *n*\\에 "
+"대해 ``fmod(x, y)``\\가 ``x - n*y``\\와 정확히 (수학적으로; 무한 정밀도로) 같고, 결과는 *x*\\와 "
+"같은 부호를 가지며 크기(절댓값)는 ``abs(y)``\\보다 작아지도록 하는 것입니다. 파이썬의 ``x % y``\\는 대신 "
+"*y*\\의 부호를 갖는 결과를 반환하며 float 인자에 대해 정확하게 계산할 수 없을 수 있습니다. 예를 들어, "
+"``fmod(-1e-100, 1e100)``\\는 ``-1e-100``\\이지만, 파이썬의 ``-1e-100 % 1e100``\\의"
+" 결과는 ``1e100-1e-100``\\이며, 부동 소수점으로 정확하게 표현할 수 없어서, 의외의 ``1e100``\\으로 "
+"반올림됩니다. 이러한 이유로, 함수 :func:`fmod`\\는 일반적으로 float로 작업할 때 선호되는 반면 파이썬의 ``x %"
+" y``\\는 정수로 작업할 때 선호됩니다."
 
 #: ../../library/math.rst:267
 msgid ""
@@ -837,15 +794,14 @@ msgid ""
 msgstr "*x*\\의 소수와 정수 부분을 반환합니다. 두 결과 모두 *x*\\의 부호를 가지며 float입니다."
 
 #: ../../library/math.rst:270
-#, fuzzy
 msgid ""
 "Note that :func:`modf` has a different call/return pattern than its C "
 "equivalents: it takes a single argument and return a pair of values, "
 "rather than returning its second return value through an 'output "
 "parameter' (there is no such thing in Python)."
 msgstr ""
-":func:`frexp`\\와 :func:`modf`\\는 C 대응물과는 다른 호출/반환 패턴을 가지고 있습니다: 두 번째 반환 "
-"값을 '출력 매개 변수'로 반환하는 대신 (파이썬에는 그러한 것이 없습니다), 단일 인자를 받아서 값의 쌍을 반환합니다."
+":func:`modf`\\는 C 대응물과는 다른 호출/반환 패턴을 가지고 있음에 유의하십시오: 두 번째 반환 값을 '출력 매개 "
+"변수'로 반환하는 대신 (파이썬에는 그러한 것이 없습니다), 단일 인자를 받아서 값의 쌍을 반환합니다."
 
 #: ../../library/math.rst:278
 msgid ""
@@ -876,7 +832,6 @@ msgstr ""
 "부호를 갖습니다."
 
 #: ../../library/math.rst:291
-#, fuzzy
 msgid ""
 "On platforms using IEEE 754 binary floating point, the result of this "
 "operation is always exactly representable: no rounding error is "
@@ -908,7 +863,7 @@ msgstr ""
 
 #: ../../library/math.rst:314
 msgid "Floating point manipulation functions"
-msgstr ""
+msgstr "부동 소수점 조작 함수"
 
 #: ../../library/math.rst:318
 msgid ""
@@ -933,15 +888,14 @@ msgstr ""
 "\"분리\"하는 데 사용됩니다."
 
 #: ../../library/math.rst:330
-#, fuzzy
 msgid ""
 "Note that :func:`frexp` has a different call/return pattern than its C "
 "equivalents: it takes a single argument and return a pair of values, "
 "rather than returning its second return value through an 'output "
 "parameter' (there is no such thing in Python)."
 msgstr ""
-":func:`frexp`\\와 :func:`modf`\\는 C 대응물과는 다른 호출/반환 패턴을 가지고 있습니다: 두 번째 반환 "
-"값을 '출력 매개 변수'로 반환하는 대신 (파이썬에는 그러한 것이 없습니다), 단일 인자를 받아서 값의 쌍을 반환합니다."
+":func:`frexp`\\는 C 대응물과는 다른 호출/반환 패턴을 가지고 있음에 유의하십시오: 두 번째 반환 값을 '출력 매개 "
+"변수'로 반환하는 대신 (파이썬에는 그러한 것이 없습니다), 단일 인자를 받아서 값의 쌍을 반환합니다."
 
 #: ../../library/math.rst:337
 msgid ""
@@ -950,15 +904,15 @@ msgid ""
 msgstr "값 *a*\\와 *b*\\가 서로 가까이 있으면 ``True``\\를, 그렇지 않으면 ``False``\\를 반환합니다."
 
 #: ../../library/math.rst:340
-#, fuzzy
 msgid ""
 "Whether or not two values are considered close is determined according to"
 " given absolute and relative tolerances.  If no errors occur, the result "
 "will be: ``abs(a-b) <= max(rel_tol * max(abs(a), abs(b)), abs_tol)``."
-msgstr "두 값이 근접한 것으로 간주하는지는 주어진 절대와 상대 허용 오차에 따라 결정됩니다."
+msgstr ""
+"두 값이 근접한 것으로 간주하는지는 주어진 절대와 상대 허용 오차에 따라 결정됩니다. 에러가 발생하지 않으면, 결과는 다음과 "
+"같습니다: ``abs(a-b) <= max(rel_tol * max(abs(a), abs(b)), abs_tol)``."
 
 #: ../../library/math.rst:344
-#, fuzzy
 msgid ""
 "*rel_tol* is the relative tolerance -- it is the maximum allowed "
 "difference between *a* and *b*, relative to the larger absolute value of "
@@ -969,8 +923,8 @@ msgid ""
 msgstr ""
 "*rel_tol*\\은 상대 허용 오차입니다 -- *a*\\와 *b* 중 더 큰 절댓값에 대해 상대적으로, *a*\\와 *b* 간에"
 " 허용되는 최대 차이입니다. 예를 들어, 허용 오차를 5%로 설정하려면, ``rel_tol=0.05``\\를 전달하십시오. 기본 "
-"허용 오차는 ``1e-09``\\이며, 두 값이 약 9자리 십진 숫자 내에서 같다는 것을 보장합니다. *rel_tol*\\은 0보다"
-" 커야 합니다."
+"허용 오차는 ``1e-09``\\이며, 두 값이 약 9자리 십진 숫자 내에서 같다는 것을 보장합니다. *rel_tol*\\은 음이 "
+"아니고 ``1.0``\\보다 작아야 합니다."
 
 #: ../../library/math.rst:351
 msgid ""
@@ -1021,14 +975,12 @@ msgid ""
 msgstr "``x * (2**i)``\\를 반환합니다. 이것은 본질적으로 함수 :func:`frexp`\\의 역입니다."
 
 #: ../../library/math.rst:396
-#, fuzzy
 msgid "Return the floating-point value *steps* steps after *x* towards *y*."
-msgstr "*y*\\를 향한 *x* 다음의 부동 소수점 값을 반환합니다."
+msgstr "*x*\\에서 *y* 방향으로 *steps* 스텝 다음의 부동 소수점 값을 반환합니다."
 
 #: ../../library/math.rst:398
-#, fuzzy
 msgid "If *x* is equal to *y*, return *y*, unless *steps* is zero."
-msgstr "*x*\\가 *y*\\와 같으면, *y*\\를 반환합니다."
+msgstr "*x*\\가 *y*\\와 같으면, *steps*\\이 0이 아닌 한 *y*\\를 반환합니다."
 
 #: ../../library/math.rst:400
 msgid "Examples:"
@@ -1056,7 +1008,7 @@ msgstr ":func:`math.ulp`\\도 참조하십시오."
 
 #: ../../library/math.rst:411
 msgid "Added the *steps* argument."
-msgstr ""
+msgstr "*steps* 인자를 추가했습니다."
 
 #: ../../library/math.rst:417
 msgid "Return the value of the least significant bit of the float *x*:"
@@ -1115,14 +1067,12 @@ msgstr ""
 "<sys.float_info>`\\도 참조하십시오."
 
 #: ../../library/math.rst:441
-#, fuzzy
 msgid "Power, exponential and logarithmic functions"
-msgstr "지수와 로그 함수"
+msgstr "거듭제곱, 지수 및 로그 함수"
 
 #: ../../library/math.rst:445
-#, fuzzy
 msgid "Return the cube root of *x*."
-msgstr "*x*\\의 제곱근을 반환합니다."
+msgstr "*x*\\의 세제곱근을 반환합니다."
 
 #: ../../library/math.rst:452
 msgid ""
@@ -1135,10 +1085,9 @@ msgstr ""
 
 #: ../../library/math.rst:459
 msgid "Return *2* raised to the power *x*."
-msgstr ""
+msgstr "*2*\\의 *x* 거듭제곱을 반환합니다."
 
 #: ../../library/math.rst:466
-#, fuzzy
 msgid ""
 "Return *e* raised to the power *x*, minus 1.  Here *e* is the base of "
 "natural logarithms.  For small floats *x*, the subtraction in ``exp(x) - "
@@ -1150,7 +1099,7 @@ msgstr ""
 "*e*\\의 *x* 거듭제곱에서 1을 뺀 값을 반환합니다. 여기서 *e*\\는 자연로그의 밑(base)입니다. 작은 float "
 "*x*\\의 경우, ``exp(x) - 1``\\의 뺄셈은 `상당한 정밀도 소실 "
 "<https://en.wikipedia.org/wiki/Loss_of_significance>`_\\을 일으킬 수 있습니다; "
-":func:`expm1` 함수는 이 양을 최대 정밀도로 계산하는 방법을 제공합니다::"
+":func:`expm1` 함수는 이 양을 최대 정밀도로 계산하는 방법을 제공합니다:"
 
 #: ../../library/math.rst:483
 msgid "With one argument, return the natural logarithm of *x* (to base *e*)."
@@ -1189,7 +1138,6 @@ msgid ""
 msgstr "*x*\\의 밑이 10인 로그를 반환합니다. 이것은 일반적으로 ``log(x, 10)``\\보다 정확합니다."
 
 #: ../../library/math.rst:516
-#, fuzzy
 msgid ""
 "Return *x* raised to the power *y*.  Exceptional cases follow the IEEE "
 "754 standard as far as possible.  In particular, ``pow(1.0, x)`` and "
@@ -1197,10 +1145,10 @@ msgid ""
 "  If both *x* and *y* are finite, *x* is negative, and *y* is not an "
 "integer then ``pow(x, y)`` is undefined, and raises :exc:`ValueError`."
 msgstr ""
-"``x``\\의 ``y`` 거듭제곱을 반환합니다. 예외적인 경우는 최대한 C99 표준의 부록 'F'를 따릅니다. 특히, "
-"``x``\\가 0이거나 NaN일 때도 ``pow(1.0, x)``\\와 ``pow(x, 0.0)``\\는 항상 ``1.0``\\을"
-" 반환합니다. ``x`` 와 ``y``\\가 모두 유한하고, ``x``\\가 음수이고, ``y``\\가 정수가 아니면 "
-"``pow(x, y)``\\는 정의되지 않고 :exc:`ValueError`\\를 발생시킵니다."
+"*x*\\의 *y* 거듭제곱을 반환합니다. 예외적인 경우는 최대한 IEEE 754 표준을 따릅니다. 특히, *x*\\가 0이거나 "
+"NaN일 때도 ``pow(1.0, x)``\\와 ``pow(x, 0.0)``\\는 항상 ``1.0``\\을 반환합니다. *x* 와 "
+"*y*\\가 모두 유한하고, *x*\\가 음수이고, *y*\\가 정수가 아니면 ``pow(x, y)``\\는 정의되지 않고 "
+":exc:`ValueError`\\를 발생시킵니다."
 
 #: ../../library/math.rst:523
 msgid ""
@@ -1224,7 +1172,7 @@ msgstr "*x*\\의 제곱근을 반환합니다."
 
 #: ../../library/math.rst:539
 msgid "Summation and product functions"
-msgstr ""
+msgstr "합과 곱 함수"
 
 #: ../../library/math.rst:543
 msgid ""
@@ -1241,16 +1189,15 @@ msgstr "대략 다음과 동등합니다::"
 
 #: ../../library/math.rst:549
 msgid "sqrt(sum((px - qx) ** 2.0 for px, qx in zip(p, q)))"
-msgstr ""
+msgstr "sqrt(sum((px - qx) ** 2.0 for px, qx in zip(p, q)))"
 
 #: ../../library/math.rst:556
-#, fuzzy
 msgid ""
 "Return an accurate floating-point sum of values in the iterable.  Avoids "
 "loss of precision by tracking multiple intermediate partial sums."
 msgstr ""
 "이터러블(iterable)에 있는 값의 정확한(accurate) 부동 소수점 합을 반환합니다. 여러 중간 부분 합을 추적하여 정밀도"
-" 손실을 방지합니다::"
+" 손실을 방지합니다."
 
 #: ../../library/math.rst:559
 msgid ""
@@ -1265,7 +1212,6 @@ msgstr ""
 "round) 하여 최하위 비트(least significant bit)에서 분리할 수 있습니다."
 
 #: ../../library/math.rst:565
-#, fuzzy
 msgid ""
 "For further discussion and two alternative approaches, see the `ASPN "
 "cookbook recipes for accurate floating-point summation "
@@ -1273,7 +1219,8 @@ msgid ""
 "summation-accurate-to-full-p/>`_\\."
 msgstr ""
 "자세한 논의와 두 가지 대안은, `ASPN cookbook recipes for accurate floating point "
-"summation <https://code.activestate.com/recipes/393090/>`_\\을 참조하십시오."
+"summation <https://code.activestate.com/recipes/393090-binary-floating-"
+"point-summation-accurate-to-full-p/>`_\\을 참조하십시오."
 
 #: ../../library/math.rst:572
 msgid ""
@@ -1331,7 +1278,7 @@ msgstr ""
 
 #: ../../library/math.rst:610
 msgid "sum(itertools.starmap(operator.mul, zip(p, q, strict=True)))"
-msgstr ""
+msgstr "sum(itertools.starmap(operator.mul, zip(p, q, strict=True)))"
 
 #: ../../library/math.rst:612
 msgid ""
@@ -1405,13 +1352,12 @@ msgid "Hyperbolic functions"
 msgstr "쌍곡선 함수"
 
 #: ../../library/math.rst:680
-#, fuzzy
 msgid ""
 "`Hyperbolic functions "
 "<https://en.wikipedia.org/wiki/Hyperbolic_functions>`_ are analogs of "
 "trigonometric functions that are based on hyperbolas instead of circles."
 msgstr ""
-"`쌍곡선 함수 <https://en.wikipedia.org/wiki/Hyperbolic_function>`_\\는 원 대신 "
+"`쌍곡선 함수 <https://en.wikipedia.org/wiki/Hyperbolic_functions>`_\\는 원 대신 "
 "쌍곡선을 기반으로 하는 삼각 함수의 동류(analog)입니다."
 
 #: ../../library/math.rst:686
@@ -1451,15 +1397,14 @@ msgstr ""
 "<https://en.wikipedia.org/wiki/Error_function>`_\\를 반환합니다."
 
 #: ../../library/math.rst:722
-#, fuzzy
 msgid ""
 "The :func:`erf` function can be used to compute traditional statistical "
 "functions such as the `cumulative standard normal distribution "
 "<https://en.wikipedia.org/wiki/Cumulative_distribution_function>`_::"
 msgstr ""
 ":func:`erf` 함수는 `누적 표준 정규 분포 "
-"<https://en.wikipedia.org/wiki/Normal_distribution#Cumulative_distribution_function>`_\\와"
-" 같은 전통적인 통계 함수를 계산하는 데 사용할 수 있습니다::"
+"<https://en.wikipedia.org/wiki/Cumulative_distribution_function>`_\\와 같은 "
+"전통적인 통계 함수를 계산하는 데 사용할 수 있습니다::"
 
 #: ../../library/math.rst:726
 msgid ""
@@ -1468,6 +1413,9 @@ msgid ""
 "distribution'\n"
 "    return (1.0 + erf(x / sqrt(2.0))) / 2.0"
 msgstr ""
+"def phi(x):\n"
+"    '표준 정규 분포의 누적 분포 함수'\n"
+"    return (1.0 + erf(x / sqrt(2.0))) / 2.0"
 
 #: ../../library/math.rst:735
 msgid ""
